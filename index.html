@@ -79,6 +79,11 @@
         </div>
     </nav>
 
+    <!-- Fixed language toggle always visible -->
+    <button class="lang-toggle-fixed" id="langToggleFixed" title="Switch to Arabic / التبديل للعربية">
+        <i class="fa fa-globe"></i> <span id="langLabelFixed">AR</span>
+    </button>
+
     <!-- ─── HERO ─── -->
     <div class="hero-parallax">
         <div class="hero-overlay"></div>
@@ -1906,9 +1911,10 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
         '.stats-section':      null,
     };
     var enLabels = {};
-    document.getElementById('langToggle').addEventListener('click', function() {
+    function applyLangToggle() {
         isArabic = !isArabic;
         document.getElementById('langLabel').textContent = isArabic ? 'English' : 'العربية';
+        document.getElementById('langLabelFixed').textContent = isArabic ? 'EN' : 'AR';
         document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
         document.documentElement.setAttribute('lang', isArabic ? 'ar' : 'en');
 
@@ -1929,7 +1935,9 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
             if (isArabic && arH[i]) h.textContent = arH[i];
             else if (!isArabic && enH[i]) h.textContent = enH[i];
         });
-    });
+    }
+    document.getElementById('langToggle').addEventListener('click', applyLangToggle);
+    document.getElementById('langToggleFixed').addEventListener('click', applyLangToggle);
 })();
 </script>
 </body>
