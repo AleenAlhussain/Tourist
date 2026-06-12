@@ -15,8 +15,9 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* ─── Smooth Scroll ─── */
+/* ─── Smooth Scroll + prevent horizontal overflow ─── */
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
 
 /* ─── Page Loader ─── */
 #page-loader {
@@ -1900,10 +1901,14 @@ html { scroll-behavior: smooth; }
 }
 
 /* ── Fix: original style.css layout bugs ── */
+/* contact-map iframe has margin-left:100px globally — overflows on all screens */
+.contact-map iframe { margin-left: 0 !important; width: 100% !important; }
+/* home-desc has margin-left:150px — clips on mid screens */
+.home .home-desc { margin-left: 0 !important; }
+
 @media (max-width: 768px) {
     .banner { margin-top: 0 !important; }
     section.banner { padding-top: 70px !important; }
-    .contact-map iframe { margin-left: 0 !important; width: 100% !important; }
     .footer-logo { margin-left: 0 !important; }
     .footer-disc { margin-left: 0 !important; }
 }
