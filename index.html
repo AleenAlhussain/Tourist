@@ -62,14 +62,18 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#offer">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline">History</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="lang-toggle" id="langToggle" title="Switch to Arabic / التبديل للعربية">
+                            <i class="fa fa-globe"></i> <span id="langLabel">العربية</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -765,6 +769,39 @@
     </div>
 </div>
 
+<!-- ═══════════════════════════════ TOUR CALENDAR ═══════════════════════════════ -->
+<section class="calendar-section" id="calendar">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Available Tour Dates</h2>
+            <p class="section-sub">Check open spots and book your preferred date instantly</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="cal-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="cal-header">
+                <button class="cal-nav-btn" id="calPrev"><i class="fa fa-chevron-left"></i></button>
+                <h4 id="calMonthLabel">June 2026</h4>
+                <button class="cal-nav-btn" id="calNext"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <div class="cal-legend">
+                <span class="cal-leg available"><i class="fa fa-circle"></i> Available</span>
+                <span class="cal-leg limited"><i class="fa fa-circle"></i> Limited spots</span>
+                <span class="cal-leg full"><i class="fa fa-circle"></i> Fully booked</span>
+                <span class="cal-leg past"><i class="fa fa-circle"></i> Unavailable</span>
+            </div>
+            <div class="cal-grid-header">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+            <div class="cal-tooltip" id="calTooltip" style="display:none;"></div>
+        </div>
+        <div class="cal-cta" data-aos="fade-up" data-aos-delay="200">
+            <p><i class="fa fa-info-circle"></i> Click any available date to jump to the booking form. <strong>Max 12 guests per tour.</strong></p>
+            <a href="#booking" class="cal-book-btn">Check Availability &rarr;</a>
+        </div>
+    </div>
+</section>
+
 <!-- ═══════════════════════════════ BLOG ═══════════════════════════════ -->
 <section class="blog-section" id="blog">
     <div class="section-header" data-aos="fade-up">
@@ -783,11 +820,11 @@
                     <div class="blog-body">
                         <div class="blog-meta">
                             <span><i class="fa fa-calendar"></i> April 2024</span>
-                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                            <span><i class="fa fa-clock-o"></i> 5 min read</span>
                         </div>
                         <h5>Spring Festival of the Basalt Mountain</h5>
                         <p>Every April, Swaida bursts into color as locals celebrate the spring harvest with traditional music, folk dancing, and open-air markets stretching through the old city.</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -800,11 +837,11 @@
                     <div class="blog-body">
                         <div class="blog-meta">
                             <span><i class="fa fa-calendar"></i> March 2024</span>
-                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                            <span><i class="fa fa-clock-o"></i> 8 min read</span>
                         </div>
-                        <h5>Walking Through Philippopolis – Roman Shahba</h5>
-                        <p>Founded by Emperor Philip the Arab in 244 AD as his imperial capital, Shahba contains the most complete Roman urban grid in the Levant. We explore what remains.</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        <h5>10 Things You Didn't Know About Shahba</h5>
+                        <p>Founded by Emperor Philip the Arab in 244 AD as his imperial capital, Shahba hides secrets most visitors walk right past. Here are the ten most surprising facts about ancient Philippopolis.</p>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -817,11 +854,62 @@
                     <div class="blog-body">
                         <div class="blog-meta">
                             <span><i class="fa fa-calendar"></i> February 2024</span>
-                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                            <span><i class="fa fa-clock-o"></i> 6 min read</span>
                         </div>
                         <h5>Salkhad Castle at Sunset – A Photographer's Guide</h5>
-                        <p>Perched on a volcanic cone visible from 50 km away, Salkhad Castle is one of the most photogenic medieval fortresses in the Middle East. Here's where to stand.</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                        <p>Perched on a volcanic cone visible from 50 km away, Salkhad Castle is one of the most photogenic medieval fortresses in the Middle East. Here's exactly where to stand for the best shot.</p>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/kanawat.jpg" alt="Kanawat Temples">
+                        <span class="blog-category">Culture</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> January 2024</span>
+                            <span><i class="fa fa-clock-o"></i> 7 min read</span>
+                        </div>
+                        <h5>Druze Culture: Traditions You'll Experience in Swaida</h5>
+                        <p>From the coffee ceremony to the mezze feast, from the elders' council to the embroidered thobe — a traveller's guide to Druze customs and how to respect them.</p>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/swaida.jpg" alt="Swaida Museum">
+                        <span class="blog-category">Guide</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> December 2023</span>
+                            <span><i class="fa fa-clock-o"></i> 9 min read</span>
+                        </div>
+                        <h5>The Ultimate First-Timer's Guide to Swaida</h5>
+                        <p>How to get there, what to wear, what to eat, which sites to prioritise, and everything else a first-time visitor needs to know about the Basalt Mountain.</p>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/swaida6.jpg" alt="Druze Food">
+                        <span class="blog-category">Food</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> November 2023</span>
+                            <span><i class="fa fa-clock-o"></i> 5 min read</span>
+                        </div>
+                        <h5>What to Eat in Swaida: A Local Food Guide</h5>
+                        <p>Kibbeh bil-sayniyeh, freekeh soup, za'atar-pressed olive oil, and the best place to drink Turkish coffee in the old souk. A food lover's guide to eating like a local.</p>
+                        <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1256,6 +1344,13 @@
         </div>
     </div>
 </div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/963997395229?text=Hello%20Visit%20Swaida!%20I'd%20like%20to%20book%20a%20tour."
+   class="whatsapp-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <i class="fa fa-whatsapp"></i>
+    <span class="whatsapp-label">WhatsApp Us</span>
+</a>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
@@ -1716,6 +1811,126 @@ function sendChatMsg(text) {
 $('#chatSend').click(function() { sendChatMsg($('#chatInput').val()); });
 $('#chatInput').keypress(function(e) { if (e.which === 13) sendChatMsg($(this).val()); });
 $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
+
+// ─── Tour Calendar ───
+(function() {
+    var tourData = {
+        // status: 'available' | 'limited' | 'full' | (none = unavailable)
+        // Format: 'YYYY-M-D'
+        available: [3,5,8,10,12,15,17,19,22,24,26,29],
+        limited:   [6,13,20,27],
+        full:      [7,14,21,28]
+    };
+
+    var now = new Date();
+    var viewYear = now.getFullYear();
+    var viewMonth = now.getMonth();
+
+    var monthNames = ['January','February','March','April','May','June',
+                      'July','August','September','October','November','December'];
+
+    function buildCal() {
+        var grid = document.getElementById('calGrid');
+        var label = document.getElementById('calMonthLabel');
+        if (!grid || !label) return;
+        label.textContent = monthNames[viewMonth] + ' ' + viewYear;
+        grid.innerHTML = '';
+
+        var first = new Date(viewYear, viewMonth, 1).getDay();
+        var days  = new Date(viewYear, viewMonth + 1, 0).getDate();
+        var today = new Date(); today.setHours(0,0,0,0);
+
+        // blank cells
+        for (var i = 0; i < first; i++) {
+            var blank = document.createElement('div');
+            blank.className = 'cal-day cal-blank';
+            grid.appendChild(blank);
+        }
+
+        for (var d = 1; d <= days; d++) {
+            var cell = document.createElement('div');
+            cell.textContent = d;
+            var cellDate = new Date(viewYear, viewMonth, d);
+            var status = '';
+            if (cellDate < today) {
+                status = 'past';
+            } else if (tourData.full.indexOf(d) !== -1) {
+                status = 'full';
+            } else if (tourData.limited.indexOf(d) !== -1) {
+                status = 'limited';
+            } else if (tourData.available.indexOf(d) !== -1) {
+                status = 'available';
+            }
+            cell.className = 'cal-day' + (status ? ' cal-' + status : ' cal-na');
+            if (status === 'available' || status === 'limited') {
+                cell.style.cursor = 'pointer';
+                cell.addEventListener('click', function() {
+                    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+                });
+            }
+            if (status === 'limited') {
+                var badge = document.createElement('span');
+                badge.className = 'cal-spots';
+                badge.textContent = Math.floor(Math.random()*3+1) + ' left';
+                cell.appendChild(badge);
+            }
+            if (status === 'full') {
+                var fullBadge = document.createElement('span');
+                fullBadge.className = 'cal-spots cal-spots-full';
+                fullBadge.textContent = 'Full';
+                cell.appendChild(fullBadge);
+            }
+            grid.appendChild(cell);
+        }
+    }
+
+    document.getElementById('calPrev').addEventListener('click', function() {
+        viewMonth--; if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+        buildCal();
+    });
+    document.getElementById('calNext').addEventListener('click', function() {
+        viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+        buildCal();
+    });
+
+    buildCal();
+})();
+
+// ─── Arabic Language Toggle ───
+(function() {
+    var isArabic = false;
+    var translations = {
+        '#home-tagline':       'اكتشف مدن رومانية عريقة، ومناظر بركانية خلابة، وثقافة سورية خالدة',
+        '.hero-sub':           'مرحباً بكم في جبل العرب',
+        '#typed-destination':  'السويداء',
+        '.stats-section':      null,
+    };
+    var enLabels = {};
+    document.getElementById('langToggle').addEventListener('click', function() {
+        isArabic = !isArabic;
+        document.getElementById('langLabel').textContent = isArabic ? 'English' : 'العربية';
+        document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', isArabic ? 'ar' : 'en');
+
+        // Swap nav link labels
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        var enNav = ['Home','Destinations','Gallery','Packages','About Us','Book Now','Blog','FAQ','Contact'];
+        var arNav = ['الرئيسية','الوجهات','معرض الصور','الباقات','من نحن','احجز الآن','المدونة','الأسئلة الشائعة','اتصل بنا'];
+        navLinks.forEach(function(link, i) {
+            if (isArabic && arNav[i]) link.textContent = arNav[i];
+            else if (!isArabic && enNav[i]) link.textContent = enNav[i];
+        });
+
+        // Swap section headings
+        var headings = document.querySelectorAll('.section-header h2');
+        var enH = ['Discover Swaida','Our Services','Book Your Trip','Our Gallery','What We Offer','Best Time to Visit','Virtual 360° Tour','Explore Our Destinations','History of Swaida','Travel Blog','Traveller Reviews','Frequently Asked Questions','Location & Contact'];
+        var arH = ['اكتشف السويداء','خدماتنا','احجز رحلتك','معرض صورنا','ما نقدمه','أفضل وقت للزيارة','جولة افتراضية 360°','استكشف وجهاتنا','تاريخ السويداء','مدونة السفر','آراء المسافرين','الأسئلة الشائعة','الموقع والتواصل'];
+        headings.forEach(function(h, i) {
+            if (isArabic && arH[i]) h.textContent = arH[i];
+            else if (!isArabic && enH[i]) h.textContent = enH[i];
+        });
+    });
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Visit Swaida</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,600;1,200;1,400;1,700&family=Trirong:ital,wght@0,200;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <style>
+        .gallery-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003d5c 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            color: #fff;
+        }
+        .gallery-page-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3rem); color: #fff; margin-bottom: 10px; }
+        .gallery-page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; }
+        .gallery-breadcrumb { margin-top: 14px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+        .gallery-breadcrumb a { color: var(--accent); text-decoration: none; }
+
+        /* Filter tabs */
+        .gallery-filters {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 10px; padding: 40px 0 28px;
+        }
+        .gf-btn {
+            padding: 9px 22px; border-radius: 50px;
+            border: 2px solid #e8eaed;
+            background: #fff; color: var(--text-muted);
+            font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease;
+            font-family: 'Nunito', sans-serif;
+        }
+        .gf-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .gf-btn.active { background: var(--primary); color: var(--accent); border-color: var(--primary); }
+
+        /* Masonry grid */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 14px;
+            padding: 0 0 60px;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 14px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+        }
+        .masonry-item img {
+            width: 100%; display: block;
+            transition: transform 0.5s ease;
+        }
+        .masonry-item:hover img { transform: scale(1.05); }
+        .masonry-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,43,66,0.8) 0%, transparent 55%);
+            opacity: 0; transition: opacity 0.35s;
+            display: flex; align-items: flex-end;
+            padding: 18px;
+        }
+        .masonry-item:hover .masonry-overlay { opacity: 1; }
+        .masonry-caption { color: #fff; }
+        .masonry-caption strong { display: block; font-size: 0.92rem; font-family: 'Cinzel', serif; }
+        .masonry-caption span {
+            font-size: 0.72rem; color: var(--accent);
+            background: rgba(255,255,255,0.12); padding: 2px 8px; border-radius: 50px;
+        }
+        .masonry-item.hidden { display: none; }
+
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 480px) { .masonry-grid { column-count: 1; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-scrolled" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/logo4.png" alt="Swaida Logo" class="logo" style="width:100px;height:auto !important;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="kanawat.html">Kanawat</a></li>
+                <li class="nav-item"><a class="nav-link" href="shahba.html">Shahba</a></li>
+                <li class="nav-item"><a class="nav-link" href="salkhad.html">Salkhad</a></li>
+                <li class="nav-item"><a class="nav-link" href="swaida.html">Swaida City</a></li>
+                <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#booking">Book Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="gallery-page-hero">
+    <div class="container">
+        <p data-aos="fade-down">Explore</p>
+        <h1 data-aos="zoom-in" data-aos-delay="100">Photo Gallery</h1>
+        <p data-aos="fade-up" data-aos-delay="200">A visual journey through Swaida's ancient monuments, volcanic landscapes, and vibrant culture</p>
+        <div class="gallery-breadcrumb" data-aos="fade-up" data-aos-delay="300">
+            <a href="index.html">Home</a> / Gallery
+        </div>
+    </div>
+</div>
+
+<section style="padding: 0; background: #f8f9fb;">
+    <div class="container">
+        <div class="gallery-filters" data-aos="fade-up">
+            <button class="gf-btn active" data-filter="all">All Photos</button>
+            <button class="gf-btn" data-filter="kanawat">Kanawat</button>
+            <button class="gf-btn" data-filter="shahba">Shahba</button>
+            <button class="gf-btn" data-filter="salkhad">Salkhad</button>
+            <button class="gf-btn" data-filter="swaida">Swaida City</button>
+        </div>
+
+        <div class="masonry-grid" id="masonryGrid">
+
+            <div class="masonry-item" data-cat="kanawat">
+                <img src="images/kanawat.jpg" alt="Temple of Zeus, Kanawat">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Temple of Zeus</strong>
+                        <span>Kanawat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="shahba">
+                <img src="images/shahba.jpg" alt="Roman Philippopolis, Shahba">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Ancient Philippopolis</strong>
+                        <span>Shahba</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="salkhad">
+                <img src="images/salkhadd.jpg" alt="Salkhad Castle">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Salkhad Castle</strong>
+                        <span>Salkhad</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="swaida">
+                <img src="images/swaida.jpg" alt="Swaida City">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Swaida City</strong>
+                        <span>Swaida</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="kanawat">
+                <img src="images/kanawat3.jpg" alt="Kanawat Ruins">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Serapeion Complex</strong>
+                        <span>Kanawat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="shahba">
+                <img src="images/shahba3.jpg" alt="Shahba Theater">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Roman Theater</strong>
+                        <span>Shahba</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="salkhad">
+                <img src="images/salkhad3.jpg" alt="Salkhad Panorama">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Volcanic Panorama</strong>
+                        <span>Salkhad</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="swaida">
+                <img src="images/swaida1.jpeg" alt="Swaida Museum">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>National Museum</strong>
+                        <span>Swaida</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="kanawat">
+                <img src="images/kanawat2.jpg" alt="Kanawat Columns">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Nabataean Columns</strong>
+                        <span>Kanawat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="swaida">
+                <img src="images/swaida6.jpg" alt="Swaida Old Souk">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Old Market (Souk)</strong>
+                        <span>Swaida</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="salkhad">
+                <img src="images/salkhadd.jpg" alt="Salkhad at Sunset" style="filter:saturate(1.3)">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Castle at Sunset</strong>
+                        <span>Salkhad</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-cat="shahba">
+                <img src="images/shahba.jpg" alt="Shahba Mosaics" style="filter:brightness(0.9)">
+                <div class="masonry-overlay">
+                    <div class="masonry-caption">
+                        <strong>Imperial Mosaics</strong>
+                        <span>Shahba</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12"><img src="images/logo4.png" class="footer-logo" alt=""><p class="footer-disc list">Enjoy your trip with us</p></div>
+            <div class="col-md-3 col-12"><h4>Quick Links</h4><ul class="list"><li><a href="index.html#about">Destinations</a></li><li><a href="packages.html">Packages</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About Us</a></li></ul></div>
+            <div class="col-md-3 col-12"><h4>Quick Contact</h4><a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a><a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a><a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida</a></div>
+            <div class="col-md-3 col-12"><h4 class="follow">Follow Us</h4><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a><a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i> YouTube</a><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></div>
+        </div>
+        <hr>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2024 Visit Swaida</p>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa fa-times"></i></button>
+    <img id="lightboxImg" src="" alt="">
+</div>
+<button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 700, once: true });
+
+// Filter
+document.querySelectorAll('.gf-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.gf-btn').forEach(function(b){ b.classList.remove('active'); });
+        this.classList.add('active');
+        var filter = this.dataset.filter;
+        document.querySelectorAll('.masonry-item').forEach(function(item) {
+            if (filter === 'all' || item.dataset.cat === filter) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// Lightbox
+document.querySelectorAll('.masonry-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+        var src = this.querySelector('img').src;
+        document.getElementById('lightboxImg').src = src;
+        document.getElementById('lightbox').classList.add('active');
+    });
+});
+document.getElementById('lightboxClose').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('active');
+});
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
+});
+
+// Navbar scroll
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 80) $('#mainNav').addClass('navbar-scrolled'); else $('#mainNav').addClass('navbar-scrolled');
+    if ($(this).scrollTop() > 400) $('#backToTop').addClass('show'); else $('#backToTop').removeClass('show');
+});
+$('#backToTop').click(function() { $('html,body').animate({scrollTop:0},600); });
+</script>
+</body>
+</html>

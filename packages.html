@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Packages | Visit Swaida</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,600;1,200;1,400;1,700&family=Trirong:ital,wght@0,200;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <style>
+        .packages-hero {
+            background: linear-gradient(135deg, #1a0a00 0%, var(--primary) 100%);
+            padding: 120px 0 70px;
+            text-align: center; color: #fff;
+        }
+        .packages-hero h1 { font-family:'Cinzel',serif; font-size:clamp(2rem,5vw,3rem); color:#fff; margin-bottom:10px; }
+        .packages-hero p { color:rgba(255,255,255,0.65); }
+        .gallery-breadcrumb { margin-top:14px; font-size:0.82rem; color:rgba(255,255,255,0.5); }
+        .gallery-breadcrumb a { color:var(--accent); text-decoration:none; }
+
+        /* Package cards */
+        .pkg-section { padding: 80px 0; background: #f8f9fb; }
+        .pkg-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,43,66,0.1);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            height: 100%;
+            display: flex; flex-direction: column;
+            position: relative;
+        }
+        .pkg-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,43,66,0.18); }
+        .pkg-badge {
+            position: absolute; top: 18px; right: 18px;
+            background: var(--accent); color: var(--primary);
+            font-size: 0.7rem; font-weight: 800;
+            padding: 4px 12px; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .pkg-badge.popular { background: #e74c3c; color: #fff; }
+        .pkg-img { position: relative; overflow: hidden; }
+        .pkg-img img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
+        .pkg-card:hover .pkg-img img { transform: scale(1.06); }
+        .pkg-body { padding: 28px 26px; flex: 1; display: flex; flex-direction: column; }
+        .pkg-duration {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--accent);
+            font-family: 'Nunito', sans-serif; margin-bottom: 8px;
+        }
+        .pkg-body h3 { font-family:'Cinzel',serif; color:var(--primary); font-size:1.2rem; margin-bottom:10px; }
+        .pkg-body p { color:var(--text-muted); font-size:0.88rem; line-height:1.7; margin-bottom:16px; }
+
+        .pkg-highlights { list-style:none; padding:0; margin-bottom:20px; }
+        .pkg-highlights li { font-size:0.85rem; color:var(--primary); padding:5px 0; border-bottom:1px solid #f0f0f0; display:flex; align-items:center; gap:8px; }
+        .pkg-highlights li:last-child { border-bottom:none; }
+        .pkg-highlights li i { color:#27ae60; font-size:0.8rem; flex-shrink:0; }
+
+        .pkg-footer {
+            display:flex; align-items:center; justify-content:space-between;
+            padding: 18px 26px;
+            border-top: 1px solid #f0f0f0;
+            background: #fafbfc;
+        }
+        .pkg-price { line-height:1; }
+        .pkg-price .from { font-size:0.72rem; color:#aaa; text-transform:uppercase; display:block; }
+        .pkg-price .amount { font-family:'Cinzel',serif; font-size:1.7rem; color:var(--primary); font-weight:700; }
+        .pkg-price .per { font-size:0.75rem; color:#aaa; }
+        .btn-pkg {
+            background: var(--primary); color: var(--accent) !important;
+            padding: 10px 22px !important; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 700;
+            text-decoration: none !important; transition: all 0.3s;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .btn-pkg:hover { background: #003d5c; transform: scale(1.04); }
+
+        /* What's included strip */
+        .included-section { padding: 70px 0; background: var(--primary); }
+        .included-section .section-header h2 { color:#fff; }
+        .included-section .section-sub { color:rgba(255,255,255,0.55); }
+        .included-section .section-divider { background: linear-gradient(90deg,transparent,var(--accent),transparent); }
+        .inc-item {
+            text-align:center; padding:24px 16px; color:#fff;
+        }
+        .inc-icon {
+            width:60px; height:60px; border-radius:50%;
+            background:rgba(242,183,147,0.15);
+            color:var(--accent); font-size:1.4rem;
+            display:flex; align-items:center; justify-content:center;
+            margin:0 auto 14px;
+            border: 1px solid rgba(242,183,147,0.3);
+        }
+        .inc-item h5 { font-family:'Cinzel',serif; font-size:0.92rem; color:var(--accent); margin-bottom:6px; }
+        .inc-item p { font-size:0.8rem; color:rgba(255,255,255,0.55); margin:0; line-height:1.5; }
+
+        /* CTA */
+        .pkg-cta { padding:80px 0; background:#f8f9fb; text-align:center; }
+        .pkg-cta h2 { font-family:'Cinzel',serif; color:var(--primary); font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:12px; }
+        .pkg-cta p { color:var(--text-muted); margin-bottom:28px; }
+        .btn-cta-pkg {
+            background:var(--accent); color:var(--primary) !important;
+            padding:14px 36px !important; border-radius:50px; font-weight:700;
+            font-size:1rem; text-decoration:none !important;
+            display:inline-flex; align-items:center; gap:8px;
+            transition:all 0.3s;
+        }
+        .btn-cta-pkg:hover { background:var(--accent-dark); transform:scale(1.04); }
+
+        @media(max-width:576px) {
+            .pkg-footer { flex-direction:column; gap:14px; text-align:center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-scrolled" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/logo4.png" alt="Swaida Logo" class="logo" style="width:100px;height:auto !important;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="kanawat.html">Kanawat</a></li>
+                <li class="nav-item"><a class="nav-link" href="shahba.html">Shahba</a></li>
+                <li class="nav-item"><a class="nav-link" href="salkhad.html">Salkhad</a></li>
+                <li class="nav-item"><a class="nav-link" href="swaida.html">Swaida City</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link active" href="packages.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#booking">Book Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="packages-hero">
+    <div class="container">
+        <p data-aos="fade-down">Curated Experiences</p>
+        <h1 data-aos="zoom-in" data-aos-delay="100">Trip Packages</h1>
+        <p data-aos="fade-up" data-aos-delay="200">From half-day escapes to multi-day immersions — hand-crafted itineraries for every traveller</p>
+        <div class="gallery-breadcrumb" data-aos="fade-up" data-aos-delay="300">
+            <a href="index.html">Home</a> / Packages
+        </div>
+    </div>
+</div>
+
+<!-- Packages Grid -->
+<section class="pkg-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Choose Your Journey</h2>
+            <p class="section-sub">All prices per person · Groups of up to 12 · Private tours available</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="row">
+
+            <!-- Package 1 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="pkg-card">
+                    <span class="pkg-badge">Day Trip</span>
+                    <div class="pkg-img"><img src="images/kanawat.jpg" alt="Kanawat Day Tour"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> 1 Day</p>
+                        <h3>Kanawat Ruins & Souk</h3>
+                        <p>A full-day expert-guided tour of Kanawat's ancient Nabataean and Roman monuments, ending with a traditional lunch in a local family home.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> Temple of Zeus & Serapeion</li>
+                            <li><i class="fa fa-check-circle"></i> Expert English/Arabic guide</li>
+                            <li><i class="fa fa-check-circle"></i> Traditional Druze lunch included</li>
+                            <li><i class="fa fa-check-circle"></i> Transport from Swaida City</li>
+                            <li><i class="fa fa-check-circle"></i> All entrance fees</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$55</span>
+                            <span class="per">/ person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="pkg-card">
+                    <span class="pkg-badge popular">Most Popular</span>
+                    <div class="pkg-img"><img src="images/shahba.jpg" alt="Roman Trail"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> 2 Days · 1 Night</p>
+                        <h3>2-Day Roman Trail</h3>
+                        <p>Follow in Emperor Philip's footsteps — visiting Shahba (Philippopolis) on Day 1 and Kanawat (Canatha) on Day 2, with an overnight stay in a Druze guesthouse.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> Shahba Roman city & Mosaic Museum</li>
+                            <li><i class="fa fa-check-circle"></i> Kanawat temples & ruins</li>
+                            <li><i class="fa fa-check-circle"></i> Overnight in guesthouse (breakfast incl.)</li>
+                            <li><i class="fa fa-check-circle"></i> Expert guide both days</li>
+                            <li><i class="fa fa-check-circle"></i> All transport & entrance fees</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$145</span>
+                            <span class="per">/ person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="pkg-card">
+                    <span class="pkg-badge">Scenic</span>
+                    <div class="pkg-img"><img src="images/salkhadd.jpg" alt="Salkhad Castle Tour"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> 1 Day</p>
+                        <h3>Salkhad Fortress & Sunset</h3>
+                        <p>Climb the ancient Ayyubid castle, explore the basalt old town, and experience a 360° volcanic sunset from the highest point in the Hauran plain.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> Salkhad Castle guided climb</li>
+                            <li><i class="fa fa-check-circle"></i> Salkhad old town walk</li>
+                            <li><i class="fa fa-check-circle"></i> Sunset panorama experience</li>
+                            <li><i class="fa fa-check-circle"></i> Traditional dinner in local restaurant</li>
+                            <li><i class="fa fa-check-circle"></i> Transport & entrance fees</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$78</span>
+                            <span class="per">/ person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="pkg-card">
+                    <span class="pkg-badge">Culture</span>
+                    <div class="pkg-img"><img src="images/swaida.jpg" alt="Swaida Museum & Souk"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> 1 Day</p>
+                        <h3>Swaida City Deep Dive</h3>
+                        <p>A cultural immersion into the heart of Druze heritage — the National Museum, the old covered souk, local artisans, and a Druze home-cooked feast.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> Swaida National Museum tour</li>
+                            <li><i class="fa fa-check-circle"></i> Old Souk artisan visits</li>
+                            <li><i class="fa fa-check-circle"></i> Traditional cooking demonstration</li>
+                            <li><i class="fa fa-check-circle"></i> Druze cultural talk by local elder</li>
+                            <li><i class="fa fa-check-circle"></i> Lunch & coffee included</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$65</span>
+                            <span class="per">/ person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 5: Full Hauran Circuit -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="pkg-card">
+                    <span class="pkg-badge popular">Best Value</span>
+                    <div class="pkg-img"><img src="images/shahba3.jpg" alt="Full Hauran Circuit"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> 4 Days · 3 Nights</p>
+                        <h3>Full Hauran Circuit</h3>
+                        <p>The definitive Swaida experience. All four destinations, expert guides, the finest local meals, handpicked accommodation, and memories for a lifetime.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> All 4 destinations (Kanawat, Shahba, Salkhad, Swaida)</li>
+                            <li><i class="fa fa-check-circle"></i> 3 nights accommodation + all breakfasts</li>
+                            <li><i class="fa fa-check-circle"></i> 4 expert-guided days</li>
+                            <li><i class="fa fa-check-circle"></i> All transport, entrance fees, lunches</li>
+                            <li><i class="fa fa-check-circle"></i> Souvenir Druze craft gift included</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$380</span>
+                            <span class="per">/ person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 6: Private -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="pkg-card">
+                    <span class="pkg-badge">Custom</span>
+                    <div class="pkg-img"><img src="images/kanawat3.jpg" alt="Private Custom Tour"></div>
+                    <div class="pkg-body">
+                        <p class="pkg-duration"><i class="fa fa-clock-o"></i> Your Schedule</p>
+                        <h3>Private Custom Tour</h3>
+                        <p>Design your own itinerary. Choose your destinations, set your pace, and travel with a dedicated private guide — perfect for families, couples, or photographers.</p>
+                        <ul class="pkg-highlights">
+                            <li><i class="fa fa-check-circle"></i> Fully customisable itinerary</li>
+                            <li><i class="fa fa-check-circle"></i> Dedicated private guide</li>
+                            <li><i class="fa fa-check-circle"></i> Private air-conditioned vehicle</li>
+                            <li><i class="fa fa-check-circle"></i> Flexible dates & duration</li>
+                            <li><i class="fa fa-check-circle"></i> Special photography locations</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-footer">
+                        <div class="pkg-price">
+                            <span class="from">From</span>
+                            <span class="amount">$120</span>
+                            <span class="per">/ day</span>
+                        </div>
+                        <a href="index.html#booking" class="btn-pkg"><i class="fa fa-envelope"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- What's Included -->
+<section class="included-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Always Included</h2>
+            <p class="section-sub">Every Visit Swaida package comes with these as standard</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-user-secret"></i></div>
+                    <h5>Expert Guide</h5>
+                    <p>English & Arabic speaking local historian</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-car"></i></div>
+                    <h5>Transport</h5>
+                    <p>A/C minibus, all transfers included</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-ticket"></i></div>
+                    <h5>Entry Fees</h5>
+                    <p>All site entrance tickets covered</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-cutlery"></i></div>
+                    <h5>Local Food</h5>
+                    <p>Traditional Druze lunches & refreshments</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="250">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-shield"></i></div>
+                    <h5>Insurance</h5>
+                    <p>Travel & activity insurance included</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="inc-item">
+                    <div class="inc-icon"><i class="fa fa-phone"></i></div>
+                    <h5>24/7 Support</h5>
+                    <p>On-call assistance throughout your trip</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="pkg-cta">
+    <div class="container" data-aos="fade-up">
+        <h2>Not sure which package is right for you?</h2>
+        <p>Send us a message and we'll design the perfect Swaida experience for your group, budget, and interests.</p>
+        <a href="index.html#booking" class="btn-cta-pkg"><i class="fa fa-paper-plane"></i> Get a Custom Quote</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12"><img src="images/logo4.png" class="footer-logo" alt=""><p class="footer-disc list">Enjoy your trip with us</p></div>
+            <div class="col-md-3 col-12"><h4>Quick Links</h4><ul class="list"><li><a href="index.html#about">Destinations</a></li><li><a href="packages.html">Packages</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About Us</a></li></ul></div>
+            <div class="col-md-3 col-12"><h4>Quick Contact</h4><a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a><a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a><a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida</a></div>
+            <div class="col-md-3 col-12"><h4 class="follow">Follow Us</h4><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a><a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i> YouTube</a><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></div>
+        </div>
+        <hr>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2024 Visit Swaida</p>
+    </div>
+</section>
+
+<button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 700, once: true });
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 400) $('#backToTop').addClass('show'); else $('#backToTop').removeClass('show');
+});
+$('#backToTop').click(function() { $('html,body').animate({scrollTop:0},600); });
+</script>
+</body>
+</html>
