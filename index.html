@@ -66,6 +66,7 @@
             <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="400">
                 Visit <span id="typed-destination">Swaida</span>
             </h1>
+            <div class="hero-title-divider" data-aos="fade-up" data-aos-delay="550"></div>
             <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
                 Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture
             </p>
@@ -74,8 +75,9 @@
                 <a href="#booking" class="btn btn-hero-outline">Book a Trip</a>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <span></span><span></span><span></span>
+        <div class="hero-scroll-indicator" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+            <div class="scroll-mouse"></div>
+            <span class="scroll-label">Scroll</span>
         </div>
     </div>
 </header>
