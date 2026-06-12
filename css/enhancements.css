@@ -50,15 +50,72 @@ html { scroll-behavior: smooth; }
 @keyframes loadProgress { from { width: 0; } to { width: 100%; } }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(0.95); opacity:0.7; } }
 
-/* ─── Navbar Scrolled ─── */
-#mainNav { transition: var(--transition); background: transparent; }
-#mainNav.navbar-scrolled {
-    background: var(--primary) !important;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+/* ═══════════════════ MODERN NAVBAR ═══════════════════ */
+#mainNav {
+    transition: var(--transition);
+    background: transparent;
+    padding: 18px 0;
 }
-#mainNav.navbar-scrolled .nav-link { color: var(--accent) !important; }
+#mainNav.navbar-scrolled {
+    background: rgba(10, 25, 38, 0.92) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.35);
+    padding: 10px 0;
+}
+/* nav links — transparent state */
+#mainNav .nav-link {
+    color: rgba(255,255,255,0.88) !important;
+    font-size: 0.88rem !important;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 14px !important;
+    border-radius: 6px;
+    position: relative;
+    transition: color 0.3s;
+    margin: 0 2px;
+}
+#mainNav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 14px; right: 14px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+#mainNav .nav-link:hover::after,
+#mainNav .nav-link.active::after { transform: scaleX(1); }
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active { color: var(--accent) !important; background: transparent !important; }
 
-/* ─── Hero Parallax ─── */
+/* "Book Now" pill in navbar */
+#mainNav .nav-item:nth-child(5) .nav-link {
+    background: var(--accent) !important;
+    color: var(--primary) !important;
+    border-radius: 50px !important;
+    padding: 8px 20px !important;
+    font-weight: 700;
+    margin-left: 6px;
+}
+#mainNav .nav-item:nth-child(5) .nav-link::after { display: none; }
+#mainNav .nav-item:nth-child(5) .nav-link:hover {
+    background: var(--accent-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(242,183,147,0.45);
+}
+
+/* logo */
+.navbar-brand img.logo { transition: opacity 0.3s; }
+.navbar-brand img.logo:hover { opacity: 0.85; }
+
+/* mobile toggler */
+.navbar-toggler { border-color: rgba(255,255,255,0.4) !important; }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(242,183,147,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; }
+
+/* ═══════════════════ MODERN HERO ═══════════════════ */
 .hero-parallax {
     width: 100%;
     min-height: 100vh;
@@ -71,104 +128,174 @@ html { scroll-behavior: smooth; }
     align-items: center;
     justify-content: center;
 }
+/* rich layered overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,43,66,0.75) 0%, rgba(0,0,0,0.5) 100%);
+    background:
+        linear-gradient(to top,   rgba(0,0,0,0.85) 0%, transparent 50%),
+        linear-gradient(to right, rgba(0,43,66,0.6) 0%, transparent 70%);
 }
+/* noise texture for depth */
+.hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
     color: var(--white);
-    padding: 0 20px;
+    padding: 0 24px;
+    max-width: 860px;
+    margin: 0 auto;
 }
+
+/* badge pill above title */
 .hero-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'Nunito', sans-serif;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 0.95rem;
-    color: var(--accent);
-    margin-bottom: 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--accent);
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 28px;
 }
+.hero-sub::before { content: '✦'; font-size: 0.6rem; }
+.hero-sub::after  { content: '✦'; font-size: 0.6rem; }
+
+/* main title */
 .hero-title {
     font-family: 'Cinzel', serif;
-    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-size: clamp(3.2rem, 9vw, 7.5rem);
     font-weight: 700;
     color: var(--white);
-    line-height: 1;
-    margin-bottom: 20px;
+    line-height: 1.0;
+    margin-bottom: 24px;
     text-transform: uppercase;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
 }
 .hero-title span {
     color: var(--accent);
     transition: opacity 0.4s ease;
+    display: inline-block;
 }
+
+/* divider line */
+.hero-title-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 0 auto 20px;
+}
+
 .hero-tagline {
     font-family: 'Nunito', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: rgba(255,255,255,0.85);
-    max-width: 600px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.78);
+    max-width: 580px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    font-weight: 300;
 }
-.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* buttons */
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-hero-primary {
     background: var(--accent);
     color: var(--primary) !important;
-    padding: 14px 36px;
+    padding: 14px 38px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
     transition: var(--transition);
     border: 2px solid var(--accent);
     text-decoration: none !important;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
+.btn-hero-primary::after { content: '→'; font-size: 1rem; }
 .btn-hero-primary:hover {
     background: var(--accent-dark);
+    border-color: var(--accent-dark);
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(242,183,147,0.4);
+    box-shadow: 0 10px 28px rgba(242,183,147,0.4);
 }
 .btn-hero-outline {
-    background: transparent;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
     color: var(--white) !important;
-    padding: 14px 36px;
+    padding: 14px 38px;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1rem;
-    border: 2px solid rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: 1.5px solid rgba(255,255,255,0.45);
     transition: var(--transition);
     text-decoration: none !important;
     display: inline-block;
 }
 .btn-hero-outline:hover {
-    background: rgba(255,255,255,0.15);
-    border-color: var(--white);
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.9);
     transform: translateY(-3px);
 }
 
-/* Scroll indicator */
+/* scroll mouse indicator */
 .hero-scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    cursor: pointer;
 }
-.hero-scroll-indicator span {
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+.hero-scroll-indicator .scroll-mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255,255,255,0.45);
+    border-radius: 12px;
+    position: relative;
+}
+.hero-scroll-indicator .scroll-mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 50%;
+    transform: translateX(-50%);
+    width: 3px; height: 7px;
     background: var(--accent);
-    animation: scrollBounce 1.4s ease infinite;
+    border-radius: 2px;
+    animation: scrollWheel 1.6s ease infinite;
 }
-.hero-scroll-indicator span:nth-child(2) { animation-delay: 0.2s; }
-.hero-scroll-indicator span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes scrollWheel {
+    0%   { top: 6px;  opacity: 1; }
+    100% { top: 22px; opacity: 0; }
+}
+.hero-scroll-indicator .scroll-label {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-family: 'Nunito', sans-serif;
+}
+
 @keyframes scrollBounce { 0%,100% { opacity:0.3; transform: scale(0.8); } 50% { opacity:1; transform: scale(1); } }
 
 /* ─── Section Headers ─── */
