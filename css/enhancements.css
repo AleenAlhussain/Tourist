@@ -743,9 +743,148 @@ html { scroll-behavior: smooth; }
     border: none;
 }
 
-/* ─── Footer links fix ─── */
-.footer ul li a { color: var(--accent) !important; }
-.footer a { color: var(--accent) !important; }
+/* ═══════════════════ FOOTER REDESIGN ═══════════════════ */
+.footer {
+    background: linear-gradient(135deg, #1a0a00 0%, #3d1c00 40%, #5c2e0a 100%) !important;
+    padding: 70px 20px 24px !important;
+    color: #f5e6d3 !important;
+    position: relative;
+    overflow: hidden;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #e8a06a, var(--accent));
+}
+.footer h4 {
+    color: var(--accent) !important;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(242,183,147,0.25);
+}
+.footer p, .footer ul li, .footer .copyright {
+    color: rgba(245,230,211,0.8) !important;
+}
+.footer a, .footer ul li a {
+    color: rgba(245,230,211,0.75) !important;
+    transition: color 0.3s, padding-left 0.3s;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.footer a:hover, .footer ul li a:hover {
+    color: var(--accent) !important;
+    padding-left: 4px;
+}
+.footer ul { list-style: none; padding: 0; }
+.footer ul li { margin-bottom: 6px; }
+.footer .row .fa {
+    color: var(--accent);
+    margin-right: 8px;
+    width: 16px;
+}
+.footer hr {
+    border-color: rgba(242,183,147,0.2) !important;
+    margin: 30px 0 18px !important;
+}
+.footer .copyright {
+    text-align: center;
+    color: rgba(245,230,211,0.5) !important;
+    font-size: 0.85rem;
+}
+.footer .copyright .fa-heart { color: #e74c3c !important; }
+.footer-logo {
+    width: 80px !important;
+    height: auto !important;
+    margin: 0 0 14px 0 !important;
+    opacity: 0.9;
+}
+.footer-disc {
+    color: rgba(245,230,211,0.7) !important;
+    margin-top: 0 !important;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+.footer .icon {
+    color: rgba(245,230,211,0.75) !important;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    text-transform: none !important;
+}
+.footer .icon:hover { color: var(--accent) !important; }
+.footer .icon i { color: var(--accent) !important; font-size: 1rem; width: 16px; }
+
+/* ═══════════════════ BOOK NOW REDESIGN ═══════════════════ */
+/* Replace the old letter-box heading */
+.book { padding: 80px 0; background: #f8f9fb; }
+.book .heading {
+    text-align: center;
+    padding: 0 0 50px !important;
+}
+.book .heading span {
+    font-size: 1rem !important;
+    background: none !important;
+    color: var(--text-muted) !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    display: inline !important;
+}
+.book .heading::before {
+    content: 'Book Your Trip';
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+.book .heading span.space { display: none !important; }
+
+/* booking image — fix the stretched circle */
+.book .row .image img {
+    height: 520px !important;
+    border-radius: var(--radius) !important;
+    object-fit: cover;
+    margin-left: 0 !important;
+    box-shadow: var(--shadow);
+}
+
+/* ─── Fix: What We Offer section height ─── */
+.section-offer {
+    height: auto !important;
+    margin-top: 0;
+    padding: 80px 0;
+}
+.section-offer .offer {
+    margin-bottom: 0;
+}
+.section-offer .About-content {
+    margin-bottom: 24px;
+}
+
+/* ─── Fix: Button sizing – replace fixed width with padding ─── */
+.btn {
+    width: auto !important;
+    padding: 10px 24px !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+}
+.booking-btn {
+    width: auto !important;
+    padding: 10px 30px !important;
+    font-size: 0.95rem !important;
+}
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
