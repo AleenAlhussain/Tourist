@@ -4,474 +4,1065 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swaida</title>
+    <title>Visit Swaida – Basalt Mountain Heritage</title>
 
-     <!-- BT 4.0 -->
-  <link rel="stylesheet" href="libs/bootstrap.min.css">
-  <script src="libs/jquery.min.js"></script>
-  <script src="libs/popper.min.js"></script>
-  <script src="libs/bootstrap.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="css/style.css">
-  <!-- font awesowm -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Nunito:ital,wght@0,200;0,600;1,200;1,400;1,700&family=Trirong:ital,wght@0,200;0,400;1,300&display=swap"
-    rel="stylesheet">
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,600;1,200;1,400;1,700&family=Trirong:ital,wght@0,200;0,400;1,300&display=swap" rel="stylesheet">
+
+    <!-- AOS – Animate On Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <header class="header">
-    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
+
+<!-- ═══════════════════════════════ PAGE LOADER ═══════════════════════════════ -->
+<div id="page-loader">
+    <div class="loader-inner">
+        <img src="images/logo4.png" alt="Swaida Logo">
+        <div class="loader-bar"><span></span></div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<header class="header" id="home">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" id="mainNav">
         <div class="container">
-        <a class="navbar-brand" href="#"><img src="images/logo4.png" alt="" class="logo" style="width:100px;height: auto !important;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#gallery">Gallery</a>
-            </li>  
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#offer">Offer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#booking">Booking</a>
-              </li> 
-               
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>  
-          </ul>
-        </div>  
-    </div>
-      </nav>
-   
-
-
-      <!-- home seCtion -->
-      <div class="home" id="home">
-     
-            <div class="home-item">
-              <h2 class="title">visit<br>swaida</h2>
-              <p class="home-desc hover-opacity">welcome to basalt mountain</p>
+            <a class="navbar-brand" href="#home">
+                <img src="images/logo4.png" alt="Swaida Logo" class="logo" style="width:100px;height:auto !important;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#offer">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-          
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <div class="hero-parallax">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200">Welcome to the Basalt Mountain</p>
+            <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="400">
+                Visit <span id="typed-destination">Swaida</span>
+            </h1>
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
+                Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                <a href="#about" class="btn btn-hero-primary">Explore Now</a>
+                <a href="#booking" class="btn btn-hero-outline">Book a Trip</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span></span><span></span><span></span>
+        </div>
     </div>
-  </header>
-      <!--featured section  -->
-   <section class="feature" id="about">
-    <h2>featured destination</h2>
+</header>
+
+<!-- ═══════════════════════════════ STATS COUNTER ═══════════════════════════════ -->
+<section class="stats-section" id="stats">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-          <div class="feature-box">
-            <div class="feature-img">
-              <img src="images/salkhadd.jpg" alt="">
-            
-            <div class="price">
-              <p>78$</p>
+        <div class="row text-center">
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <i class="fa fa-map-marker"></i>
+                    <h3 class="counter" data-target="47">0</h3>
+                    <p>Archaeological Sites</p>
+                </div>
             </div>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <i class="fa fa-users"></i>
+                    <h3 class="counter" data-target="12400">0</h3>
+                    <p>Happy Visitors</p>
+                </div>
             </div>
-          </div>
-          <div class="feature-details">
-            <h4>salkhad</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque dolores vero hic
-              aspernatur vitae tempora
-              labore ea illum incidunt.
-            </p>          
-              <div><span class="fa fa-map-marker">salkhad</span>
-              <span class="fa fa-sun-o">4 Days</span>
-              <span class="fa fa-moon-o"> 3 Nights</span>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <i class="fa fa-trophy"></i>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Tour Packages</p>
+                </div>
             </div>
-          </div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-item">
+                    <i class="fa fa-star"></i>
+                    <h3 class="counter" data-target="98">0</h3>
+                    <p>% Satisfaction</p>
+                </div>
+            </div>
         </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 ">
-            <div class="feature-box">
-              <div class="feature-img">
-                <img src="images/shahba.jpg" alt="">
-              
-              <div class="price">
-                <p>67$</p>
-              </div>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-  
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-  
-              </div>
-              <div class="feature-details">
-                <h4>shahba</h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque dolores vero hic
-                  aspernatur vitae tempora
-                  labore ea illum incidunt.
-                </p>
-                <div><span class="fa fa-map-marker">swaida</span>
-                  <span class="fa fa-sun-o">4 Days</span>
-                  <span class="fa fa-moon-o"> 3 Nights</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="feature-box">
-              <div class="feature-img">
-                <img src="images/kanawat.jpg" alt="">
-              
-              <div class="price">
-                <p>88$</p>
-              </div>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-  
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              </div>
-              <div class="feature-details">
-                <h4>kanawat</h4>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque dolores vero hic
-                  aspernatur vitae tempora
-                  labore ea illum incidunt.
-                  
-                </p>
-                <div><span class="fa fa-map-marker">swaida</span>
-                  <span class="fa fa-sun-o">4 Days</span>
-                  <span class="fa fa-moon-o"> 3 Nights</span></div>
-              </div>
-  
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6  col-12">
-            <div class="feature-box">
-              <div class="feature-img">
-                <img src="images/swaida.jpg" alt="">
-              
-              <div class="price">
-                <p>95$</p>
-              </div>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              </div>
-              <div class="feature-details">
-                <h4>swaida</h4>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque dolores vero hic
-                  aspernatur vitae tempora
-                  labore ea illum incidunt.
-                </p>
-                <div><span class="fa fa-map-marker">swaida</span>
-                  <span class="fa fa-sun-o">4 Days</span>
-                  <span class="fa fa-moon-o"> 3 Nights</span></div>
-              </div>
-  
-            </div>
-          </div>
-      </div>
-
-    </div>
-   </section>
-
-
-   <!-- gallery -->
-   <section class="gallery" id="gallery">
-        <h2>travelling gallery</h2>
-        <div class="container">
-          <div class="row">
-              <div class="col-md-3 col-sm-6 col-12">
-              <div class="gallery-box">
-                  <img src="images/swaida1.jpeg" alt="" class="hotel-img">
-                  <h5 class="gallery_disc">swaida</h5>
-                
-                 
-                  <a href="swaida.html" class="btn btn-gradient" target="_blank">See More
-                      <span class="dots"><i class="fa fa-ellipsis-h"></i></span>
-                  </a>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="gallery-box">
-                  <img src="images/shahba3.jpg" alt="" class="hotel-img">
-                  <h5 class="gallery_disc">shahba</h5>
-                
-                 
-                  <a href="shahba.html" class="btn btn-gradient" target="_blank">See More
-                      <span class="dots"><i class="fa fa-ellipsis-h"></i></span>
-                  </a>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="gallery-box">
-                  <img src="images/salkhad3.jpg" alt="" class="hotel-img">
-                  <h5 class="gallery_disc">salkhad</h5>
-                
-                  <a href="salkhad.html" class="btn btn-gradient" target="_blank">See More
-                      <span class="dots"><i class="fa fa-ellipsis-h"></i></span>
-                  </a>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="gallery-box">
-                  <img src="images/kanawat.jpg" alt="" class="hotel-img">
-                  <h5 class="gallery_disc">kanawat</h5>
-                  
-                 
-                  <a href="kanawat.html" class="btn btn-gradient" target="_blank">See More
-                      <span class="dots"><i class="fa fa-ellipsis-h"></i></span>
-                  </a>
-              </div>
-            </div>
-          </div>
-           
-          </div>
-        </div>
-   </section>
-
-   <!-- offer -->
-<section class="section-offer" >
-    <div class="offer" id="offer" >
-      <h2 class="title">
-        what we offer
-    </h2>
-    <span class="line"></span>
-      <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-12">
-          
-        <div class="About-content">
-          <div class="About-item ltr-effect">
-            <i class="icone fa fa-cutlery" aria-hidden="true"></i>
-              <h2 class="About-item-title">food & drink</h2>
-              <p class="About-item-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-12">
-        
-        <div class="About-content">
-          <div class="About-item ltr-effect">
-            <i class="icone fa fa-plane" aria-hidden="true"></i>
-              <h2 class="About-item-title">fatest travel</h2>
-              <p class="About-item-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-       
-      <div class="About-content">
-        <div class="About-item ltr-effect">
-          <i class="icone fa fa-shield" aria-hidden="true"></i> 
-            <h2 class="About-item-title">safty guide</h2>
-            <p class="About-item-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            
-        </div>
-      </div>
-      </div>
-      </div>
-      </div>
     </div>
 </section>
 
-<!-- banner -->
-
-<section>
-    <div class="banner">
-      <div class="banner-highlights">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-12">
-              <h2>welcome to basalt mountain</h2>
-              <p>enjoy with us and avail 30% flat discount</p>
-            </div>
-            <div class="col-md-4 col-12">
-              <button class="btn booking-btn">Book</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- ═══════════════════════════════ FEATURED DESTINATIONS ═══════════════════════════════ -->
+<section class="feature" id="about">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Featured Destinations</h2>
+        <p class="section-sub">Explore the ancient wonders of the Swaida Governorate</p>
+        <span class="section-divider"></span>
     </div>
-   </section>
-
-   <!-- booking -->
-  <section class="book" id="booking">
-    <h2 class="heading">
-      <span>b</span>
-      <span>o</span>
-      <span>o</span>
-      <span>k</span>
-      <span class="space"></span>
-      <span>n</span>
-      <span>o</span>
-      <span>w</span>
-    </h2>
     <div class="container">
         <div class="row">
-          <div class="col-md-6 col-12">
-              <div class="image">
-           <img src="images/book.jpg" alt="">
-           </div>
+            <!-- Salkhad -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/salkhadd.jpg" alt="Salkhad Castle">
+                        <div class="price"><p>78$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="feature-details">
+                        <h4>Salkhad</h4>
+                        <p>Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Salkhad</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Shahba -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/shahba.jpg" alt="Shahba Roman City">
+                        <div class="price"><p>67$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="feature-details">
+                        <h4>Shahba</h4>
+                        <p>Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Swaida</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="shahba.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Kanawat -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/kanawat.jpg" alt="Kanawat Ruins">
+                        <div class="price"><p>88$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="feature-details">
+                        <h4>Kanawat</h4>
+                        <p>Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Swaida</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="kanawat.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Swaida City -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/swaida.jpg" alt="Swaida City">
+                        <div class="price"><p>95$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="feature-details">
+                        <h4>Swaida City</h4>
+                        <p>The vibrant capital of the governorate, home to the Swaida Museum — one of Syria's finest — and the lively old market showcasing Druze culture and traditions.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Swaida</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="swaida.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                    </div>
+                </div>
+            </div>
         </div>
-           <d class="col-md-6 col-12">
-       <form action="" class="book-form">
-        <div class="inputbox">
-          <h3>where to</h3>
-          <input type="text" placeholder="place name" >
-        </div>
-        <div class="inputbox">
-          <h3>how many</h3>
-          <input type="number" placeholder="number of guests">
-        </div>
-        <div class="inputbox">
-          <h3>arrivals</h3>
-          <input type="date" >
-        </div>
-        <div class="inputbox">
-          <h3>leaving</h3>
-          <input type="date" >
-        </div>
-        <!-- <input type="submit" class="btn" value="book now" data-toggle="modal" data-target="#myModal"> -->
-     
-       <!-- Button to Open the Modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Book Now
-  </button>
-</form>
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Enjoy your trip with us</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          Your flight has been booked
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
     </div>
-  </div>
+</section>
 
+<!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
+<section class="gallery" id="gallery">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Travelling Gallery</h2>
+        <p class="section-sub">A visual journey through Swaida's landscapes and heritage</p>
+        <span class="section-divider"></span>
     </div>
-        </div>
-    </div>
-    
-  </section>
-
-    
-    <!-- feedback  -->
-  <section class="user-feedback">
-    <h2>users review</h2>
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-12">
-          <div class="user-review">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laudantium, asperiores natus delectus sed
-              sint amet</p>
-            <h5>pravel sharma</h5>
-            <small>salkhad</small>
-          </div>
-          <img src="images/feedback.jpg" alt="">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="100">
+                <div class="gallery-box">
+                    <img src="images/swaida1.jpeg" alt="Swaida" class="hotel-img">
+                    <div class="gallery-overlay">
+                        <h5 class="gallery_disc">Swaida</h5>
+                        <a href="swaida.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="200">
+                <div class="gallery-box">
+                    <img src="images/shahba3.jpg" alt="Shahba" class="hotel-img">
+                    <div class="gallery-overlay">
+                        <h5 class="gallery_disc">Shahba</h5>
+                        <a href="shahba.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="300">
+                <div class="gallery-box">
+                    <img src="images/salkhad3.jpg" alt="Salkhad" class="hotel-img">
+                    <div class="gallery-overlay">
+                        <h5 class="gallery_disc">Salkhad</h5>
+                        <a href="salkhad.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="400">
+                <div class="gallery-box">
+                    <img src="images/kanawat.jpg" alt="Kanawat" class="hotel-img">
+                    <div class="gallery-overlay">
+                        <h5 class="gallery_disc">Kanawat</h5>
+                        <a href="kanawat.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 col-12">
-          <div class="user-review">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laudantium, asperiores natus delectus sed
-              sint amet</p>
-            <h5>pravel sharma</h5>
-            <small>shahba</small>
-          </div>
-          <img src="images/re2.jpeg" alt="">
-        </div>
-        <div class="col-md-4 col-12">
-          <div class="user-review">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laudantium, asperiores natus delectus sed
-              sint amet</p>
-            <h5>pravel sharma</h5>
-            <small>swaida</small>
-          </div>
-          <img src="images/reviw.jpg" alt="">
-        </div>
-      </div>
     </div>
-    
-  </section>
- 
-  
+</section>
 
-  <section class="footer" id="contact">
+<!-- ═══════════════════════════════ VIDEO SECTION ═══════════════════════════════ -->
+<section class="video-section">
+    <div class="video-parallax-bg"></div>
+    <div class="video-content" data-aos="zoom-in">
+        <p class="section-sub-light">Heritage & Culture</p>
+        <h2>Experience Swaida's Living History</h2>
+        <p>Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant Druze culture that make Swaida one of the most fascinating destinations in the Middle East.</p>
+        <button class="btn-play" id="videoPlayBtn" data-toggle="modal" data-target="#videoModal">
+            <i class="fa fa-play"></i>
+        </button>
+        <p class="play-label">Watch the Story</p>
+    </div>
+</section>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="videoFrame" class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+<section class="section-offer" id="offer">
+    <div class="offer">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="title">What We Offer</h2>
+            <p class="section-sub">Everything you need for an unforgettable journey</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12" data-aos="fade-right" data-aos-delay="100">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-cutlery"></i>
+                            <h2 class="About-item-title">Food &amp; Drink</h2>
+                            <p class="About-item-disc">Savor authentic Druze cuisine — from freshly baked flatbread to slow-cooked lamb — paired with locally harvested olive oil and seasonal produce.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-plane"></i>
+                            <h2 class="About-item-title">Fastest Travel</h2>
+                            <p class="About-item-disc">Comfortable, air-conditioned vehicles with expert local guides. Direct routes from Damascus, Amman, or Beirut — door-to-door service available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="300">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-shield"></i>
+                            <h2 class="About-item-title">Safety Guide</h2>
+                            <p class="About-item-disc">Your safety is our priority. Experienced guides, comprehensive travel insurance, 24/7 emergency support, and well-marked trails at every site.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-right" data-aos-delay="400">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-camera"></i>
+                            <h2 class="About-item-title">Photo Tours</h2>
+                            <p class="About-item-disc">Dedicated photography tours to capture the golden-hour light on ancient basalt ruins. Professional photographers available to lead small groups.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-bed"></i>
+                            <h2 class="About-item-title">Accommodation</h2>
+                            <p class="About-item-disc">Handpicked local guesthouses and boutique hotels. Experience traditional Haurani stone architecture — sleep where history was made.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="600">
+                    <div class="About-content">
+                        <div class="About-item ltr-effect">
+                            <i class="icone fa fa-book"></i>
+                            <h2 class="About-item-title">Cultural Workshops</h2>
+                            <p class="About-item-disc">Immersive workshops: mosaic restoration, traditional weaving, and Arabic calligraphy. Learn from local artisans keeping ancient crafts alive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ PARALLAX BANNER ═══════════════════════════════ -->
+<section>
+    <div class="banner">
+        <div class="banner-highlights">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8 col-12" data-aos="fade-right">
+                        <h2>Welcome to the Basalt Mountain</h2>
+                        <p>Book your trip today and enjoy 30% off all packages until end of season</p>
+                    </div>
+                    <div class="col-md-4 col-12 text-center" data-aos="fade-left">
+                        <a href="#booking" class="btn booking-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ INTERACTIVE MAP ═══════════════════════════════ -->
+<section class="map-section" id="map">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Tourist Map &amp; Routes</h2>
+        <p class="section-sub">Find all sites and plan your perfect itinerary</p>
+        <span class="section-divider"></span>
+    </div>
+    <div class="container" data-aos="zoom-in">
+        <div class="map-tabs mb-4 text-center">
+            <button class="map-tab-btn active" data-dest="kanawat">Kanawat</button>
+            <button class="map-tab-btn" data-dest="shahba">Shahba</button>
+            <button class="map-tab-btn" data-dest="salkhad">Salkhad</button>
+            <button class="map-tab-btn" data-dest="swaida">Swaida</button>
+        </div>
+        <div class="map-wrapper">
+            <iframe id="destMap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26843.199596458086!2d36.59902090223755!3d32.755120624398366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151981ddb3684ca3%3A0x9e5554072331e83c!2sQanawat%2C%20Syria!5e0!3m2!1sen!2sus!4v1638036786245!5m2!1sen!2sus"
+                width="100%" height="450" style="border:0;border-radius:12px;" allowfullscreen loading="lazy">
+            </iframe>
+        </div>
+        <div class="route-cards row mt-4">
+            <div class="col-md-4 col-12 mb-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="route-card">
+                    <i class="fa fa-road"></i>
+                    <h5>Day Trip Route</h5>
+                    <p>Swaida City → Shahba → Kanawat → Swaida</p>
+                    <span class="badge badge-primary">~6 hours</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="route-card">
+                    <i class="fa fa-map"></i>
+                    <h5>Weekend Getaway</h5>
+                    <p>Full circuit: all 4 destinations with overnight stay in Salkhad</p>
+                    <span class="badge badge-success">2 Days</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="route-card">
+                    <i class="fa fa-flag"></i>
+                    <h5>Heritage Deep Dive</h5>
+                    <p>Guided archaeological tour with local historians — all major sites</p>
+                    <span class="badge badge-warning">4 Days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ BOOKING ═══════════════════════════════ -->
+<section class="book" id="booking">
+    <div class="section-header" data-aos="fade-up">
+        <h2 class="heading">
+            <span>B</span><span>o</span><span>o</span><span>k</span>
+            <span class="space"></span>
+            <span>N</span><span>o</span><span>w</span>
+        </h2>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-12">
-          <img src="images/logo4.png" class="footer-logo" alt="">
-          <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi corrupti eaque ducimus placeat amet
-          </p> -->
-          <p class="footer-disc list">Enjoy your trip with us</p>
-
+        <div class="row align-items-center">
+            <div class="col-md-6 col-12" data-aos="fade-right">
+                <div class="image">
+                    <img src="images/book.jpg" alt="Book a Trip">
+                </div>
+            </div>
+            <div class="col-md-6 col-12" data-aos="fade-left">
+                <form id="bookingForm" class="book-form enhanced-booking">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-map-marker"></i> Destination</label>
+                                <select name="destination" required>
+                                    <option value="">Select Destination</option>
+                                    <option value="kanawat">Kanawat – Roman City</option>
+                                    <option value="shahba">Shahba – Philippopolis</option>
+                                    <option value="salkhad">Salkhad – Ayyubid Fortress</option>
+                                    <option value="swaida">Swaida City &amp; Museum</option>
+                                    <option value="full">Full Circuit Tour</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-suitcase"></i> Trip Type</label>
+                                <div class="trip-type-group">
+                                    <label class="trip-type-label">
+                                        <input type="radio" name="tripType" value="day"> Day Trip
+                                    </label>
+                                    <label class="trip-type-label">
+                                        <input type="radio" name="tripType" value="weekend" checked> Weekend
+                                    </label>
+                                    <label class="trip-type-label">
+                                        <input type="radio" name="tripType" value="full"> Full Package
+                                    </label>
+                                    <label class="trip-type-label">
+                                        <input type="radio" name="tripType" value="custom"> Custom
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-users"></i> Guests</label>
+                                <input type="number" name="guests" placeholder="Number of guests" min="1" max="50">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-user"></i> Your Name</label>
+                                <input type="text" name="name" placeholder="Full name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-calendar"></i> Arrival</label>
+                                <input type="date" name="arrival">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-calendar-check-o"></i> Departure</label>
+                                <input type="date" name="departure">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-envelope"></i> Email</label>
+                                <input type="email" name="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="inputbox">
+                                <label><i class="fa fa-phone"></i> Phone</label>
+                                <input type="tel" name="phone" placeholder="+963 xxx xxx xxx">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-total" id="bookingTotal">
+                        <span>Estimated Total: </span><strong id="priceDisplay">Select options</strong>
+                    </div>
+                    <button type="button" class="btn btn-book-submit" data-toggle="modal" data-target="#paymentModal">
+                        <i class="fa fa-lock"></i> Proceed to Payment
+                    </button>
+                </form>
+            </div>
         </div>
-
-        <div class="col-md-3 col-12">
-          <h4>features</h4>
-          <ul class="list">
-            <li>deals & offer</li>
-            <li>customer review</li>
-            <li>cancelation policy</li>
-
-          </ul>
-        </div>
-        <div class="col-md-3 col-12">
-          <h4>quick contact</h4>
-          <a href="" class="icon"><i class="fa fa-phone-square"></i>+963 997395229</a>
-          <a href="" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail</a>
-          <a href="" class="icon"><i class="fa fa-home"></i>syria swaida</a>
-          
-        </div>
-        <div class="col-md-3 col-12">
-          <h4 class="follow">follow us</h4>
-          <a href="facebook.com"><i class="fa fa-facebook-official"></i>facebook</a>
-          <a href="youyube.com"><i class="fa fa-youtube-play"></i>youtube</a>
-          <a href="twitter.com"><i class="fa fa-twitter"></i>twitter</a>
-          
-        </div>
-      </div>
-      <hr>
-      <p class="copyright">made with <i class="fa fa-heart"></i> by aleen alhussain</p>
     </div>
- 
-  </section>
+</section>
+
+<!-- Payment Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header payment-header">
+                <h4 class="modal-title"><i class="fa fa-lock"></i> Secure Payment</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-methods mb-3">
+                    <h6>Select Payment Method</h6>
+                    <div class="pay-method-group">
+                        <label class="pay-method active" id="pmCard">
+                            <input type="radio" name="payMethod" value="card" checked>
+                            <i class="fa fa-credit-card"></i> Credit Card
+                        </label>
+                        <label class="pay-method" id="pmPaypal">
+                            <input type="radio" name="payMethod" value="paypal">
+                            <i class="fa fa-paypal"></i> PayPal
+                        </label>
+                        <label class="pay-method" id="pmBank">
+                            <input type="radio" name="payMethod" value="bank">
+                            <i class="fa fa-bank"></i> Bank Transfer
+                        </label>
+                    </div>
+                </div>
+                <div id="cardDetails">
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNum">
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Expiry</label>
+                                <input type="text" class="form-control" placeholder="MM / YY" maxlength="7">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="password" class="form-control" placeholder="•••" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" class="form-control" placeholder="Name on card">
+                    </div>
+                </div>
+                <div class="secure-badge">
+                    <i class="fa fa-lock"></i> Your payment is secured with 256-bit SSL encryption
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="confirmPayBtn">
+                    <i class="fa fa-check"></i> Confirm &amp; Pay
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Booking Confirmation Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+            <div class="confirm-icon"><i class="fa fa-check-circle"></i></div>
+            <h3>Booking Confirmed!</h3>
+            <p>Thank you for booking with Visit Swaida. A confirmation email has been sent to your address along with an SMS notification.</p>
+            <div class="booking-ref">Booking Reference: <strong id="bookingRef">SW-2024-XXXX</strong></div>
+            <p class="text-muted small mt-2">Our team will contact you within 24 hours to finalize your itinerary.</p>
+            <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Done</button>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ BLOG ═══════════════════════════════ -->
+<section class="blog-section" id="blog">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Travel Blog</h2>
+        <p class="section-sub">Stories, events, and seasonal highlights from Swaida</p>
+        <span class="section-divider"></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/kanawat1.jpg" alt="Spring Festival">
+                        <span class="blog-category">Events</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> April 2024</span>
+                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                        </div>
+                        <h5>Spring Festival of the Basalt Mountain</h5>
+                        <p>Every April, Swaida bursts into color as locals celebrate the spring harvest with traditional music, folk dancing, and open-air markets stretching through the old city.</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/shahba3.jpg" alt="Roman Ruins">
+                        <span class="blog-category">History</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> March 2024</span>
+                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                        </div>
+                        <h5>Walking Through Philippopolis – Roman Shahba</h5>
+                        <p>Founded by Emperor Philip the Arab in 244 AD as his imperial capital, Shahba contains the most complete Roman urban grid in the Levant. We explore what remains.</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="images/salkhad3.jpg" alt="Salkhad Castle">
+                        <span class="blog-category">Destinations</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> February 2024</span>
+                            <span><i class="fa fa-user"></i> Aleen Alhussain</span>
+                        </div>
+                        <h5>Salkhad Castle at Sunset – A Photographer's Guide</h5>
+                        <p>Perched on a volcanic cone visible from 50 km away, Salkhad Castle is one of the most photogenic medieval fortresses in the Middle East. Here's where to stand.</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ REVIEWS ═══════════════════════════════ -->
+<section class="user-feedback" id="reviews">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Traveller Reviews</h2>
+        <p class="section-sub">What visitors say about their Swaida experience</p>
+        <span class="section-divider"></span>
+    </div>
+    <div class="container">
+        <!-- Existing reviews -->
+        <div class="row" id="reviewsContainer">
+            <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="user-review">
+                    <div class="review-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
+                    <p>"The Kanawat ruins exceeded every expectation. Walking among 2,000-year-old Roman temples with virtually no crowds is an experience I will never forget. The local guide was exceptional."</p>
+                    <h5>Pravel Sharma</h5>
+                    <small>Kanawat</small>
+                </div>
+                <img src="images/feedback.jpg" alt="Pravel Sharma">
+            </div>
+            <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="user-review">
+                    <div class="review-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p>"Shahba is an archaeologist's dream. We spent an entire day there and still didn't see everything. The mosaics in the local museum are world-class. The booking process was seamless."</p>
+                    <h5>Maria Fontaine</h5>
+                    <small>Shahba</small>
+                </div>
+                <img src="images/re2.jpeg" alt="Maria Fontaine">
+            </div>
+            <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="user-review">
+                    <div class="review-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
+                    <p>"Standing on top of Salkhad Castle watching the sunset over the volcanic landscape — that moment alone was worth the entire trip. Absolutely magical. 10/10 would return."</p>
+                    <h5>Omar Al-Hassan</h5>
+                    <small>Salkhad</small>
+                </div>
+                <img src="images/reviw.jpg" alt="Omar Al-Hassan">
+            </div>
+        </div>
+
+        <!-- Add Review Form -->
+        <div class="add-review-section mt-5" data-aos="fade-up">
+            <h4 class="text-center mb-4">Share Your Experience</h4>
+            <div class="review-form-wrapper">
+                <form id="reviewForm">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reviewName" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <select class="form-control" id="reviewDest">
+                                    <option value="">Which destination?</option>
+                                    <option>Kanawat</option>
+                                    <option>Shahba</option>
+                                    <option>Salkhad</option>
+                                    <option>Swaida City</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="star-rating-input text-center mb-3">
+                        <p>Your Rating:</p>
+                        <span class="star-input" data-val="1"><i class="fa fa-star-o"></i></span>
+                        <span class="star-input" data-val="2"><i class="fa fa-star-o"></i></span>
+                        <span class="star-input" data-val="3"><i class="fa fa-star-o"></i></span>
+                        <span class="star-input" data-val="4"><i class="fa fa-star-o"></i></span>
+                        <span class="star-input" data-val="5"><i class="fa fa-star-o"></i></span>
+                        <input type="hidden" id="ratingValue" value="0">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="reviewText" rows="4" placeholder="Share your experience..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-review-submit">
+                            <i class="fa fa-paper-plane"></i> Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<section class="footer" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12">
+                <img src="images/logo4.png" class="footer-logo" alt="Logo">
+                <p class="footer-disc list">Enjoy your trip with us</p>
+            </div>
+            <div class="col-md-3 col-12">
+                <h4>Quick Links</h4>
+                <ul class="list">
+                    <li><a href="#about">Destinations</a></li>
+                    <li><a href="#booking">Book a Trip</a></li>
+                    <li><a href="#blog">Travel Blog</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12">
+                <h4>Quick Contact</h4>
+                <a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a>
+                <a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a>
+                <a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida Governorate</a>
+            </div>
+            <div class="col-md-3 col-12">
+                <h4 class="follow">Follow Us</h4>
+                <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a>
+                <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i> YouTube</a>
+                <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2024 Visit Swaida</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ LIVE CHAT WIDGET ═══════════════════════════════ -->
+<div class="chat-widget" id="chatWidget">
+    <div class="chat-bubble" id="chatBubble">
+        <i class="fa fa-comments"></i>
+        <span class="chat-badge">1</span>
+    </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="chat-agent">
+                <img src="images/logo4.png" alt="Agent">
+                <div>
+                    <strong>Visit Swaida Support</strong>
+                    <span class="online-dot"></span> Online
+                </div>
+            </div>
+            <button id="chatClose"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg agent">
+                <p>👋 Welcome to Visit Swaida! I'm here to help you plan your perfect trip. How can I assist you today?</p>
+                <small>Just now</small>
+            </div>
+            <div class="chat-quick-replies">
+                <button class="quick-reply" data-msg="What are the best sites to visit?">Best sites?</button>
+                <button class="quick-reply" data-msg="How do I book a trip?">How to book?</button>
+                <button class="quick-reply" data-msg="What are your prices?">Prices?</button>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="chatSend"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
+
+<!-- ═══════════════════════════════ SCRIPTS ═══════════════════════════════ -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// ─── AOS Init ───
+AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+
+// ─── Page Loader ───
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('page-loader').classList.add('loaded');
+    }, 800);
+});
+
+// ─── Navbar Scroll Effect ───
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 80) {
+        $('#mainNav').addClass('navbar-scrolled');
+    } else {
+        $('#mainNav').removeClass('navbar-scrolled');
+    }
+    // Back to top
+    if ($(this).scrollTop() > 400) {
+        $('#backToTop').addClass('show');
+    } else {
+        $('#backToTop').removeClass('show');
+    }
+});
+$('#backToTop').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 600);
+});
+
+// ─── Typed Destination ───
+var destinations = ['Swaida', 'Kanawat', 'Shahba', 'Salkhad'];
+var dIdx = 0;
+function typeDestination() {
+    var el = document.getElementById('typed-destination');
+    if (!el) return;
+    var word = destinations[dIdx % destinations.length];
+    dIdx++;
+    el.style.opacity = '0';
+    setTimeout(function() {
+        el.textContent = word;
+        el.style.opacity = '1';
+    }, 400);
+}
+setInterval(typeDestination, 2500);
+
+// ─── Counter Animation ───
+function animateCounters() {
+    $('.counter').each(function() {
+        var $this = $(this);
+        var target = parseInt($this.data('target'));
+        var duration = 2000;
+        var step = target / (duration / 16);
+        var current = 0;
+        var timer = setInterval(function() {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            $this.text(Math.floor(current).toLocaleString() + (target === 98 ? '%' : '+'));
+        }, 16);
+    });
+}
+var countersAnimated = false;
+$(window).scroll(function() {
+    if (!countersAnimated && $('#stats').length) {
+        var statsTop = $('#stats').offset().top;
+        if ($(window).scrollTop() + $(window).height() > statsTop + 100) {
+            countersAnimated = true;
+            animateCounters();
+        }
+    }
+});
+
+// ─── Booking Price Estimator ───
+var prices = { kanawat: 88, shahba: 67, salkhad: 78, swaida: 95, full: 199 };
+var typeMultipliers = { day: 0.5, weekend: 1, full: 2, custom: 1.5 };
+function updatePrice() {
+    var dest = $('[name="destination"]').val();
+    var type = $('[name="tripType"]:checked').val();
+    var guests = parseInt($('[name="guests"]').val()) || 1;
+    if (dest && type) {
+        var base = (prices[dest] || 88) * (typeMultipliers[type] || 1) * guests;
+        $('#priceDisplay').text('$' + Math.round(base));
+    }
+}
+$('[name="destination"], [name="tripType"], [name="guests"]').on('change input', updatePrice);
+
+// ─── Payment Confirm ───
+$('#confirmPayBtn').click(function() {
+    var ref = 'SW-2024-' + Math.floor(1000 + Math.random() * 9000);
+    $('#bookingRef').text(ref);
+    $('#paymentModal').modal('hide');
+    setTimeout(function() { $('#confirmationModal').modal('show'); }, 400);
+});
+
+// ─── Card Number Formatting ───
+$('#cardNum').on('input', function() {
+    var v = $(this).val().replace(/\D/g, '').substring(0, 16);
+    $(this).val(v.replace(/(.{4})/g, '$1 ').trim());
+});
+
+// ─── Payment Method Toggle ───
+$('[name="payMethod"]').on('change', function() {
+    $('.pay-method').removeClass('active');
+    $(this).closest('.pay-method').addClass('active');
+});
+
+// ─── Star Rating Input ───
+var selectedRating = 0;
+$('.star-input').on('mouseover', function() {
+    var val = $(this).data('val');
+    $('.star-input').each(function() {
+        var v = $(this).data('val');
+        $(this).find('i').removeClass('fa-star fa-star-o').addClass(v <= val ? 'fa-star' : 'fa-star-o');
+    });
+}).on('mouseout', function() {
+    $('.star-input').each(function() {
+        var v = $(this).data('val');
+        $(this).find('i').removeClass('fa-star fa-star-o').addClass(v <= selectedRating ? 'fa-star' : 'fa-star-o');
+    });
+}).on('click', function() {
+    selectedRating = $(this).data('val');
+    $('#ratingValue').val(selectedRating);
+    $('.star-input').each(function() {
+        var v = $(this).data('val');
+        $(this).find('i').removeClass('fa-star fa-star-o').addClass(v <= selectedRating ? 'fa-star' : 'fa-star-o');
+    });
+});
+
+// ─── Review Submission ───
+$('#reviewForm').on('submit', function(e) {
+    e.preventDefault();
+    var name = $('#reviewName').val();
+    var dest = $('#reviewDest').val() || 'Swaida';
+    var text = $('#reviewText').val();
+    var rating = parseInt($('#ratingValue').val()) || 5;
+    var stars = '';
+    for (var i = 1; i <= 5; i++) {
+        stars += '<i class="fa fa-' + (i <= rating ? 'star' : 'star-o') + '"></i>';
+    }
+    var newReview = '<div class="col-md-4 col-12 review-new" style="opacity:0;transition:opacity 0.5s">' +
+        '<div class="user-review"><div class="review-stars">' + stars + '</div>' +
+        '<p>"' + $('<div>').text(text).html() + '"</p>' +
+        '<h5>' + $('<div>').text(name).html() + '</h5>' +
+        '<small>' + $('<div>').text(dest).html() + '</small></div>' +
+        '<img src="images/feedback.jpg" alt="' + $('<div>').text(name).html() + '"></div>';
+    $('#reviewsContainer').append(newReview);
+    setTimeout(function() { $('.review-new').css('opacity', '1'); }, 50);
+    this.reset();
+    selectedRating = 0;
+    $('.star-input i').removeClass('fa-star').addClass('fa-star-o');
+    alert('Thank you for your review!');
+});
+
+// ─── Interactive Map Tabs ───
+var mapUrls = {
+    kanawat: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26843.199596458086!2d36.59902090223755!3d32.755120624398366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151981ddb3684ca3%3A0x9e5554072331e83c!2sQanawat%2C%20Syria!5e0!3m2!1sen!2sus!4v1638036786245!5m2!1sen!2sus',
+    shahba:  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13400.0!2d36.6334!3d32.8570!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151982d0a0000001%3A0x1234567890abcdef!2sShahba%2C%20Syria!5e0!3m2!1sen!2sus!4v1638036786245!5m2!1sen!2sus',
+    salkhad: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13400.0!2d36.7101!3d32.4939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151960000000001%3A0xabcdef1234567890!2sSalkhad%2C%20Syria!5e0!3m2!1sen!2sus!4v1638036786245!5m2!1sen!2sus',
+    swaida:  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27000.0!2d36.5659!3d32.7098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151981000000001%3A0xfedcba9876543210!2sSweida%2C%20Syria!5e0!3m2!1sen!2sus!4v1638036786245!5m2!1sen!2sus'
+};
+$('.map-tab-btn').click(function() {
+    $('.map-tab-btn').removeClass('active');
+    $(this).addClass('active');
+    var dest = $(this).data('dest');
+    $('#destMap').attr('src', mapUrls[dest] || mapUrls.kanawat);
+});
+
+// ─── Video Modal Stop on Close ───
+$('#videoModal').on('hide.bs.modal', function() {
+    var src = $('#videoFrame').attr('src');
+    $('#videoFrame').attr('src', src);
+});
+
+// ─── Live Chat ───
+$('#chatBubble').click(function() {
+    $('#chatBox').toggleClass('open');
+    $('.chat-badge').hide();
+});
+$('#chatClose').click(function() {
+    $('#chatBox').removeClass('open');
+});
+
+var chatResponses = {
+    'best sites': 'Our top picks are Kanawat (Roman temples), Shahba (Roman city), and Salkhad Castle. All are within easy driving distance!',
+    'book': 'You can book directly on this page in the "Book Now" section, or call us at +963 997 395 229.',
+    'price': 'Prices start at $67/person for a day trip to Shahba. Full circuit packages from $199. Check our booking section for details!',
+    'default': 'Thanks for your message! Our team will reply shortly. You can also reach us at +963 997 395 229 or aleenalhussain11@gmail.com.'
+};
+
+function sendChatMsg(text) {
+    if (!text.trim()) return;
+    var time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    $('#chatMessages').append('<div class="chat-msg user"><p>' + $('<div>').text(text).html() + '</p><small>' + time + '</small></div>');
+    var lower = text.toLowerCase();
+    var response = chatResponses.default;
+    if (lower.includes('site') || lower.includes('visit') || lower.includes('best')) response = chatResponses['best sites'];
+    else if (lower.includes('book')) response = chatResponses['book'];
+    else if (lower.includes('price') || lower.includes('cost') || lower.includes('how much')) response = chatResponses['price'];
+    setTimeout(function() {
+        var t2 = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        $('#chatMessages').append('<div class="chat-msg agent"><p>' + response + '</p><small>' + t2 + '</small></div>');
+        $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
+    }, 800);
+    $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
+    $('#chatInput').val('');
+}
+$('#chatSend').click(function() { sendChatMsg($('#chatInput').val()); });
+$('#chatInput').keypress(function(e) { if (e.which === 13) sendChatMsg($(this).val()); });
+$('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
+</script>
 </body>
 </html>
