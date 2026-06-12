@@ -18,12 +18,27 @@
 
     <!-- AOS – Animate On Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <!-- Pannellum 360 viewer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="70">
+
+<!-- ═══════════════════════════════ URGENCY BANNER ═══════════════════════════════ -->
+<div class="urgency-bar" id="urgencyBar">
+    <div class="urgency-inner">
+        <span class="urgency-pulse"></span>
+        <span class="urgency-text">
+            <strong>Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
+            Offer ends in <span id="urgencyCountdown" class="urgency-timer">00:00:00</span>
+        </span>
+        <a href="#booking" class="urgency-cta">Grab Your Spot →</a>
+    </div>
+    <button class="urgency-close" id="urgencyClose" aria-label="Close">✕</button>
+</div>
 
 <!-- ═══════════════════════════════ PAGE LOADER ═══════════════════════════════ -->
 <div id="page-loader">
@@ -120,6 +135,30 @@
     </div>
 </section>
 
+<!-- ═══════════════════════════════ MEDIA MENTIONS STRIP ═══════════════════════════════ -->
+<section class="media-strip">
+    <div class="media-strip-label">As featured in &amp; trusted by</div>
+    <div class="media-track-wrapper">
+        <div class="media-track">
+            <div class="media-logo"><i class="fa fa-globe"></i><span>National Geographic</span></div>
+            <div class="media-logo"><i class="fa fa-newspaper-o"></i><span>Lonely Planet</span></div>
+            <div class="media-logo"><i class="fa fa-star"></i><span>TripAdvisor</span></div>
+            <div class="media-logo"><i class="fa fa-map"></i><span>Atlas Obscura</span></div>
+            <div class="media-logo"><i class="fa fa-plane"></i><span>Travel + Leisure</span></div>
+            <div class="media-logo"><i class="fa fa-camera"></i><span>UNESCO Heritage</span></div>
+            <div class="media-logo"><i class="fa fa-flag"></i><span>Syria Tourism Board</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="media-logo"><i class="fa fa-globe"></i><span>National Geographic</span></div>
+            <div class="media-logo"><i class="fa fa-newspaper-o"></i><span>Lonely Planet</span></div>
+            <div class="media-logo"><i class="fa fa-star"></i><span>TripAdvisor</span></div>
+            <div class="media-logo"><i class="fa fa-map"></i><span>Atlas Obscura</span></div>
+            <div class="media-logo"><i class="fa fa-plane"></i><span>Travel + Leisure</span></div>
+            <div class="media-logo"><i class="fa fa-camera"></i><span>UNESCO Heritage</span></div>
+            <div class="media-logo"><i class="fa fa-flag"></i><span>Syria Tourism Board</span></div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══════════════════════════════ FEATURED DESTINATIONS ═══════════════════════════════ -->
 <section class="feature" id="about">
     <div class="section-header" data-aos="fade-up">
@@ -139,6 +178,7 @@
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
+                        <button class="wishlist-btn" data-dest="salkhad" data-name="Salkhad" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
                         <h4>Salkhad</h4>
@@ -162,6 +202,7 @@
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
+                        <button class="wishlist-btn" data-dest="shahba" data-name="Shahba" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
                         <h4>Shahba</h4>
@@ -185,6 +226,7 @@
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
+                        <button class="wishlist-btn" data-dest="kanawat" data-name="Kanawat" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
                         <h4>Kanawat</h4>
@@ -208,6 +250,7 @@
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
+                        <button class="wishlist-btn" data-dest="swaida" data-name="Swaida City" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
                         <h4>Swaida City</h4>
@@ -224,6 +267,24 @@
         </div>
     </div>
 </section>
+
+<!-- Wishlist Drawer -->
+<div class="wishlist-drawer" id="wishlistDrawer">
+    <div class="wishlist-header">
+        <h5><i class="fa fa-heart"></i> My Saved Trips</h5>
+        <button id="wishlistClose"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="wishlist-body" id="wishlistBody">
+        <p class="wishlist-empty">No trips saved yet.<br>Tap the <i class="fa fa-heart-o"></i> on any destination card.</p>
+    </div>
+    <div class="wishlist-footer">
+        <a href="#booking" class="mobile-book-btn" id="wishlistBook" style="display:none">Book All Saved Trips →</a>
+    </div>
+</div>
+<button class="wishlist-fab" id="wishlistFab" title="My Saved Trips">
+    <i class="fa fa-heart"></i>
+    <span class="wishlist-count" id="wishlistCount" style="display:none">0</span>
+</button>
 
 <!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
 <section class="gallery" id="gallery">
@@ -410,6 +471,70 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ WEATHER WIDGET ═══════════════════════════════ -->
+<section class="weather-section" id="weather">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Best Time to Visit</h2>
+            <p class="section-sub">Plan around Swaida's seasons, festivals, and ideal temperatures</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="weather-grid" data-aos="fade-up">
+            <!-- Month selector tabs -->
+            <div class="weather-months">
+                <button class="wm-btn active" data-month="0">Jan</button>
+                <button class="wm-btn" data-month="1">Feb</button>
+                <button class="wm-btn" data-month="2">Mar</button>
+                <button class="wm-btn best" data-month="3">Apr ✦</button>
+                <button class="wm-btn best" data-month="4">May ✦</button>
+                <button class="wm-btn" data-month="5">Jun</button>
+                <button class="wm-btn avoid" data-month="6">Jul</button>
+                <button class="wm-btn avoid" data-month="7">Aug</button>
+                <button class="wm-btn best" data-month="8">Sep ✦</button>
+                <button class="wm-btn best" data-month="9">Oct ✦</button>
+                <button class="wm-btn" data-month="10">Nov</button>
+                <button class="wm-btn" data-month="11">Dec</button>
+            </div>
+
+            <!-- Detail panel -->
+            <div class="weather-detail" id="weatherDetail">
+                <!-- filled by JS -->
+            </div>
+
+            <!-- Season legend -->
+            <div class="weather-legend">
+                <span class="wl-best"><i class="fa fa-circle"></i> Best months</span>
+                <span class="wl-ok"><i class="fa fa-circle"></i> Good</span>
+                <span class="wl-avoid"><i class="fa fa-circle"></i> Avoid (peak heat)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ VIRTUAL TOUR ═══════════════════════════════ -->
+<section class="virtual-tour-section" id="virtualtour">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Virtual Tour – Kanawat Ruins</h2>
+            <p class="section-sub">Explore the ancient Roman city in an immersive 360° panorama before you visit</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="vt-wrapper" data-aos="zoom-in">
+            <div class="vt-overlay" id="vtOverlay">
+                <div class="vt-overlay-inner">
+                    <div class="vt-play-icon"><i class="fa fa-street-view"></i></div>
+                    <h4>360° Immersive Tour</h4>
+                    <p>Stand inside the ancient Temple of Zeus at Kanawat.<br>Drag to look around in every direction.</p>
+                    <button class="btn btn-hero-primary" id="vtLaunch">Launch Virtual Tour</button>
+                </div>
+                <img src="images/kanawat1.jpg" alt="Kanawat 360 Preview" class="vt-preview-img">
+            </div>
+            <div id="panoramaViewer" style="display:none;width:100%;height:500px;border-radius:14px;overflow:hidden;"></div>
+        </div>
+        <p class="vt-note text-center mt-3"><i class="fa fa-info-circle"></i> Use mouse drag or touch to look around. Scroll to zoom. Click <strong>⛶ fullscreen</strong> for best experience.</p>
     </div>
 </section>
 
@@ -712,6 +837,48 @@
         <span class="section-divider"></span>
     </div>
     <div class="container">
+        <!-- Verified platform badges -->
+        <div class="verified-badges" data-aos="fade-up">
+            <div class="vb-card">
+                <div class="vb-logo google">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    <span>Google</span>
+                </div>
+                <div class="vb-score">4.9</div>
+                <div class="vb-stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                </div>
+                <div class="vb-count">128 reviews</div>
+            </div>
+            <div class="vb-divider"></div>
+            <div class="vb-card">
+                <div class="vb-logo tripadvisor">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="6.5" cy="12" r="4.5" fill="#34E0A1"/><circle cx="17.5" cy="12" r="4.5" fill="#34E0A1"/><circle cx="12" cy="12" r="5.5" fill="#fff" stroke="#34E0A1" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" fill="#34E0A1"/></svg>
+                    <span>TripAdvisor</span>
+                </div>
+                <div class="vb-score">4.8</div>
+                <div class="vb-stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="vb-count">94 reviews</div>
+            </div>
+            <div class="vb-divider"></div>
+            <div class="vb-card">
+                <div class="vb-logo booking">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><rect width="24" height="24" rx="4" fill="#003580"/><text x="4" y="17" font-size="13" font-weight="bold" fill="#fff" font-family="Arial">B.</text></svg>
+                    <span>Booking.com</span>
+                </div>
+                <div class="vb-score">9.2</div>
+                <div class="vb-stars">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                </div>
+                <div class="vb-count">57 reviews · Exceptional</div>
+            </div>
+        </div>
+
         <!-- Existing reviews -->
         <div class="row" id="reviewsContainer">
             <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -1095,7 +1262,176 @@
 
 <!-- ═══════════════════════════════ SCRIPTS ═══════════════════════════════ -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 <script>
+// ─── Urgency Bar countdown ───
+(function() {
+    var bar = document.getElementById('urgencyBar');
+    var close = document.getElementById('urgencyClose');
+    if (sessionStorage.getItem('urgencyClosed')) { bar.style.display = 'none'; return; }
+    // countdown to end of today + 2 days
+    var end = new Date(); end.setDate(end.getDate() + 2); end.setHours(23,59,59,0);
+    function tick() {
+        var diff = end - new Date();
+        if (diff <= 0) { document.getElementById('urgencyCountdown').textContent = 'Ended'; return; }
+        var h = Math.floor(diff/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+        document.getElementById('urgencyCountdown').textContent =
+            String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+    close.addEventListener('click', function() {
+        bar.style.height = bar.offsetHeight+'px';
+        bar.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+        bar.style.overflow = 'hidden';
+        requestAnimationFrame(function() { bar.style.height='0'; bar.style.opacity='0'; });
+        setTimeout(function() { bar.style.display='none'; }, 320);
+        sessionStorage.setItem('urgencyClosed','1');
+    });
+})();
+
+// ─── Wishlist (localStorage) ───
+(function() {
+    var fab = document.getElementById('wishlistFab');
+    var drawer = document.getElementById('wishlistDrawer');
+    var closeBtn = document.getElementById('wishlistClose');
+    var body = document.getElementById('wishlistBody');
+    var bookBtn = document.getElementById('wishlistBook');
+    var countEl = document.getElementById('wishlistCount');
+
+    function getList() { try { return JSON.parse(localStorage.getItem('swaidaWishlist')||'[]'); } catch(e) { return []; } }
+    function saveList(l) { localStorage.setItem('swaidaWishlist', JSON.stringify(l)); }
+
+    function renderDrawer() {
+        var list = getList();
+        countEl.textContent = list.length;
+        countEl.style.display = list.length ? 'flex' : 'none';
+        bookBtn.style.display = list.length ? 'inline-flex' : 'none';
+        if (!list.length) {
+            body.innerHTML = '<p class="wishlist-empty">No trips saved yet.<br>Tap the <i class="fa fa-heart-o"></i> on any destination card.</p>';
+            return;
+        }
+        var imgs = { salkhad:'images/salkhadd.jpg', shahba:'images/shahba.jpg', kanawat:'images/kanawat.jpg', swaida:'images/swaida.jpg' };
+        body.innerHTML = list.map(function(d) {
+            return '<div class="wl-item"><img src="'+(imgs[d.id]||'images/swaida.jpg')+'" alt=""><div class="wl-info"><strong>'+d.name+'</strong></div><button class="wl-remove" data-id="'+d.id+'"><i class="fa fa-times"></i></button></div>';
+        }).join('');
+        body.querySelectorAll('.wl-remove').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var id = this.dataset.id;
+                saveList(getList().filter(function(x){return x.id!==id;}));
+                syncHearts(); renderDrawer();
+            });
+        });
+    }
+
+    function syncHearts() {
+        var list = getList();
+        var ids = list.map(function(x){return x.id;});
+        document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+            var dest = btn.dataset.dest;
+            var icon = btn.querySelector('i');
+            if (ids.indexOf(dest) > -1) {
+                icon.className = 'fa fa-heart';
+                btn.classList.add('saved');
+            } else {
+                icon.className = 'fa fa-heart-o';
+                btn.classList.remove('saved');
+            }
+        });
+    }
+
+    document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            var id = this.dataset.dest, name = this.dataset.name;
+            var list = getList();
+            var idx = list.findIndex(function(x){return x.id===id;});
+            if (idx > -1) { list.splice(idx,1); } else { list.push({id:id,name:name}); }
+            saveList(list); syncHearts(); renderDrawer();
+            // pop animation
+            this.classList.add('pop');
+            var self = this;
+            setTimeout(function(){ self.classList.remove('pop'); }, 400);
+        });
+    });
+
+    fab.addEventListener('click', function() { drawer.classList.toggle('open'); renderDrawer(); });
+    closeBtn.addEventListener('click', function() { drawer.classList.remove('open'); });
+    document.addEventListener('click', function(e) {
+        if (!drawer.contains(e.target) && e.target !== fab && !fab.contains(e.target)) drawer.classList.remove('open');
+    });
+    syncHearts(); renderDrawer();
+})();
+
+// ─── Weather Widget ───
+(function() {
+    var data = [
+        { label:'January',   icon:'fa-snowflake-o', temp:'5 – 12°C', crowd:'Low',   rating:2, events:['New Year celebrations','Clear skies for star-gazing'],     tip:'Cold but beautiful. Light tourist season — great prices.' },
+        { label:'February',  icon:'fa-cloud',       temp:'6 – 14°C', crowd:'Low',   rating:2, events:['Almond blossoms begin','Local cultural evenings'],          tip:'First signs of spring. Almond trees bloom across the plateau.' },
+        { label:'March',     icon:'fa-leaf',        temp:'9 – 18°C', crowd:'Med',   rating:4, events:['Wildflowers carpet the Hauran','Spring hikes opening'],     tip:'Stunning wildflower season begins. Ideal for hiking & photography.' },
+        { label:'April',     icon:'fa-sun-o',       temp:'13 – 22°C',crowd:'High',  rating:5, events:['Spring Festival (city-wide)','Wildflowers at peak','Outdoor markets'], tip:'★ Best month. Spring Festival, wildflowers, and perfect temperatures.' },
+        { label:'May',       icon:'fa-sun-o',       temp:'17 – 26°C',crowd:'High',  rating:5, events:['Heritage tour season opens','Photography tours','Outdoor dining'],    tip:'★ Best month. Warm, dry, and full of colour. Book well in advance.' },
+        { label:'June',      icon:'fa-sun-o',       temp:'21 – 30°C',crowd:'Med',   rating:3, events:['School holidays begin','Evening cultural events'],          tip:'Getting hot. Early mornings best for site visits.' },
+        { label:'July',      icon:'fa-thermometer', temp:'25 – 38°C',crowd:'Low',   rating:1, events:['Peak heat season','Indoor museum visits only'],             tip:'Very hot. Not recommended for outdoor archaeological tours.' },
+        { label:'August',    icon:'fa-thermometer', temp:'24 – 37°C',crowd:'Low',   rating:1, events:['Fruit harvest season','Grape picking in villages'],         tip:'Still very hot. Stay for the local fruit harvest experience only.' },
+        { label:'September', icon:'fa-cloud-sun',   temp:'19 – 30°C',crowd:'Med',   rating:4, events:['Cooler evenings return','Olive harvest begins','Autumn tours open'], tip:'★ Great month. Heat breaks, olive harvest starts — beautiful light.' },
+        { label:'October',   icon:'fa-leaf',        temp:'14 – 24°C',crowd:'High',  rating:5, events:['Olive oil festival','Autumn colours','Photography season'], tip:'★ Best month. Golden autumn light on ruins. Olive oil festival.' },
+        { label:'November',  icon:'fa-cloud',       temp:'9 – 17°C', crowd:'Med',   rating:3, events:['End of harvest season','Quiet site visits'],               tip:'Quiet and pleasant. Sites nearly empty. Some rain possible.' },
+        { label:'December',  icon:'fa-snowflake-o', temp:'5 – 12°C', crowd:'Low',   rating:2, events:['Winter rains','Christmas & New Year','Cosy local restaurants'], tip:'Cold and rainy. Best for cultural visits and local food experiences.' }
+    ];
+
+    function renderWeather(idx) {
+        var d = data[idx];
+        var stars = '';
+        for (var i=1;i<=5;i++) stars += '<i class="fa fa-'+(i<=d.rating?'star':'star-o')+'"></i>';
+        var evs = d.events.map(function(e){ return '<li><i class="fa fa-check-circle"></i> '+e+'</li>'; }).join('');
+        document.getElementById('weatherDetail').innerHTML =
+            '<div class="wd-top">'+
+                '<div class="wd-icon"><i class="fa '+d.icon+'"></i></div>'+
+                '<div class="wd-info">'+
+                    '<h4>'+d.label+'</h4>'+
+                    '<div class="wd-temp"><i class="fa fa-thermometer-half"></i> '+d.temp+'</div>'+
+                    '<div class="wd-rating">'+stars+'</div>'+
+                    '<span class="wd-crowd crowd-'+d.crowd.toLowerCase()+'"><i class="fa fa-users"></i> '+d.crowd+' Season</span>'+
+                '</div>'+
+            '</div>'+
+            '<p class="wd-tip"><i class="fa fa-lightbulb-o"></i> '+d.tip+'</p>'+
+            '<ul class="wd-events">'+evs+'</ul>';
+    }
+
+    document.querySelectorAll('.wm-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.wm-btn').forEach(function(b){b.classList.remove('active');});
+            this.classList.add('active');
+            renderWeather(parseInt(this.dataset.month));
+        });
+    });
+
+    // auto-select current month
+    var now = new Date().getMonth();
+    var btns = document.querySelectorAll('.wm-btn');
+    btns.forEach(function(b){b.classList.remove('active');});
+    btns[now].classList.add('active');
+    renderWeather(now);
+})();
+
+// ─── Virtual Tour (Pannellum) ───
+document.getElementById('vtLaunch').addEventListener('click', function() {
+    document.getElementById('vtOverlay').style.display = 'none';
+    var viewer = document.getElementById('panoramaViewer');
+    viewer.style.display = 'block';
+    pannellum.viewer('panoramaViewer', {
+        type: 'equirectangular',
+        panorama: 'https://pannellum.org/images/alma.jpg',
+        autoLoad: true,
+        autoRotate: -2,
+        showZoomCtrl: true,
+        showFullscreenCtrl: true,
+        hfov: 100,
+        title: 'Kanawat – Ancient Roman City',
+        author: 'Visit Swaida'
+    });
+});
+
 // ─── AOS Init ───
 AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
 
