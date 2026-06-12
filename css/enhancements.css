@@ -987,18 +987,129 @@ html { scroll-behavior: smooth; }
     box-shadow: var(--shadow);
 }
 
-/* ─── Fix: What We Offer section height ─── */
+/* ═══════════════════ WHAT WE OFFER – REDESIGN ═══════════════════ */
 .section-offer {
     height: auto !important;
-    margin-top: 0;
-    padding: 80px 0;
+    padding: 100px 0;
+    background: #f8f9fb;
 }
-.section-offer .offer {
-    margin-bottom: 0;
+
+/* heading block */
+.offer-badge {
+    display: inline-block;
+    background: rgba(0,43,66,0.08);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(0,43,66,0.12);
 }
-.section-offer .About-content {
-    margin-bottom: 24px;
+.offer-heading {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    color: var(--primary);
+    line-height: 1.3;
+    margin-bottom: 14px;
+    text-align: left;
+    padding-bottom: 0;
 }
+.offer-sub {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+/* service card */
+.offer-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 2px 16px rgba(0,43,66,0.07);
+    border-top: 3px solid var(--card-color, var(--accent));
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    cursor: default;
+}
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,43,66,0.14);
+}
+
+/* large icon circle */
+.offer-card-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--card-color, var(--accent)) 12%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--card-color, var(--accent));
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+.offer-card:hover .offer-card-icon {
+    background: var(--card-color, var(--accent));
+    color: #fff;
+    border-radius: 50%;
+}
+
+.offer-card-body h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+.offer-card-body p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ghost number watermark */
+.offer-card-num {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--card-color, var(--accent));
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+.offer-card:hover .offer-card-num { opacity: 0.1; }
+
+/* last card dark variant */
+.offer-card--accent {
+    background: var(--primary);
+    border-top-color: var(--accent);
+}
+.offer-card--accent .offer-card-icon {
+    background: rgba(242,183,147,0.15);
+    color: var(--accent);
+}
+.offer-card--accent:hover .offer-card-icon {
+    background: var(--accent);
+    color: var(--primary);
+}
+.offer-card--accent .offer-card-body h4 { color: var(--accent); }
+.offer-card--accent .offer-card-body p  { color: rgba(255,255,255,0.65); }
+.offer-card--accent .offer-card-num { color: var(--accent); opacity: 0.1; }
 
 /* ─── Fix: Button sizing – replace fixed width with padding ─── */
 .btn {
