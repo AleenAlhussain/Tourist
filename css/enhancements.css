@@ -1678,24 +1678,232 @@ html { scroll-behavior: smooth; }
 }
 .mobile-book-btn:hover { background: var(--accent-dark); }
 
-/* ─── Responsive ─── */
-@media (max-width: 768px) {
-    .hero-title { font-size: 3.5rem; }
-    .hero-buttons { flex-direction: column; align-items: center; }
-    .chat-box { width: 280px; }
-    .history-img-grid { grid-template-columns: 1fr; }
-    .enhanced-booking { padding: 20px; }
-    .review-form-wrapper { padding: 24px; }
-    .trip-type-label { min-width: 60px; font-size: 0.75rem; padding: 6px 8px; }
-    /* show sticky bar only on mobile */
-    .mobile-book-bar { display: block; }
-    /* faq sidebar stacks */
-    .faq-sidebar { padding-right: 0; margin-bottom: 36px; }
-    /* timeline hint shows */
-    .timeline-scroll-hint { display: block; }
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — comprehensive breakpoints
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1024px and below (large tablet / small laptop) ── */
+@media (max-width: 1024px) {
+    .hero-title { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+    .stats-section .stat-item { padding: 28px 12px; }
+    .tl-item { width: 240px; }
+    .faq-sidebar { padding-right: 24px; }
+    .history-img-grid { gap: 8px; }
+    .vt-overlay { height: 420px; }
 }
-@media (max-width: 576px) {
-    .stats-section .stat-item h3 { font-size: 2rem; }
-    .video-section { min-height: 400px; }
+
+/* ── 768px and below (tablet + mobile) ── */
+@media (max-width: 768px) {
+
+    /* Urgency bar */
+    .urgency-bar { padding: 10px 40px 10px 16px; font-size: 0.78rem; }
+    .urgency-inner { gap: 8px; }
+    .urgency-cta { display: none; }
+
+    /* Navbar */
+    #mainNav .navbar-nav { text-align: center; padding: 12px 0; }
+    #mainNav .navbar-nav .nav-link { padding: 10px 16px; }
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        margin: 8px auto 4px;
+        width: fit-content;
+    }
+
+    /* Hero */
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; align-items: center; gap: 12px; }
+    .hero-buttons .btn-hero,
+    .hero-buttons .btn-hero-outline { width: 200px; justify-content: center; }
+    .hero-badge { font-size: 0.72rem; }
+    .scroll-indicator { display: none; }
+
+    /* Stats section */
+    .stats-section .row { justify-content: center; }
+    .stats-section .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 16px; }
+    .stats-section .stat-item:last-child { border-bottom: none; }
+
+    /* Section headers */
+    .section-header h2 { font-size: 1.6rem; }
+
+    /* Feature/destination cards — already Bootstrap col-sm-6 but ensure images scale */
+    .feature-box .feature-img img { height: 200px; }
+
+    /* Gallery grid */
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+
+    /* Media mentions */
+    .media-logo { padding: 0 20px; font-size: 0.75rem; }
+
+    /* Offer cards */
+    .offer-cards-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    /* Weather widget */
+    .weather-section { padding: 60px 0; }
+    .wm-btn { padding: 6px 10px; font-size: 0.72rem; }
+    .weather-detail { padding: 20px 16px; }
+    .wd-top { flex-direction: column; gap: 12px; align-items: flex-start; }
+
+    /* Virtual tour */
+    .vt-overlay { height: 300px; }
+    .vt-play-icon { width: 60px; height: 60px; font-size: 1.4rem; }
+    .vt-overlay-inner h4 { font-size: 1.1rem; }
+
+    /* Map tabs */
+    .map-tab-btn { padding: 8px 14px; font-size: 0.78rem; }
+
+    /* Booking form */
+    .enhanced-booking { padding: 20px 16px; }
+    .trip-type-label { min-width: 60px; font-size: 0.75rem; padding: 6px 8px; }
+    .booking-total { flex-direction: column; gap: 12px; text-align: center; }
+
+    /* History timeline */
+    .timeline-section { padding: 60px 0 40px; }
+    .tl-item { width: 220px; }
+    .timeline-scroll-hint { display: block; }
+
+    /* FAQ */
+    .faq-section { padding: 60px 0; }
+    .faq-sidebar { padding-right: 0; margin-bottom: 36px; }
+    .faq-sidebar h2 { font-size: 1.5rem; }
+
+    /* Blog */
+    .blog-card .blog-img-wrap img { height: 200px; }
+
+    /* Verified badges */
+    .verified-badges { flex-direction: column; }
+    .vb-divider { width: 100%; height: 1px; align-self: auto; }
+    .vb-card { padding: 20px; }
+
+    /* Reviews */
+    .review-form-wrapper { padding: 24px 16px; }
+
+    /* Wishlist drawer */
+    .wishlist-drawer { width: 100%; border-radius: 16px 16px 0 0; }
+    .wishlist-fab { bottom: 76px; left: 16px; }
+
+    /* Chat widget */
+    .chat-box { width: 280px; right: 0; left: 0; margin: 0 10px; }
     .chat-widget { bottom: 16px; right: 16px; }
+
+    /* Sticky mobile bar */
+    .mobile-book-bar { display: block; }
+
+    /* Destination pages */
+    .history-img-grid { grid-template-columns: 1fr; }
+    .dest-hero { min-height: 380px; }
+    .dest-hero h1 { font-size: 2.2rem; }
+
+    /* Footer */
+    .footer .col-md-3 { margin-bottom: 28px; }
+    .footer .col-md-3:last-child { margin-bottom: 0; }
+}
+
+/* ── 576px and below (small mobile) ── */
+@media (max-width: 576px) {
+
+    /* Global spacing */
+    section { padding-left: 4px; padding-right: 4px; }
+
+    /* Urgency bar */
+    .urgency-bar { font-size: 0.72rem; padding: 8px 36px 8px 10px; }
+    .urgency-timer { font-size: 0.8rem; letter-spacing: 0; }
+
+    /* Hero */
+    .hero-title { font-size: 2.2rem; line-height: 1.2; }
+    .hero-subtitle { font-size: 0.9rem; }
+    .hero-divider { margin: 18px auto; }
+    .hero-buttons .btn-hero,
+    .hero-buttons .btn-hero-outline { width: 180px; font-size: 0.85rem; padding: 12px 20px; }
+
+    /* Stats */
+    .stats-section .stat-item h3 { font-size: 2rem; }
+    .stats-section .stat-item p { font-size: 0.75rem; }
+
+    /* Section header */
+    .section-header h2 { font-size: 1.4rem; }
+    .section-header p { font-size: 0.88rem; }
+
+    /* Destination cards */
+    .feature-box { margin-bottom: 20px; }
+    .feature-box .feature-img img { height: 180px; }
+
+    /* Gallery — single column on tiny screens */
+    .gallery-grid { grid-template-columns: 1fr; }
+
+    /* What We Offer */
+    .offer-cards-grid { grid-template-columns: 1fr; }
+    .offer-card { padding: 22px 18px; }
+    .offer-card-num { font-size: 2.5rem; }
+
+    /* Video */
+    .video-section { min-height: 320px; }
+    .video-section h2 { font-size: 1.5rem; }
+
+    /* Weather */
+    .weather-section { padding: 50px 0; }
+    .weather-months { gap: 4px; }
+    .wm-btn { padding: 5px 8px; font-size: 0.68rem; }
+
+    /* Virtual tour */
+    .vt-overlay { height: 240px; }
+    .vt-play-icon { width: 52px; height: 52px; font-size: 1.2rem; margin-bottom: 12px; }
+    .vt-overlay-inner h4 { font-size: 0.95rem; }
+    .vt-overlay-inner p { font-size: 0.8rem; }
+
+    /* Booking form */
+    .enhanced-booking { padding: 16px 12px; border-radius: 14px; }
+    .booking-price-estimate { flex-direction: column; gap: 8px; }
+
+    /* Timeline */
+    .timeline-section { padding: 50px 0 30px; }
+    .tl-item { width: 190px; }
+    .tl-card { padding: 16px 14px; }
+    .tl-card h5 { font-size: 0.88rem; }
+    .tl-card p  { font-size: 0.78rem; }
+    .timeline-track-wrapper { padding: 0 16px 50px; }
+
+    /* FAQ */
+    .faq-q { padding: 14px 16px; }
+    .faq-a.open { padding: 0 16px 14px; }
+
+    /* Blog */
+    .blog-card .blog-img-wrap img { height: 180px; }
+
+    /* Verified badges */
+    .vb-score { font-size: 1.8rem; }
+
+    /* Reviews section */
+    .star-rating label { font-size: 1.6rem; }
+
+    /* Wishlist FAB */
+    .wishlist-fab { bottom: 72px; left: 12px; width: 46px; height: 46px; font-size: 1rem; }
+
+    /* Back-to-top */
+    .back-to-top { bottom: 80px; right: 16px; width: 40px; height: 40px; font-size: 0.9rem; }
+
+    /* Mobile bar */
+    .mobile-book-text strong { font-size: 0.82rem; }
+    .mobile-book-btn { padding: 9px 16px !important; font-size: 0.8rem; }
+
+    /* Destination hero */
+    .dest-hero h1 { font-size: 1.8rem; }
+    .dest-hero p  { font-size: 0.9rem; }
+
+    /* Destination contact map */
+    .contact-map iframe { height: 260px; }
+
+    /* Footer */
+    .footer { padding: 40px 0 20px; }
+    .footer h4 { font-size: 1rem; }
+    .footer .icon { font-size: 0.82rem; }
+    .copyright { font-size: 0.78rem; }
+}
+
+/* ── Fix: original style.css layout bugs ── */
+@media (max-width: 768px) {
+    .banner { margin-top: 0 !important; }
+    section.banner { padding-top: 70px !important; }
+    .contact-map iframe { margin-left: 0 !important; width: 100% !important; }
+    .footer-logo { margin-left: 0 !important; }
+    .footer-disc { margin-left: 0 !important; }
 }
