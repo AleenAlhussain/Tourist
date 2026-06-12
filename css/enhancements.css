@@ -747,6 +747,32 @@ html { scroll-behavior: smooth; }
 .footer ul li a { color: var(--accent) !important; }
 .footer a { color: var(--accent) !important; }
 
+/* ─── Fix: What We Offer section height ─── */
+.section-offer {
+    height: auto !important;
+    margin-top: 0;
+    padding: 80px 0;
+}
+.section-offer .offer {
+    margin-bottom: 0;
+}
+.section-offer .About-content {
+    margin-bottom: 24px;
+}
+
+/* ─── Fix: Button sizing – replace fixed width with padding ─── */
+.btn {
+    width: auto !important;
+    padding: 10px 24px !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+}
+.booking-btn {
+    width: auto !important;
+    padding: 10px 30px !important;
+    font-size: 0.95rem !important;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
     .hero-title { font-size: 3.5rem; }
