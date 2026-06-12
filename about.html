@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Visit Swaida</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,600;1,200;1,400;1,700&family=Trirong:ital,wght@0,200;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <style>
+        /* Hero */
+        .about-hero {
+            background: linear-gradient(135deg, #1a0a00 0%, var(--primary) 100%);
+            padding: 130px 0 80px; text-align: center; color: #fff;
+        }
+        .about-hero h1 { font-family:'Cinzel',serif; font-size:clamp(2rem,5vw,3rem); color:#fff; margin-bottom:10px; }
+        .about-hero p { color:rgba(255,255,255,0.65); font-size:1rem; max-width:600px; margin:0 auto; }
+        .gallery-breadcrumb { margin-top:14px; font-size:0.82rem; color:rgba(255,255,255,0.5); }
+        .gallery-breadcrumb a { color:var(--accent); text-decoration:none; }
+
+        /* Story section */
+        .story-section { padding: 90px 0; background: #fff; }
+        .story-img-wrap { position:relative; }
+        .story-img-wrap img { border-radius: 20px; width:100%; object-fit:cover; max-height:460px; box-shadow:0 20px 60px rgba(0,43,66,0.18); }
+        .story-img-badge {
+            position:absolute; bottom:-20px; right:20px;
+            background:var(--accent); color:var(--primary);
+            border-radius:14px; padding:18px 22px; text-align:center;
+            box-shadow:0 8px 24px rgba(0,0,0,0.2);
+        }
+        .story-img-badge strong { display:block; font-family:'Cinzel',serif; font-size:2rem; color:var(--primary); line-height:1; }
+        .story-img-badge span { font-size:0.78rem; font-weight:700; color:var(--primary); }
+
+        .story-text { padding-left: 50px; }
+        .story-text .history-badge { margin-bottom:16px; }
+        .story-text h2 { font-family:'Cinzel',serif; color:var(--primary); font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:18px; line-height:1.3; }
+        .story-text p { color:var(--text-muted); line-height:1.8; margin-bottom:16px; font-size:0.95rem; }
+
+        .story-quote {
+            border-left:4px solid var(--accent);
+            padding:16px 22px; margin:24px 0;
+            background:rgba(242,183,147,0.08);
+            border-radius:0 12px 12px 0;
+        }
+        .story-quote p { color:var(--primary); font-style:italic; margin:0; font-size:1rem; font-weight:600; }
+        .story-quote cite { font-size:0.8rem; color:var(--text-muted); margin-top:6px; display:block; font-style:normal; }
+
+        /* Values */
+        .values-section { padding: 80px 0; background: #f8f9fb; }
+        .value-card {
+            background:#fff; border-radius:16px; padding:32px 26px;
+            box-shadow:0 4px 20px rgba(0,43,66,0.08);
+            text-align:center; height:100%;
+            transition:transform 0.35s, box-shadow 0.35s;
+        }
+        .value-card:hover { transform:translateY(-6px); box-shadow:0 14px 40px rgba(0,43,66,0.14); }
+        .value-icon {
+            width:64px; height:64px; border-radius:50%;
+            background:rgba(0,43,66,0.07);
+            color:var(--primary); font-size:1.4rem;
+            display:flex; align-items:center; justify-content:center;
+            margin:0 auto 18px;
+            border:2px solid rgba(242,183,147,0.4);
+        }
+        .value-card h5 { font-family:'Cinzel',serif; color:var(--primary); margin-bottom:10px; font-size:1rem; }
+        .value-card p { color:var(--text-muted); font-size:0.85rem; line-height:1.7; margin:0; }
+
+        /* Team */
+        .team-section { padding: 80px 0; background: #fff; }
+        .team-card {
+            border-radius:18px; overflow:hidden;
+            box-shadow:0 6px 24px rgba(0,43,66,0.1);
+            transition:transform 0.35s;
+        }
+        .team-card:hover { transform:translateY(-6px); }
+        .team-img { position:relative; overflow:hidden; }
+        .team-img img { width:100%; height:260px; object-fit:cover; transition:transform 0.5s; }
+        .team-card:hover .team-img img { transform:scale(1.06); }
+        .team-body { padding:22px 20px; text-align:center; background:#fff; }
+        .team-body h5 { font-family:'Cinzel',serif; color:var(--primary); margin-bottom:4px; font-size:1rem; }
+        .team-body .team-role { color:var(--accent); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:10px; }
+        .team-body p { color:var(--text-muted); font-size:0.83rem; line-height:1.6; margin:0; }
+        .team-social { margin-top:12px; display:flex; justify-content:center; gap:10px; }
+        .team-social a { width:32px; height:32px; border-radius:50%; background:rgba(0,43,66,0.07); display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:0.8rem; transition:all 0.3s; text-decoration:none; }
+        .team-social a:hover { background:var(--primary); color:var(--accent); }
+
+        /* Testimonials carousel */
+        .testimonials-section { padding:80px 0; background:var(--primary); }
+        .testimonials-section .section-header h2 { color:#fff; }
+        .testimonials-section .section-sub { color:rgba(255,255,255,0.55); }
+        .testimonials-section .section-divider { background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+
+        .testimonial-carousel { max-width:800px; margin:0 auto; }
+        .testi-slide {
+            display:none; text-align:center; padding:10px 20px;
+        }
+        .testi-slide.active { display:block; }
+        .testi-avatar {
+            width:80px; height:80px; border-radius:50%;
+            border:3px solid var(--accent);
+            margin:0 auto 18px; overflow:hidden;
+        }
+        .testi-avatar img { width:100%; height:100%; object-fit:cover; }
+        .testi-stars { color:#f39c12; font-size:1rem; margin-bottom:14px; }
+        .testi-text {
+            color:rgba(255,255,255,0.85); font-size:1.05rem;
+            line-height:1.8; font-style:italic; margin-bottom:18px;
+            text-transform:none;
+        }
+        .testi-text::before { content:'"'; font-size:2.5rem; color:var(--accent); line-height:0; vertical-align:-0.5em; margin-right:4px; }
+        .testi-text::after  { content:'"'; font-size:2.5rem; color:var(--accent); line-height:0; vertical-align:-0.5em; margin-left:4px; }
+        .testi-name { font-family:'Cinzel',serif; color:var(--accent); font-size:1rem; }
+        .testi-location { color:rgba(255,255,255,0.45); font-size:0.8rem; text-transform:none; }
+        .testi-dots { display:flex; justify-content:center; gap:8px; margin-top:28px; }
+        .testi-dot {
+            width:10px; height:10px; border-radius:50%;
+            background:rgba(255,255,255,0.25); border:none;
+            cursor:pointer; transition:background 0.3s, transform 0.3s;
+            padding:0;
+        }
+        .testi-dot.active { background:var(--accent); transform:scale(1.3); }
+        .testi-controls { display:flex; justify-content:center; gap:14px; margin-top:18px; }
+        .testi-btn {
+            width:40px; height:40px; border-radius:50%;
+            background:rgba(255,255,255,0.1);
+            border:1px solid rgba(255,255,255,0.2);
+            color:var(--accent); font-size:0.85rem;
+            cursor:pointer; transition:all 0.3s;
+        }
+        .testi-btn:hover { background:var(--accent); color:var(--primary); }
+
+        /* Stats bar */
+        .about-stats { padding:60px 0; background:#f8f9fb; }
+        .astat { text-align:center; }
+        .astat h3 { font-family:'Cinzel',serif; font-size:2.4rem; color:var(--primary); margin-bottom:4px; }
+        .astat p { color:var(--text-muted); font-size:0.85rem; }
+
+        /* CTA */
+        .about-cta { padding:80px 0; background:var(--accent); text-align:center; }
+        .about-cta h2 { font-family:'Cinzel',serif; color:var(--primary); font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:10px; }
+        .about-cta p { color:rgba(0,43,66,0.7); margin-bottom:24px; }
+        .btn-about-cta {
+            background:var(--primary); color:var(--accent) !important;
+            padding:13px 34px !important; border-radius:50px;
+            font-weight:700; font-size:0.95rem;
+            text-decoration:none !important; transition:all 0.3s;
+            display:inline-flex; align-items:center; gap:8px;
+        }
+        .btn-about-cta:hover { background:#003d5c; }
+
+        @media(max-width:768px) {
+            .story-text { padding-left:0; margin-top:40px; }
+            .story-img-badge { position:static; margin-top:16px; display:inline-block; border-radius:12px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-scrolled" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/logo4.png" alt="Swaida Logo" class="logo" style="width:100px;height:auto !important;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="kanawat.html">Kanawat</a></li>
+                <li class="nav-item"><a class="nav-link" href="shahba.html">Shahba</a></li>
+                <li class="nav-item"><a class="nav-link" href="salkhad.html">Salkhad</a></li>
+                <li class="nav-item"><a class="nav-link" href="swaida.html">Swaida City</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#booking">Book Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="about-hero">
+    <div class="container">
+        <p data-aos="fade-down">Our Story</p>
+        <h1 data-aos="zoom-in" data-aos-delay="100">About Visit Swaida</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Born and raised in the Hauran, we're on a mission to share the world's best-kept secret with curious travellers everywhere</p>
+        <div class="gallery-breadcrumb" data-aos="fade-up" data-aos-delay="300">
+            <a href="index.html">Home</a> / About Us
+        </div>
+    </div>
+</div>
+
+<!-- Story -->
+<section class="story-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5 col-12 mb-4" data-aos="fade-right">
+                <div class="story-img-wrap">
+                    <img src="images/swaida.jpg" alt="Aleen Alhussain – Founder">
+                    <div class="story-img-badge">
+                        <strong>2021</strong>
+                        <span>Founded</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-12 mb-4" data-aos="fade-left">
+                <div class="story-text">
+                    <span class="history-badge">Our Story</span>
+                    <h2>Why We Started Visit Swaida</h2>
+                    <p>I grew up walking among 2,000-year-old Roman temples in Kanawat, watching foreign archaeologists discover what every child in Swaida already knew — that this region is extraordinary. But almost no one outside Syria had ever heard of it.</p>
+                    <p>In 2021, I launched Visit Swaida with one goal: to bring the world to our doorstep. Not as a mass-tourism destination, but as a carefully curated, deeply personal experience — guided by people who actually live here, love it, and know every hidden corner of the basalt mountain.</p>
+                    <div class="story-quote">
+                        <p>We don't just show you the ruins. We tell you why they matter, who built them, and what their descendants are doing today.</p>
+                        <cite>— Aleen Alhussain, Founder</cite>
+                    </div>
+                    <p>Every tour is small-group (max 12), every guide is a local expert, and every meal is prepared by a Druze family — because the real Swaida isn't in a museum. It's at the kitchen table.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>What We Stand For</h2>
+            <p class="section-sub">The principles behind every Visit Swaida experience</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="50">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-heart"></i></div>
+                    <h5>Authentic</h5>
+                    <p>No tourist traps. Every experience is designed by people who live here and love it.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-users"></i></div>
+                    <h5>Community First</h5>
+                    <p>90% of every booking goes directly to local guides, restaurants, and artisans.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-leaf"></i></div>
+                    <h5>Sustainable</h5>
+                    <p>Small groups, low impact, high respect for the sites and the people who live beside them.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-book"></i></div>
+                    <h5>Educational</h5>
+                    <p>We believe understanding history changes how you see the present. Every tour is a lesson in humanity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Meet the Team</h2>
+            <p class="section-sub">Swaida natives who know every stone, road, and family</p>
+            <span class="section-divider"></span>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-card">
+                    <div class="team-img"><img src="images/re2.jpeg" alt="Aleen Alhussain"></div>
+                    <div class="team-body">
+                        <h5>Aleen Alhussain</h5>
+                        <span class="team-role">Founder & Lead Guide</span>
+                        <p>History graduate, fourth-generation Swaida native, and passionate advocate for Syrian cultural heritage. Speaks English, Arabic, and French.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-card">
+                    <div class="team-img"><img src="images/reviw.jpg" alt="Khalid Mansour"></div>
+                    <div class="team-body">
+                        <h5>Khalid Mansour</h5>
+                        <span class="team-role">Senior Archaeologist Guide</span>
+                        <p>Former Syrian Ministry of Tourism archaeologist with 15 years excavating Roman sites across the Hauran. Expert on Shahba and Kanawat.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="team-card">
+                    <div class="team-img"><img src="images/re3.jpg" alt="Lina Aziz" onerror="this.src='images/swaida1.jpeg'"></div>
+                    <div class="team-body">
+                        <h5>Lina Aziz</h5>
+                        <span class="team-role">Culture & Hospitality</span>
+                        <p>Chef, storyteller, and Druze cultural ambassador. Lina curates all our traditional meal experiences and cultural immersion programmes.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>What Visitors Say</h2>
+            <p class="section-sub">From travellers who experienced Swaida with us</p>
+            <span class="section-divider"></span>
+        </div>
+
+        <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="100">
+            <div class="testi-slide active">
+                <div class="testi-avatar"><img src="images/reviw.jpg" alt="Omar Al-Hassan"></div>
+                <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p class="testi-text">Standing on top of Salkhad Castle watching the sunset over the volcanic landscape — that moment alone was worth the entire trip. The guide knew every story behind every stone. Absolutely magical.</p>
+                <p class="testi-name">Omar Al-Hassan</p>
+                <p class="testi-location">Beirut, Lebanon · Salkhad Tour</p>
+            </div>
+            <div class="testi-slide">
+                <div class="testi-avatar"><img src="images/re2.jpeg" alt="Maria Fontaine"></div>
+                <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+                <p class="testi-text">Shahba is an archaeologist's dream. We spent an entire day there and still didn't see everything. The mosaics in the museum are world-class. I've travelled to Rome, Athens, and Petra — this rivals all of them.</p>
+                <p class="testi-name">Maria Fontaine</p>
+                <p class="testi-location">Lyon, France · Roman Trail Package</p>
+            </div>
+            <div class="testi-slide">
+                <div class="testi-avatar"><img src="images/swaida1.jpeg" alt="Ahmed Khoury"></div>
+                <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p class="testi-text">The Kanawat ruins are jaw-dropping — and completely uncrowded. We had the Temple of Zeus entirely to ourselves. Aleen's knowledge and passion made every hour unforgettable. I'm already planning my return.</p>
+                <p class="testi-name">Ahmed Khoury</p>
+                <p class="testi-location">Dubai, UAE · Kanawat Day Tour</p>
+            </div>
+            <div class="testi-slide">
+                <div class="testi-avatar"><img src="images/re2.jpeg" alt="Sophie Braun"></div>
+                <div class="testi-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p class="testi-text">The Full Hauran Circuit was the best travel decision I've ever made. Four days, four completely different places, and one incredible team. The lunch at the Druze family home was a highlight of my entire year.</p>
+                <p class="testi-name">Sophie Braun</p>
+                <p class="testi-location">Berlin, Germany · Full Hauran Circuit</p>
+            </div>
+
+            <div class="testi-dots">
+                <button class="testi-dot active" data-idx="0"></button>
+                <button class="testi-dot" data-idx="1"></button>
+                <button class="testi-dot" data-idx="2"></button>
+                <button class="testi-dot" data-idx="3"></button>
+            </div>
+            <div class="testi-controls">
+                <button class="testi-btn" id="testiPrev"><i class="fa fa-chevron-left"></i></button>
+                <button class="testi-btn" id="testiNext"><i class="fa fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="about-stats">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-6 col-md-3 mb-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="astat">
+                    <h3>500+</h3><p>Happy Travellers</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="astat">
+                    <h3>4</h3><p>Unique Destinations</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3" data-aos="fade-up" data-aos-delay="150">
+                <div class="astat">
+                    <h3>4.9★</h3><p>Average Rating</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="astat">
+                    <h3>3+</h3><p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta" data-aos="fade-up">
+    <div class="container">
+        <h2>Ready to discover Swaida with us?</h2>
+        <p>Choose a package, or contact us for a custom quote — we reply within 24 hours.</p>
+        <a href="packages.html" class="btn-about-cta"><i class="fa fa-map-o"></i> View All Packages</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="footer" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12"><img src="images/logo4.png" class="footer-logo" alt=""><p class="footer-disc list">Enjoy your trip with us</p></div>
+            <div class="col-md-3 col-12"><h4>Quick Links</h4><ul class="list"><li><a href="index.html#about">Destinations</a></li><li><a href="packages.html">Packages</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About Us</a></li></ul></div>
+            <div class="col-md-3 col-12"><h4>Quick Contact</h4><a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a><a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a><a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida</a></div>
+            <div class="col-md-3 col-12"><h4 class="follow">Follow Us</h4><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a><a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i> YouTube</a><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></div>
+        </div>
+        <hr>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2024 Visit Swaida</p>
+    </div>
+</section>
+
+<button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 700, once: true });
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 400) $('#backToTop').addClass('show'); else $('#backToTop').removeClass('show');
+});
+$('#backToTop').click(function() { $('html,body').animate({scrollTop:0},600); });
+
+// Testimonials carousel
+var slides = document.querySelectorAll('.testi-slide');
+var dots   = document.querySelectorAll('.testi-dot');
+var cur = 0;
+function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+}
+document.getElementById('testiNext').addEventListener('click', function() { goTo(cur + 1); });
+document.getElementById('testiPrev').addEventListener('click', function() { goTo(cur - 1); });
+dots.forEach(function(d) { d.addEventListener('click', function() { goTo(+this.dataset.idx); }); });
+setInterval(function() { goTo(cur + 1); }, 5000);
+</script>
+</body>
+</html>
