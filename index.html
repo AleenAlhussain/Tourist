@@ -32,10 +32,10 @@
     <div class="urgency-inner">
         <span class="urgency-pulse"></span>
         <span class="urgency-text">
-            <strong>Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
+            <strong data-i18n="urgency_spots">Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
             Offer ends in <span id="urgencyCountdown" class="urgency-timer">00:00:00</span>
         </span>
-        <a href="#booking" class="urgency-cta">Grab Your Spot →</a>
+        <a href="#booking" class="urgency-cta" data-i18n="urgency_cta">Grab Your Spot →</a>
     </div>
     <button class="urgency-close" id="urgencyClose" aria-label="Close">✕</button>
 </div>
@@ -60,16 +60,20 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                   
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-i18n="nav_home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav_destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packages.html" data-i18n="nav_packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking" data-i18n="nav_book">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog" data-i18n="nav_blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq" data-i18n="nav_faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="lang-toggle" id="langToggle" title="Switch to Arabic / التبديل للعربية">
+                            <i class="fa fa-globe"></i> <span id="langLabel">العربية</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -80,22 +84,22 @@
     <div class="hero-parallax">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200">Welcome to the Basalt Mountain</p>
+            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200" data-i18n="hero_sub">Welcome to the Basalt Mountain</p>
             <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="400">
                 Visit <span id="typed-destination">Swaida</span>
             </h1>
             <div class="hero-title-divider" data-aos="fade-up" data-aos-delay="550"></div>
-            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600" data-i18n="hero_tagline">
                 Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture
             </p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                <a href="#about" class="btn btn-hero-primary">Explore Now</a>
-                <a href="#booking" class="btn btn-hero-outline">Book a Trip</a>
+                <a href="#about" class="btn btn-hero-primary" data-i18n="hero_btn1">Explore Now</a>
+                <a href="#booking" class="btn btn-hero-outline" data-i18n="hero_btn2">Book a Trip</a>
             </div>
         </div>
         <div class="hero-scroll-indicator" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
             <div class="scroll-mouse"></div>
-            <span class="scroll-label">Scroll</span>
+            <span class="scroll-label" data-i18n="scroll_label">Scroll</span>
         </div>
     </div>
 </header>
@@ -108,28 +112,28 @@
                 <div class="stat-item">
                     <i class="fa fa-map-marker"></i>
                     <h3 class="counter" data-target="47">0</h3>
-                    <p>Archaeological Sites</p>
+                    <p data-i18n="stat1">Archaeological Sites</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-item">
                     <i class="fa fa-users"></i>
                     <h3 class="counter" data-target="12400">0</h3>
-                    <p>Happy Visitors</p>
+                    <p data-i18n="stat2">Happy Visitors</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-item">
                     <i class="fa fa-trophy"></i>
                     <h3 class="counter" data-target="15">0</h3>
-                    <p>Tour Packages</p>
+                    <p data-i18n="stat3">Tour Packages</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-item">
                     <i class="fa fa-star"></i>
                     <h3 class="counter" data-target="98">0</h3>
-                    <p>% Satisfaction</p>
+                    <p data-i18n="stat4">% Satisfaction</p>
                 </div>
             </div>
         </div>
@@ -138,7 +142,7 @@
 
 <!-- ═══════════════════════════════ MEDIA MENTIONS STRIP ═══════════════════════════════ -->
 <section class="media-strip">
-    <div class="media-strip-label">As featured in &amp; trusted by</div>
+    <div class="media-strip-label" data-i18n="media_label">As featured in &amp; trusted by</div>
     <div class="media-track-wrapper">
         <div class="media-track">
             <div class="media-logo"><i class="fa fa-globe"></i><span>National Geographic</span></div>
@@ -163,8 +167,8 @@
 <!-- ═══════════════════════════════ FEATURED DESTINATIONS ═══════════════════════════════ -->
 <section class="feature" id="about">
     <div class="section-header" data-aos="fade-up">
-        <h2>Featured Destinations</h2>
-        <p class="section-sub">Explore the ancient wonders of the Swaida Governorate</p>
+        <h2 data-i18n="sec_destinations">Featured Destinations</h2>
+        <p class="section-sub" data-i18n="sec_destinations_sub">Explore the ancient wonders of the Swaida Governorate</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
@@ -182,14 +186,14 @@
                         <button class="wishlist-btn" data-dest="salkhad" data-name="Salkhad" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Salkhad</h4>
-                        <p>Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
+                        <h4 data-i18n="dest_salkhad_name">Salkhad</h4>
+                        <p data-i18n="dest_salkhad_desc">Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Salkhad</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -206,14 +210,14 @@
                         <button class="wishlist-btn" data-dest="shahba" data-name="Shahba" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Shahba</h4>
-                        <p>Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
+                        <h4 data-i18n="dest_shahba_name">Shahba</h4>
+                        <p data-i18n="dest_shahba_desc">Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Swaida</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="shahba.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="shahba.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -230,14 +234,14 @@
                         <button class="wishlist-btn" data-dest="kanawat" data-name="Kanawat" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Kanawat</h4>
-                        <p>Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
+                        <h4 data-i18n="dest_kanawat_name">Kanawat</h4>
+                        <p data-i18n="dest_kanawat_desc">Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Swaida</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="kanawat.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="kanawat.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -254,14 +258,14 @@
                         <button class="wishlist-btn" data-dest="swaida" data-name="Swaida City" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Swaida City</h4>
-                        <p>The vibrant capital of the governorate, home to the Swaida Museum — one of Syria's finest — and the lively old market showcasing Area culture and traditions.</p>
+                        <h4 data-i18n="dest_swaida_name">Swaida City</h4>
+                        <p data-i18n="dest_swaida_desc">The vibrant capital of the governorate, home to the Swaida Museum — one of Syria's finest — and the lively old market showcasing Druze culture and traditions.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Swaida</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="swaida.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="swaida.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -272,11 +276,11 @@
 <!-- Wishlist Drawer -->
 <div class="wishlist-drawer" id="wishlistDrawer">
     <div class="wishlist-header">
-        <h5><i class="fa fa-heart"></i> My Saved Trips</h5>
+        <h5><i class="fa fa-heart"></i> <span data-i18n="wishlist_title">My Saved Trips</span></h5>
         <button id="wishlistClose"><i class="fa fa-times"></i></button>
     </div>
     <div class="wishlist-body" id="wishlistBody">
-        <p class="wishlist-empty">No trips saved yet.<br>Tap the <i class="fa fa-heart-o"></i> on any destination card.</p>
+        <p class="wishlist-empty" data-i18n="wishlist_empty">No trips saved yet.<br>Tap the <i class="fa fa-heart-o"></i> on any destination card.</p>
     </div>
     <div class="wishlist-footer">
         <a href="#booking" class="mobile-book-btn" id="wishlistBook" style="display:none">Book All Saved Trips →</a>
@@ -290,8 +294,8 @@
 <!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
 <section class="gallery" id="gallery">
     <div class="section-header" data-aos="fade-up">
-        <h2>Travelling Gallery</h2>
-        <p class="section-sub">A visual journey through Swaida's landscapes and heritage</p>
+        <h2 data-i18n="sec_gallery">Travelling Gallery</h2>
+        <p class="section-sub" data-i18n="sec_gallery_sub">A visual journey through Swaida's landscapes and heritage</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
@@ -301,7 +305,7 @@
                     <img src="images/swaida1.jpeg" alt="Swaida" class="hotel-img">
                     <div class="gallery-overlay">
                         <h5 class="gallery_disc">Swaida</h5>
-                        <a href="swaida.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                        <a href="swaida.html" class="btn btn-gradient" target="_blank"><span data-i18n="btn_see_more">See More</span> <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -310,7 +314,7 @@
                     <img src="images/shahba3.jpg" alt="Shahba" class="hotel-img">
                     <div class="gallery-overlay">
                         <h5 class="gallery_disc">Shahba</h5>
-                        <a href="shahba.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                        <a href="shahba.html" class="btn btn-gradient" target="_blank"><span data-i18n="btn_see_more">See More</span> <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -319,7 +323,7 @@
                     <img src="images/salkhad3.jpg" alt="Salkhad" class="hotel-img">
                     <div class="gallery-overlay">
                         <h5 class="gallery_disc">Salkhad</h5>
-                        <a href="salkhad.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                        <a href="salkhad.html" class="btn btn-gradient" target="_blank"><span data-i18n="btn_see_more">See More</span> <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -328,7 +332,7 @@
                     <img src="images/kanawat.jpg" alt="Kanawat" class="hotel-img">
                     <div class="gallery-overlay">
                         <h5 class="gallery_disc">Kanawat</h5>
-                        <a href="kanawat.html" class="btn btn-gradient" target="_blank">See More <i class="fa fa-arrow-right"></i></a>
+                        <a href="kanawat.html" class="btn btn-gradient" target="_blank"><span data-i18n="btn_see_more">See More</span> <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -340,13 +344,13 @@
 <section class="video-section">
     <div class="video-parallax-bg"></div>
     <div class="video-content" data-aos="zoom-in">
-        <p class="section-sub-light">Heritage & Culture</p>
-        <h2>Experience Swaida's Living History</h2>
-        <p>Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant culture that make Swaida one of the most fascinating destinations in the Middle East.</p>
+        <p class="section-sub-light" data-i18n="video_sub">Heritage & Culture</p>
+        <h2 data-i18n="video_title">Experience Swaida's Living History</h2>
+        <p data-i18n="video_desc">Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant Druze culture that make Swaida one of the most fascinating destinations in the Middle East.</p>
         <button class="btn-play" id="videoPlayBtn" data-toggle="modal" data-target="#videoModal">
             <i class="fa fa-play"></i>
         </button>
-        <p class="play-label">Watch the Story</p>
+        <p class="play-label" data-i18n="video_play_label">Watch the Story</p>
     </div>
 </section>
 
@@ -374,12 +378,12 @@
         <!-- top label + heading -->
         <div class="row align-items-center mb-5">
             <div class="col-md-7 col-12" data-aos="fade-right">
-                <span class="offer-badge">Our Services</span>
-                <h2 class="offer-heading">Everything You Need<br>for an Unforgettable Journey</h2>
-                <p class="offer-sub">From the moment you arrive to the moment you leave, we handle every detail so you can focus on the experience.</p>
+                <span class="offer-badge" data-i18n="offer_badge">Our Services</span>
+                <h2 class="offer-heading" data-i18n="offer_heading">Everything You Need<br>for an Unforgettable Journey</h2>
+                <p class="offer-sub" data-i18n="offer_sub">From the moment you arrive to the moment you leave, we handle every detail so you can focus on the experience.</p>
             </div>
             <div class="col-md-5 col-12 text-md-right text-center mt-3 mt-md-0" data-aos="fade-left">
-                <a href="#booking" class="btn btn-hero-primary" style="font-size:0.88rem;">Start Planning <span style="font-size:1rem">→</span></a>
+                <a href="#booking" class="btn btn-hero-primary" style="font-size:0.88rem;" data-i18n="offer_cta">Start Planning →</a>
             </div>
         </div>
 
@@ -390,8 +394,8 @@
                 <div class="offer-card" style="--card-color:#e07c45;">
                     <div class="offer-card-icon"><i class="fa fa-cutlery"></i></div>
                     <div class="offer-card-body">
-                        <h4>Food &amp; Drink</h4>
-                        <p>Savour authentic Druze cuisine — freshly baked flatbread, slow-cooked lamb, and locally harvested olive oil at family-run restaurants.</p>
+                        <h4 data-i18n="svc1_title">Food &amp; Drink</h4>
+                        <p data-i18n="svc1_desc">Savour authentic Druze cuisine — freshly baked flatbread, slow-cooked lamb, and locally harvested olive oil at family-run restaurants.</p>
                     </div>
                     <span class="offer-card-num">01</span>
                 </div>
@@ -401,8 +405,8 @@
                 <div class="offer-card" style="--card-color:#4a90d9;">
                     <div class="offer-card-icon"><i class="fa fa-plane"></i></div>
                     <div class="offer-card-body">
-                        <h4>Fast &amp; Comfortable Travel</h4>
-                        <p>Air-conditioned vehicles with expert local guides. Direct routes from Damascus, Amman, or Beirut — door-to-door service available.</p>
+                        <h4 data-i18n="svc2_title">Fast &amp; Comfortable Travel</h4>
+                        <p data-i18n="svc2_desc">Air-conditioned vehicles with expert local guides. Direct routes from Damascus, Amman, or Beirut — door-to-door service available.</p>
                     </div>
                     <span class="offer-card-num">02</span>
                 </div>
@@ -412,8 +416,8 @@
                 <div class="offer-card" style="--card-color:#27ae60;">
                     <div class="offer-card-icon"><i class="fa fa-shield"></i></div>
                     <div class="offer-card-body">
-                        <h4>Safety &amp; Support</h4>
-                        <p>Experienced guides, comprehensive travel insurance, 24/7 emergency support, and well-marked trails at every archaeological site.</p>
+                        <h4 data-i18n="svc3_title">Safety &amp; Support</h4>
+                        <p data-i18n="svc3_desc">Experienced guides, comprehensive travel insurance, 24/7 emergency support, and well-marked trails at every archaeological site.</p>
                     </div>
                     <span class="offer-card-num">03</span>
                 </div>
@@ -423,8 +427,8 @@
                 <div class="offer-card" style="--card-color:#9b59b6;">
                     <div class="offer-card-icon"><i class="fa fa-camera"></i></div>
                     <div class="offer-card-body">
-                        <h4>Photography Tours</h4>
-                        <p>Dedicated tours timed for golden-hour light on ancient basalt ruins. Professional photographer-guides available for small groups.</p>
+                        <h4 data-i18n="svc4_title">Photography Tours</h4>
+                        <p data-i18n="svc4_desc">Dedicated tours timed for golden-hour light on ancient basalt ruins. Professional photographer-guides available for small groups.</p>
                     </div>
                     <span class="offer-card-num">04</span>
                 </div>
@@ -434,8 +438,8 @@
                 <div class="offer-card" style="--card-color:#c0392b;">
                     <div class="offer-card-icon"><i class="fa fa-bed"></i></div>
                     <div class="offer-card-body">
-                        <h4>Accommodation</h4>
-                        <p>Handpicked local guesthouses and boutique hotels in traditional Haurani basalt stone architecture — sleep where history was made.</p>
+                        <h4 data-i18n="svc5_title">Accommodation</h4>
+                        <p data-i18n="svc5_desc">Handpicked local guesthouses and boutique hotels in traditional Haurani basalt stone architecture — sleep where history was made.</p>
                     </div>
                     <span class="offer-card-num">05</span>
                 </div>
@@ -445,8 +449,8 @@
                 <div class="offer-card offer-card--accent" style="--card-color:#002b42;">
                     <div class="offer-card-icon"><i class="fa fa-book"></i></div>
                     <div class="offer-card-body">
-                        <h4>Cultural Workshops</h4>
-                        <p>Mosaic restoration, traditional weaving, and Arabic calligraphy — learn from local artisans keeping 2,000-year-old crafts alive.</p>
+                        <h4 data-i18n="svc6_title">Cultural Workshops</h4>
+                        <p data-i18n="svc6_desc">Mosaic restoration, traditional weaving, and Arabic calligraphy — learn from local artisans keeping 2,000-year-old crafts alive.</p>
                     </div>
                     <span class="offer-card-num">06</span>
                 </div>
@@ -463,11 +467,11 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-8 col-12" data-aos="fade-right">
-                        <h2>Welcome to the Basalt Mountain</h2>
-                        <p>Book your trip today and enjoy 30% off all packages until end of season</p>
+                        <h2 data-i18n="banner_title">Welcome to the Basalt Mountain</h2>
+                        <p data-i18n="banner_sub">Book your trip today and enjoy 30% off all packages until end of season</p>
                     </div>
                     <div class="col-md-4 col-12 text-center" data-aos="fade-left">
-                        <a href="#booking" class="btn booking-btn">Book Now</a>
+                        <a href="#booking" class="btn booking-btn" data-i18n="banner_btn">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -479,8 +483,8 @@
 <section class="weather-section" id="weather">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2>Best Time to Visit</h2>
-            <p class="section-sub">Plan around Swaida's seasons, festivals, and ideal temperatures</p>
+            <h2 data-i18n="sec_weather">Best Time to Visit</h2>
+            <p class="section-sub" data-i18n="sec_weather_sub">Plan around Swaida's seasons, festivals, and ideal temperatures</p>
             <span class="section-divider"></span>
         </div>
         <div class="weather-grid" data-aos="fade-up">
@@ -507,9 +511,9 @@
 
             <!-- Season legend -->
             <div class="weather-legend">
-                <span class="wl-best"><i class="fa fa-circle"></i> Best months</span>
+                <span class="wl-best"><i class="fa fa-circle"></i> <span data-i18n="weather_best">Best months</span></span>
                 <span class="wl-ok"><i class="fa fa-circle"></i> Good</span>
-                <span class="wl-avoid"><i class="fa fa-circle"></i> Avoid (peak heat)</span>
+                <span class="wl-avoid"><i class="fa fa-circle"></i> <span data-i18n="weather_avoid">Avoid (peak heat)</span></span>
             </div>
         </div>
     </div>
@@ -519,23 +523,23 @@
 <section class="virtual-tour-section" id="virtualtour">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2>Virtual Tour – Kanawat Ruins</h2>
-            <p class="section-sub">Explore the ancient Roman city in an immersive 360° panorama before you visit</p>
+            <h2 data-i18n="sec_vt">Virtual Tour – Kanawat Ruins</h2>
+            <p class="section-sub" data-i18n="sec_vt_sub">Explore the ancient Roman city in an immersive 360° panorama before you visit</p>
             <span class="section-divider"></span>
         </div>
         <div class="vt-wrapper" data-aos="zoom-in">
             <div class="vt-overlay" id="vtOverlay">
                 <div class="vt-overlay-inner">
                     <div class="vt-play-icon"><i class="fa fa-street-view"></i></div>
-                    <h4>360° Immersive Tour</h4>
-                    <p>Stand inside the ancient Temple of Zeus at Kanawat.<br>Drag to look around in every direction.</p>
-                    <button class="btn btn-hero-primary" id="vtLaunch">Launch Virtual Tour</button>
+                    <h4 data-i18n="vt_title">360° Immersive Tour</h4>
+                    <p data-i18n="vt_desc">Stand inside the ancient Temple of Zeus at Kanawat.<br>Drag to look around in every direction.</p>
+                    <button class="btn btn-hero-primary" id="vtLaunch" data-i18n="vt_btn">Launch Virtual Tour</button>
                 </div>
                 <img src="images/kanawat1.jpg" alt="Kanawat 360 Preview" class="vt-preview-img">
             </div>
             <div id="panoramaViewer" style="display:none;width:100%;height:500px;border-radius:14px;overflow:hidden;"></div>
         </div>
-        <p class="vt-note text-center mt-3"><i class="fa fa-info-circle"></i> Use mouse drag or touch to look around. Scroll to zoom. Click <strong>⛶ fullscreen</strong> for best experience.</p>
+        <p class="vt-note text-center mt-3" data-i18n="vt_note"><i class="fa fa-info-circle"></i> Use mouse drag or touch to look around. Scroll to zoom. Click <strong>⛶ fullscreen</strong> for best experience.</p>
     </div>
 </section>
 
@@ -770,8 +774,8 @@
 <section class="calendar-section" id="calendar">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2>Available Tour Dates</h2>
-            <p class="section-sub">Check open spots and book your preferred date instantly</p>
+            <h2 data-i18n="sec_cal">Available Tour Dates</h2>
+            <p class="section-sub" data-i18n="sec_cal_sub">Check open spots and book your preferred date instantly</p>
             <span class="section-divider"></span>
         </div>
         <div class="cal-wrapper" data-aos="fade-up" data-aos-delay="100">
@@ -793,8 +797,8 @@
             <div class="cal-tooltip" id="calTooltip" style="display:none;"></div>
         </div>
         <div class="cal-cta" data-aos="fade-up" data-aos-delay="200">
-            <p><i class="fa fa-info-circle"></i> Click any available date to jump to the booking form. <strong>Max 12 guests per tour.</strong></p>
-            <a href="#booking" class="cal-book-btn">Check Availability &rarr;</a>
+            <p data-i18n="cal_hint"><i class="fa fa-info-circle"></i> Click any available date to jump to the booking form. <strong>Max 12 guests per tour.</strong></p>
+            <a href="#booking" class="cal-book-btn" data-i18n="cal_cta">Check Availability →</a>
         </div>
     </div>
 </section>
@@ -802,8 +806,8 @@
 <!-- ═══════════════════════════════ BLOG ═══════════════════════════════ -->
 <section class="blog-section" id="blog">
     <div class="section-header" data-aos="fade-up">
-        <h2>Travel Blog</h2>
-        <p class="section-sub">Stories, events, and seasonal highlights from Swaida</p>
+        <h2 data-i18n="sec_blog">Travel Blog</h2>
+        <p class="section-sub" data-i18n="sec_blog_sub">Stories, events, and seasonal highlights from Swaida</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
@@ -917,8 +921,8 @@
 <!-- ═══════════════════════════════ REVIEWS ═══════════════════════════════ -->
 <section class="user-feedback" id="reviews">
     <div class="section-header" data-aos="fade-up">
-        <h2>Traveller Reviews</h2>
-        <p class="section-sub">What visitors say about their Swaida experience</p>
+        <h2 data-i18n="sec_reviews">Traveller Reviews</h2>
+        <p class="section-sub" data-i18n="sec_reviews_sub">What visitors say about their Swaida experience</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
@@ -1006,7 +1010,7 @@
 
         <!-- Add Review Form -->
         <div class="add-review-section mt-5" data-aos="fade-up">
-            <h4 class="text-center mb-4">Share Your Experience</h4>
+            <h4 class="text-center mb-4" data-i18n="review_form_title">Share Your Experience</h4>
             <div class="review-form-wrapper">
                 <form id="reviewForm">
                     <div class="row">
@@ -1176,8 +1180,8 @@
         <div class="row align-items-start">
             <div class="col-md-4 col-12 faq-sidebar" data-aos="fade-right">
                 <span class="history-badge mb-3 d-inline-block">Got Questions?</span>
-                <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know before booking your trip to Swaida.</p>
+                <h2 data-i18n="sec_faq">Frequently Asked Questions</h2>
+                <p data-i18n="sec_faq_sub">Everything you need to know before booking your trip to Swaida.</p>
                 <a href="#booking" class="btn btn-hero-primary mt-3" style="font-size:0.85rem">Book Now</a>
             </div>
             <div class="col-md-8 col-12" data-aos="fade-left">
@@ -1185,7 +1189,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq1">
-                            <span>Do I need a visa to visit Swaida, Syria?</span>
+                            <span data-i18n="faq1_q">Do I need a visa to visit Swaida, Syria?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq1">
@@ -1195,7 +1199,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq2">
-                            <span>What is the best time of year to visit?</span>
+                            <span data-i18n="faq2_q">What is the best time of year to visit?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq2">
@@ -1205,7 +1209,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq3">
-                            <span>What is included in your tour packages?</span>
+                            <span data-i18n="faq3_q">What is included in your tour packages?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq3">
@@ -1215,7 +1219,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq4">
-                            <span>How large are the tour groups?</span>
+                            <span data-i18n="faq4_q">How large are the tour groups?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq4">
@@ -1225,7 +1229,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq5">
-                            <span>What is your cancellation policy?</span>
+                            <span data-i18n="faq5_q">What is your cancellation policy?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq5">
@@ -1276,10 +1280,10 @@
         <div class="row">
             <div class="col-md-3 col-12">
                 <img src="images/logo4.png" class="footer-logo" alt="Logo">
-                <p class="footer-disc list">Enjoy your trip with us</p>
+                <p class="footer-disc list" data-i18n="footer_disc">Enjoy your trip with us</p>
             </div>
             <div class="col-md-3 col-12">
-                <h4>Quick Links</h4>
+                <h4 data-i18n="footer_links">Quick Links</h4>
                 <ul class="list">
                     <li><a href="#about">Destinations</a></li>
                     <li><a href="#booking">Book a Trip</a></li>
@@ -1289,13 +1293,13 @@
                 </ul>
             </div>
             <div class="col-md-3 col-12">
-                <h4>Quick Contact</h4>
-                <a href="tel:+963993773650" class="icon"><i class="fa fa-phone-square"></i>+963 993 773 650</a>
+                <h4 data-i18n="footer_contact">Quick Contact</h4>
+                <a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a>
                 <a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a>
                 <a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida Governorate</a>
             </div>
             <div class="col-md-3 col-12">
-                <h4 class="follow">Follow Us</h4>
+                <h4 class="follow" data-i18n="footer_social">Follow Us</h4>
                 <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a>
                 <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube-play"></i> YouTube</a>
                 <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
@@ -1886,43 +1890,251 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
     buildCal();
 })();
 
-// ─── Arabic Language Toggle ───
+// ─── Full Bilingual i18n System ───
 (function() {
-    var isArabic = false;
+    var lang = localStorage.getItem('vsLang') || 'en';
+
     var translations = {
-        '#home-tagline':       'اكتشف مدن رومانية عريقة، ومناظر بركانية خلابة، وثقافة سورية خالدة',
-        '.hero-sub':           'مرحباً بكم في جبل العرب',
-        '#typed-destination':  'السويداء',
-        '.stats-section':      null,
+        en: {
+            urgency_spots: 'Only 4 spots left',
+            urgency_cta: 'Grab Your Spot →',
+            nav_home: 'Home',
+            nav_destinations: 'Destinations',
+            nav_gallery: 'Gallery',
+            nav_packages: 'Packages',
+            nav_about: 'About Us',
+            nav_book: 'Book Now',
+            nav_blog: 'Blog',
+            nav_faq: 'FAQ',
+            nav_contact: 'Contact',
+            hero_sub: 'Welcome to the Basalt Mountain',
+            hero_tagline: 'Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture',
+            hero_btn1: 'Explore Now',
+            hero_btn2: 'Book a Trip',
+            scroll_label: 'Scroll',
+            stat1: 'Archaeological Sites',
+            stat2: 'Happy Visitors',
+            stat3: 'Tour Packages',
+            stat4: '% Satisfaction',
+            media_label: 'As featured in & trusted by',
+            sec_destinations: 'Featured Destinations',
+            sec_destinations_sub: 'Explore the ancient wonders of the Swaida Governorate',
+            dest_salkhad_name: 'Salkhad',
+            dest_salkhad_desc: 'Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.',
+            dest_shahba_name: 'Shahba',
+            dest_shahba_desc: 'Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.',
+            dest_kanawat_name: 'Kanawat',
+            dest_kanawat_desc: 'Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.',
+            dest_swaida_name: 'Swaida City',
+            dest_swaida_desc: 'The vibrant capital of the governorate, home to the Swaida Museum — one of Syria\'s finest — and the lively old market showcasing Druze culture and traditions.',
+            btn_explore: 'Explore',
+            btn_see_more: 'See More',
+            wishlist_title: 'My Saved Trips',
+            wishlist_empty: 'No trips saved yet.\nTap the ♡ on any destination card.',
+            sec_gallery: 'Travelling Gallery',
+            sec_gallery_sub: 'A visual journey through Swaida\'s landscapes and heritage',
+            video_sub: 'Heritage & Culture',
+            video_title: 'Experience Swaida\'s Living History',
+            video_desc: 'Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant Druze culture that make Swaida one of the most fascinating destinations in the Middle East.',
+            video_play_label: 'Watch the Story',
+            offer_badge: 'Our Services',
+            offer_heading: 'Everything You Need\nfor an Unforgettable Journey',
+            offer_sub: 'From the moment you arrive to the moment you leave, we handle every detail so you can focus on the experience.',
+            offer_cta: 'Start Planning →',
+            svc1_title: 'Food & Drink',
+            svc1_desc: 'Savour authentic Druze cuisine — freshly baked flatbread, slow-cooked lamb, and locally harvested olive oil at family-run restaurants.',
+            svc2_title: 'Fast & Comfortable Travel',
+            svc2_desc: 'Air-conditioned vehicles with expert local guides. Direct routes from Damascus, Amman, or Beirut — door-to-door service available.',
+            svc3_title: 'Safety & Support',
+            svc3_desc: 'Experienced guides, comprehensive travel insurance, 24/7 emergency support, and well-marked trails at every archaeological site.',
+            svc4_title: 'Photography Tours',
+            svc4_desc: 'Dedicated tours timed for golden-hour light on ancient basalt ruins. Professional photographer-guides available for small groups.',
+            svc5_title: 'Accommodation',
+            svc5_desc: 'Handpicked local guesthouses and boutique hotels in traditional Haurani basalt stone architecture — sleep where history was made.',
+            svc6_title: 'Cultural Workshops',
+            svc6_desc: 'Mosaic restoration, traditional weaving, and Arabic calligraphy — learn from local artisans keeping 2,000-year-old crafts alive.',
+            banner_title: 'Welcome to the Basalt Mountain',
+            banner_sub: 'Book your trip today and enjoy 30% off all packages until end of season',
+            banner_btn: 'Book Now',
+            sec_weather: 'Best Time to Visit',
+            sec_weather_sub: 'Plan around Swaida\'s seasons, festivals, and ideal temperatures',
+            weather_best: 'Best months',
+            weather_avoid: 'Avoid (peak heat)',
+            sec_vt: 'Virtual Tour – Kanawat Ruins',
+            sec_vt_sub: 'Explore the ancient Roman city in an immersive 360° panorama before you visit',
+            vt_title: '360° Immersive Tour',
+            vt_desc: 'Stand inside the ancient Temple of Zeus at Kanawat. Drag to look around in every direction.',
+            vt_btn: 'Launch Virtual Tour',
+            vt_note: 'Use mouse drag or touch to look around. Scroll to zoom. Click ⛶ fullscreen for best experience.',
+            sec_booking: 'Book Your Trip',
+            sec_booking_sub: 'Reserve your place on the next available tour',
+            sec_faq: 'Frequently Asked\nQuestions',
+            sec_faq_sub: 'Everything you need to know before booking your Swaida experience.',
+            faq1_q: 'Do I need a visa to visit Swaida, Syria?',
+            faq2_q: 'What is the best time of year to visit?',
+            faq3_q: 'What is included in your tour packages?',
+            faq4_q: 'How large are the tour groups?',
+            faq5_q: 'What is your cancellation policy?',
+            sec_cal: 'Available Tour Dates',
+            sec_cal_sub: 'Check open spots and book your preferred date instantly',
+            cal_hint: 'Click any available date to jump to the booking form. Max 12 guests per tour.',
+            cal_cta: 'Check Availability →',
+            sec_blog: 'Travel Blog',
+            sec_blog_sub: 'Stories, events, and seasonal highlights from Swaida',
+            sec_reviews: 'Traveller Reviews',
+            sec_reviews_sub: 'What visitors say about their Swaida experience',
+            review_form_title: 'Share Your Experience',
+            footer_disc: 'Enjoy your trip with us',
+            footer_links: 'Quick Links',
+            footer_contact: 'Quick Contact',
+            footer_social: 'Follow Us',
+        },
+        ar: {
+            urgency_spots: 'لم يتبقَّ إلا 4 أماكن',
+            urgency_cta: 'احجز مكانك الآن ←',
+            nav_home: 'الرئيسية',
+            nav_destinations: 'الوجهات',
+            nav_gallery: 'معرض الصور',
+            nav_packages: 'الباقات',
+            nav_about: 'من نحن',
+            nav_book: 'احجز الآن',
+            nav_blog: 'المدونة',
+            nav_faq: 'الأسئلة الشائعة',
+            nav_contact: 'اتصل بنا',
+            hero_sub: 'أهلاً بكم في جبل العرب',
+            hero_tagline: 'اكتشف مدناً رومانية عريقة، ومناظر بركانية خلابة، وثقافة سورية أصيلة خالدة عبر الزمن',
+            hero_btn1: 'استكشف الآن',
+            hero_btn2: 'احجز رحلتك',
+            scroll_label: 'اسحب للأسفل',
+            stat1: 'موقع أثري',
+            stat2: 'زائر سعيد',
+            stat3: 'باقة سياحية',
+            stat4: '% رضا العملاء',
+            media_label: 'كما ورد في وتوصي به',
+            sec_destinations: 'وجهاتنا المميزة',
+            sec_destinations_sub: 'استكشف عجائب محافظة السويداء الأثرية',
+            dest_salkhad_name: 'صلخد',
+            dest_salkhad_desc: 'موطن قلعة صلخد الشهيرة، الحصن الأيوبي الذي يعود إلى القرن الثاني عشر، المتربع فوق مخروط بركاني يطل بمنظر بانورامي على سهل حوران.',
+            dest_shahba_name: 'شهبا',
+            dest_shahba_desc: 'فيلبوبوليس القديمة التي أسسها الإمبراطور الروماني فيليب العربي. مدينة رومانية محفوظة بشكل رائع تضم مسرحاً ومعابد وفسيفساء بديعة.',
+            dest_kanawat_name: 'قنوات',
+            dest_kanawat_desc: 'كناثا القديمة عضو مدن الديكابوليس العشر، تتميز بمعابد رومانية مذهلة وكنيسة بيزنطية وآثار حضارات متعددة تمتد ألفي عام.',
+            dest_swaida_name: 'مدينة السويداء',
+            dest_swaida_desc: 'العاصمة النابضة بالحياة للمحافظة، موطن متحف السويداء — أحد أرقى المتاحف السورية — والسوق القديم الذي يعرض التراث الدرزي والتقاليد الأصيلة.',
+            btn_explore: 'اكتشف',
+            btn_see_more: 'شاهد المزيد',
+            wishlist_title: 'رحلاتي المحفوظة',
+            wishlist_empty: 'لم تحفظ أي رحلات بعد.\nانقر على ♡ في أي بطاقة وجهة.',
+            sec_gallery: 'معرض الصور',
+            sec_gallery_sub: 'رحلة بصرية عبر مناظر السويداء وتراثها الحضاري',
+            video_sub: 'التراث والثقافة',
+            video_title: 'اختبر تاريخ السويداء الحي',
+            video_desc: 'شاهد الفيديو التعريفي لتكتشف المدن الرومانية العريقة، والكنائس البيزنطية، والثقافة الدرزية الحيّة التي تجعل السويداء من أكثر الوجهات إثارةً في الشرق الأوسط.',
+            video_play_label: 'شاهد القصة',
+            offer_badge: 'خدماتنا',
+            offer_heading: 'كل ما تحتاجه\nلرحلة لا تُنسى',
+            offer_sub: 'من لحظة وصولك حتى مغادرتك، نتولى كل التفاصيل حتى تتفرغ تماماً للتجربة.',
+            offer_cta: 'ابدأ التخطيط ←',
+            svc1_title: 'الطعام والشراب',
+            svc1_desc: 'استمتع بالمطبخ الدرزي الأصيل — خبز التنور الطازج، ولحم الغنم المطهو ببطء، وزيت الزيتون المحلي في مطاعم العائلات التقليدية.',
+            svc2_title: 'سفر سريع ومريح',
+            svc2_desc: 'مركبات مكيفة مع مرشدين محليين خبراء. مسارات مباشرة من دمشق أو عمّان أو بيروت — خدمة من الباب إلى الباب متاحة.',
+            svc3_title: 'الأمان والدعم',
+            svc3_desc: 'مرشدون ذوو خبرة، تأمين سفر شامل، دعم طارئ على مدار الساعة، ومسارات معلّمة بوضوح في كل موقع أثري.',
+            svc4_title: 'جولات التصوير',
+            svc4_desc: 'جولات مخصصة في ضوء الساعة الذهبية على الآثار البازلتية القديمة. مرشدون مصورون محترفون متاحون للمجموعات الصغيرة.',
+            svc5_title: 'الإقامة',
+            svc5_desc: 'دور ضيافة محلية وفنادق بوتيك منتقاة بعناية في مباني الحجر البازلتي الحوراني التقليدي — نم حيث صنع التاريخ.',
+            svc6_title: 'ورش العمل الثقافية',
+            svc6_desc: 'ترميم الفسيفساء والنسيج التقليدي والخط العربي — تعلّم من الحرفيين المحليين الذين يحيون حرفاً عمرها ألفا عام.',
+            banner_title: 'أهلاً بكم في جبل العرب',
+            banner_sub: 'احجز رحلتك اليوم واستمتع بخصم 30% على جميع الباقات حتى نهاية الموسم',
+            banner_btn: 'احجز الآن',
+            sec_weather: 'أفضل وقت للزيارة',
+            sec_weather_sub: 'خطط وفق مواسم السويداء ومهرجاناتها ودرجات حرارتها المثالية',
+            weather_best: 'أفضل الأشهر',
+            weather_avoid: 'تجنب (ذروة الحر)',
+            sec_vt: 'جولة افتراضية – آثار قنوات',
+            sec_vt_sub: 'استكشف المدينة الرومانية القديمة في بانوراما 360° قبل زيارتك',
+            vt_title: 'جولة تفاعلية 360°',
+            vt_desc: 'قف داخل معبد زيوس الأثري في قنوات. اسحب للنظر في كل الاتجاهات.',
+            vt_btn: 'انطلق في الجولة الافتراضية',
+            vt_note: 'استخدم الفأرة أو اللمس للنظر حولك. مرر للتكبير. انقر على ⛶ للشاشة الكاملة لأفضل تجربة.',
+            sec_booking: 'احجز رحلتك',
+            sec_booking_sub: 'احجز مكانك في الجولة القادمة المتاحة',
+            sec_faq: 'الأسئلة\nالمتكررة',
+            sec_faq_sub: 'كل ما تحتاج معرفته قبل حجز تجربتك في السويداء.',
+            faq1_q: 'هل أحتاج إلى تأشيرة لزيارة السويداء في سوريا؟',
+            faq2_q: 'ما هو أفضل وقت في السنة للزيارة؟',
+            faq3_q: 'ماذا يشمل برنامج الجولة؟',
+            faq4_q: 'ما حجم مجموعات الجولات؟',
+            faq5_q: 'ما هي سياسة الإلغاء لديكم؟',
+            sec_cal: 'مواعيد الجولات المتاحة',
+            sec_cal_sub: 'تحقق من الأماكن المتاحة واحجز تاريخك المفضل فوراً',
+            cal_hint: 'انقر على أي تاريخ متاح للانتقال إلى نموذج الحجز. الحد الأقصى 12 ضيفاً لكل جولة.',
+            cal_cta: 'تحقق من التوفر ←',
+            sec_blog: 'مدونة السفر',
+            sec_blog_sub: 'قصص وأحداث وأبرز المستجدات الموسمية من السويداء',
+            sec_reviews: 'آراء المسافرين',
+            sec_reviews_sub: 'ما يقوله الزوار عن تجربتهم في السويداء',
+            review_form_title: 'شاركنا تجربتك',
+            footer_disc: 'استمتع برحلتك معنا',
+            footer_links: 'روابط سريعة',
+            footer_contact: 'تواصل معنا',
+            footer_social: 'تابعنا',
+        }
     };
-    var enLabels = {};
-    function applyLangToggle() {
-        isArabic = !isArabic;
-        document.getElementById('langLabel').textContent = isArabic ? 'English' : 'العربية';
-        document.getElementById('langLabelFixed').textContent = isArabic ? 'EN' : 'AR';
-        document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
-        document.documentElement.setAttribute('lang', isArabic ? 'ar' : 'en');
 
-        // Swap nav link labels
-        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        var enNav = ['Home','Destinations','Gallery','Packages','About Us','Book Now','Blog','FAQ','Contact'];
-        var arNav = ['الرئيسية','الوجهات','معرض الصور','الباقات','من نحن','احجز الآن','المدونة','الأسئلة الشائعة','اتصل بنا'];
-        navLinks.forEach(function(link, i) {
-            if (isArabic && arNav[i]) link.textContent = arNav[i];
-            else if (!isArabic && enNav[i]) link.textContent = enNav[i];
+    function applyLang(l) {
+        lang = l;
+        localStorage.setItem('vsLang', l);
+        var t = translations[l];
+        var isAr = l === 'ar';
+
+        // Direction & lang attribute
+        document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', isAr ? 'ar' : 'en');
+
+        // Translate all [data-i18n] elements
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
         });
 
-        // Swap section headings
-        var headings = document.querySelectorAll('.section-header h2');
-        var enH = ['Discover Swaida','Our Services','Book Your Trip','Our Gallery','What We Offer','Best Time to Visit','Virtual 360° Tour','Explore Our Destinations','History of Swaida','Travel Blog','Traveller Reviews','Frequently Asked Questions','Location & Contact'];
-        var arH = ['اكتشف السويداء','خدماتنا','احجز رحلتك','معرض صورنا','ما نقدمه','أفضل وقت للزيارة','جولة افتراضية 360°','استكشف وجهاتنا','تاريخ السويداء','مدونة السفر','آراء المسافرين','الأسئلة الشائعة','الموقع والتواصل'];
-        headings.forEach(function(h, i) {
-            if (isArabic && arH[i]) h.textContent = arH[i];
-            else if (!isArabic && enH[i]) h.textContent = enH[i];
+        // Month buttons (special case — keep ✦ markers)
+        var arMonths = ['يناير','فبراير','مارس','أبريل ✦','مايو ✦','يونيو','يوليو','أغسطس','سبتمبر ✦','أكتوبر ✦','نوفمبر','ديسمبر'];
+        var enMonths = ['Jan','Feb','Mar','Apr ✦','May ✦','Jun','Jul','Aug','Sep ✦','Oct ✦','Nov','Dec'];
+        document.querySelectorAll('.wm-btn').forEach(function(btn, i) {
+            btn.textContent = isAr ? (arMonths[i] || '') : (enMonths[i] || '');
         });
+
+        // Toggle button labels
+        var label = isAr ? 'EN' : 'AR';
+        var labelLong = isAr ? 'English' : 'العربية';
+        var fixedEl = document.getElementById('langLabelFixed');
+        var navEl   = document.getElementById('langLabel');
+        if (fixedEl) fixedEl.textContent = label;
+        if (navEl)   navEl.textContent   = labelLong;
+
+        // Wishlist empty message (has line break)
+        var emptyEl = document.querySelector('.wishlist-empty');
+        if (emptyEl) emptyEl.innerHTML = isAr
+            ? 'لم تحفظ أي رحلات بعد.<br>انقر على <i class="fa fa-heart-o"></i> في أي بطاقة وجهة.'
+            : 'No trips saved yet.<br>Tap the <i class="fa fa-heart-o"></i> on any destination card.';
     }
-    document.getElementById('langToggle').addEventListener('click', applyLangToggle);
-    document.getElementById('langToggleFixed').addEventListener('click', applyLangToggle);
+
+    // Wire both toggle buttons
+    ['langToggle', 'langToggleFixed'].forEach(function(id) {
+        var btn = document.getElementById(id);
+        if (btn) btn.addEventListener('click', function() {
+            applyLang(lang === 'en' ? 'ar' : 'en');
+        });
+    });
+
+    // Apply saved language on page load
+    applyLang(lang);
 })();
 </script>
 </body>
