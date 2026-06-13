@@ -32,10 +32,10 @@
     <div class="urgency-inner">
         <span class="urgency-pulse"></span>
         <span class="urgency-text">
-            <strong>Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
+            <strong data-i18n="urgency_spots">Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
             Offer ends in <span id="urgencyCountdown" class="urgency-timer">00:00:00</span>
         </span>
-        <a href="#booking" class="urgency-cta">Grab Your Spot →</a>
+        <a href="#booking" class="urgency-cta" data-i18n="urgency_cta">Grab Your Spot →</a>
     </div>
     <button class="urgency-close" id="urgencyClose" aria-label="Close">✕</button>
 </div>
@@ -60,15 +60,15 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-i18n="nav_home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav_destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packages.html" data-i18n="nav_packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking" data-i18n="nav_book">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog" data-i18n="nav_blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq" data-i18n="nav_faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
                     <li class="nav-item">
                         <button class="lang-toggle" id="langToggle" title="Switch to Arabic / التبديل للعربية">
                             <i class="fa fa-globe"></i> <span id="langLabel">العربية</span>
@@ -88,22 +88,22 @@
     <div class="hero-parallax">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200">Welcome to the Basalt Mountain</p>
+            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200" data-i18n="hero_sub">Welcome to the Basalt Mountain</p>
             <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="400">
                 Visit <span id="typed-destination">Swaida</span>
             </h1>
             <div class="hero-title-divider" data-aos="fade-up" data-aos-delay="550"></div>
-            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600" data-i18n="hero_tagline">
                 Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture
             </p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                <a href="#about" class="btn btn-hero-primary">Explore Now</a>
-                <a href="#booking" class="btn btn-hero-outline">Book a Trip</a>
+                <a href="#about" class="btn btn-hero-primary" data-i18n="hero_btn1">Explore Now</a>
+                <a href="#booking" class="btn btn-hero-outline" data-i18n="hero_btn2">Book a Trip</a>
             </div>
         </div>
         <div class="hero-scroll-indicator" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
             <div class="scroll-mouse"></div>
-            <span class="scroll-label">Scroll</span>
+            <span class="scroll-label" data-i18n="scroll_label">Scroll</span>
         </div>
     </div>
 </header>
@@ -116,28 +116,28 @@
                 <div class="stat-item">
                     <i class="fa fa-map-marker"></i>
                     <h3 class="counter" data-target="47">0</h3>
-                    <p>Archaeological Sites</p>
+                    <p data-i18n="stat1">Archaeological Sites</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-item">
                     <i class="fa fa-users"></i>
                     <h3 class="counter" data-target="12400">0</h3>
-                    <p>Happy Visitors</p>
+                    <p data-i18n="stat2">Happy Visitors</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-item">
                     <i class="fa fa-trophy"></i>
                     <h3 class="counter" data-target="15">0</h3>
-                    <p>Tour Packages</p>
+                    <p data-i18n="stat3">Tour Packages</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-item">
                     <i class="fa fa-star"></i>
                     <h3 class="counter" data-target="98">0</h3>
-                    <p>% Satisfaction</p>
+                    <p data-i18n="stat4">% Satisfaction</p>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
 
 <!-- ═══════════════════════════════ MEDIA MENTIONS STRIP ═══════════════════════════════ -->
 <section class="media-strip">
-    <div class="media-strip-label">As featured in &amp; trusted by</div>
+    <div class="media-strip-label" data-i18n="media_label">As featured in &amp; trusted by</div>
     <div class="media-track-wrapper">
         <div class="media-track">
             <div class="media-logo"><i class="fa fa-globe"></i><span>National Geographic</span></div>
@@ -171,8 +171,8 @@
 <!-- ═══════════════════════════════ FEATURED DESTINATIONS ═══════════════════════════════ -->
 <section class="feature" id="about">
     <div class="section-header" data-aos="fade-up">
-        <h2>Featured Destinations</h2>
-        <p class="section-sub">Explore the ancient wonders of the Swaida Governorate</p>
+        <h2 data-i18n="sec_destinations">Featured Destinations</h2>
+        <p class="section-sub" data-i18n="sec_destinations_sub">Explore the ancient wonders of the Swaida Governorate</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
@@ -190,14 +190,14 @@
                         <button class="wishlist-btn" data-dest="salkhad" data-name="Salkhad" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Salkhad</h4>
-                        <p>Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
+                        <h4 data-i18n="dest_salkhad_name">Salkhad</h4>
+                        <p data-i18n="dest_salkhad_desc">Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Salkhad</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -214,14 +214,14 @@
                         <button class="wishlist-btn" data-dest="shahba" data-name="Shahba" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Shahba</h4>
-                        <p>Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
+                        <h4 data-i18n="dest_shahba_name">Shahba</h4>
+                        <p data-i18n="dest_shahba_desc">Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Swaida</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
-                        <a href="shahba.html" class="btn btn-block btn-sm mt-2">Explore</a>
+                        <a href="shahba.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
                     </div>
                 </div>
             </div>
@@ -238,8 +238,8 @@
                         <button class="wishlist-btn" data-dest="kanawat" data-name="Kanawat" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4>Kanawat</h4>
-                        <p>Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
+                        <h4 data-i18n="dest_kanawat_name">Kanawat</h4>
+                        <p data-i18n="dest_kanawat_desc">Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
                         <div class="feature-meta">
                             <span class="fa fa-map-marker"> Swaida</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
