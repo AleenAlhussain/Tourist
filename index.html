@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Swaida – Basalt Mountain Heritage</title>
+    <title>Visit Damascus – Capital of the Ancient World</title>
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="libs/bootstrap.min.css">
@@ -32,7 +32,7 @@
     <div class="urgency-inner">
         <span class="urgency-pulse"></span>
         <span class="urgency-text">
-            <strong data-i18n="urgency_spots">Only 4 spots left</strong> for the May Heritage Tour &nbsp;·&nbsp;
+            <strong data-i18n="urgency_spots">Only 4 spots left</strong> for the Damascus Old City Tour &nbsp;·&nbsp;
             Offer ends in <span id="urgencyCountdown" class="urgency-timer">00:00:00</span>
         </span>
         <a href="#booking" class="urgency-cta" data-i18n="urgency_cta">Grab Your Spot →</a>
@@ -55,7 +55,7 @@
             <a class="navbar-brand" href="#home">
                 <img src="images/logo4.png" alt="Swaida Logo" class="logo" style="width:100px;height:auto !important;">
             </a>
-            <button class="navbar-toggler m-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -74,18 +74,22 @@
         </div>
     </nav>
 
+    <!-- Fixed language toggle always visible -->
+    <button class="lang-toggle-fixed" id="langToggleFixed" title="Switch to Arabic / التبديل للعربية">
+        <i class="fa fa-globe"></i> <span id="langLabelFixed">AR</span>
+    </button>
 
     <!-- ─── HERO ─── -->
     <div class="hero-parallax">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200" data-i18n="hero_sub">Welcome to the Basalt Mountain</p>
+            <p class="hero-sub" data-aos="fade-down" data-aos-delay="200" data-i18n="hero_sub">Welcome to the Ancient Capital</p>
             <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="400">
-                Visit <span id="typed-destination">Swaida</span>
+                Visit <span id="typed-destination">Damascus</span>
             </h1>
             <div class="hero-title-divider" data-aos="fade-up" data-aos-delay="550"></div>
             <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600" data-i18n="hero_tagline">
-                Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture
+                Discover one of the world's oldest cities — ancient souqs, Umayyad grandeur, and timeless Syrian hospitality
             </p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
                 <a href="#about" class="btn btn-hero-primary" data-i18n="hero_btn1">Explore Now</a>
@@ -106,8 +110,8 @@
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="stat-item">
                     <i class="fa fa-map-marker"></i>
-                    <h3 class="counter" data-target="47">0</h3>
-                    <p data-i18n="stat1">Archaeological Sites</p>
+                    <h3 class="counter" data-target="3000">0</h3>
+                    <p data-i18n="stat1">Years of History</p>
                 </div>
             </div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
@@ -163,76 +167,28 @@
 <section class="feature" id="about">
     <div class="section-header" data-aos="fade-up">
         <h2 data-i18n="sec_destinations">Featured Destinations</h2>
-        <p class="section-sub" data-i18n="sec_destinations_sub">Explore the ancient wonders of the Swaida Governorate</p>
+        <p class="section-sub" data-i18n="sec_destinations_sub">Explore the ancient wonders of Damascus, Syria's eternal capital</p>
         <span class="section-divider"></span>
     </div>
     <div class="container">
         <div class="row">
-            <!-- Salkhad -->
+            <!-- Old City of Damascus -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
                 <div class="feature-box">
                     <div class="feature-img">
-                        <img src="images/salkhadd.jpg" alt="Salkhad Castle">
+                        <img src="images/salkhadd.jpg" alt="Old City of Damascus">
                         <div class="price"><p>78$</p></div>
                         <div class="rating">
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
-                        <button class="wishlist-btn" data-dest="salkhad" data-name="Salkhad" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <button class="wishlist-btn" data-dest="oldcity" data-name="Old City" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4 data-i18n="dest_salkhad_name">Salkhad</h4>
-                        <p data-i18n="dest_salkhad_desc">Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.</p>
+                        <h4 data-i18n="dest_salkhad_name">Old City</h4>
+                        <p data-i18n="dest_salkhad_desc">A UNESCO World Heritage Site and one of the oldest continuously inhabited cities on earth. A labyrinth of ancient lanes, medieval khans, mosques, churches, and Ottoman palaces spanning 8,000 years.</p>
                         <div class="feature-meta">
-                            <span class="fa fa-map-marker"> Salkhad</span>
-                            <span class="fa fa-sun-o"> 4 Days</span>
-                            <span class="fa fa-moon-o"> 3 Nights</span>
-                        </div>
-                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Shahba -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-box">
-                    <div class="feature-img">
-                        <img src="images/shahba.jpg" alt="Shahba Roman City">
-                        <div class="price"><p>67$</p></div>
-                        <div class="rating">
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
-                        </div>
-                        <button class="wishlist-btn" data-dest="shahba" data-name="Shahba" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
-                    </div>
-                    <div class="feature-details">
-                        <h4 data-i18n="dest_shahba_name">Shahba</h4>
-                        <p data-i18n="dest_shahba_desc">Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.</p>
-                        <div class="feature-meta">
-                            <span class="fa fa-map-marker"> Swaida</span>
-                            <span class="fa fa-sun-o"> 4 Days</span>
-                            <span class="fa fa-moon-o"> 3 Nights</span>
-                        </div>
-                        <a href="shahba.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Kanawat -->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-box">
-                    <div class="feature-img">
-                        <img src="images/kanawat.jpg" alt="Kanawat Ruins">
-                        <div class="price"><p>88$</p></div>
-                        <div class="rating">
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
-                        </div>
-                        <button class="wishlist-btn" data-dest="kanawat" data-name="Kanawat" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
-                    </div>
-                    <div class="feature-details">
-                        <h4 data-i18n="dest_kanawat_name">Kanawat</h4>
-                        <p data-i18n="dest_kanawat_desc">Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.</p>
-                        <div class="feature-meta">
-                            <span class="fa fa-map-marker"> Swaida</span>
+                            <span class="fa fa-map-marker"> Damascus</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
@@ -240,23 +196,71 @@
                     </div>
                 </div>
             </div>
-            <!-- Swaida City -->
+            <!-- Umayyad Mosque -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/shahba.jpg" alt="Umayyad Mosque, Damascus">
+                        <div class="price"><p>67$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                        <button class="wishlist-btn" data-dest="umayyad" data-name="Umayyad Mosque" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                    </div>
+                    <div class="feature-details">
+                        <h4 data-i18n="dest_shahba_name">Umayyad Mosque</h4>
+                        <p data-i18n="dest_shahba_desc">Built in 705 AD by Caliph Al-Walid I, the Umayyad Mosque is one of the largest and oldest mosques in the world, built over a 1st-century Roman temple and a Byzantine cathedral.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Damascus</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="shahba.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Al-Hamidiyya Souq -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="images/kanawat.jpg" alt="Al-Hamidiyya Souq, Damascus">
+                        <div class="price"><p>88$</p></div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                        <button class="wishlist-btn" data-dest="souq" data-name="Al-Hamidiyya Souq" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                    </div>
+                    <div class="feature-details">
+                        <h4 data-i18n="dest_kanawat_name">Al-Hamidiyya Souq</h4>
+                        <p data-i18n="dest_kanawat_desc">Damascus's most famous covered market, stretching 600 metres through the heart of the old city. Built in the 19th century, it leads directly to the Umayyad Mosque through a grand arched iron roof.</p>
+                        <div class="feature-meta">
+                            <span class="fa fa-map-marker"> Damascus</span>
+                            <span class="fa fa-sun-o"> 4 Days</span>
+                            <span class="fa fa-moon-o"> 3 Nights</span>
+                        </div>
+                        <a href="salkhad.html" class="btn btn-block btn-sm mt-2" data-i18n="btn_explore">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mount Qasioun -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="400">
                 <div class="feature-box">
                     <div class="feature-img">
-                        <img src="images/swaida.jpg" alt="Swaida City">
+                        <img src="images/swaida.jpg" alt="Mount Qasioun, Damascus">
                         <div class="price"><p>95$</p></div>
                         <div class="rating">
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
                         </div>
-                        <button class="wishlist-btn" data-dest="swaida" data-name="Swaida City" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <button class="wishlist-btn" data-dest="qasioun" data-name="Mount Qasioun" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
                     </div>
                     <div class="feature-details">
-                        <h4 data-i18n="dest_swaida_name">Swaida City</h4>
-                        <p data-i18n="dest_swaida_desc">The vibrant capital of the governorate, home to the Swaida Museum — one of Syria's finest — and the lively old market showcasing Druze culture and traditions.</p>
+                        <h4 data-i18n="dest_swaida_name">Mount Qasioun</h4>
+                        <p data-i18n="dest_swaida_desc">The sacred mountain overlooking Damascus from 1,151m altitude. According to tradition, this is where Cain slew Abel. Today it offers the most spectacular panoramic views over the city, especially at night.</p>
                         <div class="feature-meta">
-                            <span class="fa fa-map-marker"> Swaida</span>
+                            <span class="fa fa-map-marker"> Damascus</span>
                             <span class="fa fa-sun-o"> 4 Days</span>
                             <span class="fa fa-moon-o"> 3 Nights</span>
                         </div>
@@ -339,9 +343,9 @@
 <section class="video-section">
     <div class="video-parallax-bg"></div>
     <div class="video-content" data-aos="zoom-in">
-        <p class="section-sub-light" data-i18n="video_sub">Heritage & Culture</p>
-        <h2 data-i18n="video_title">Experience Swaida's Living History</h2>
-        <p data-i18n="video_desc">Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant Druze culture that make Swaida one of the most fascinating destinations in the Middle East.</p>
+        <p class="section-sub-light" data-i18n="video_sub">Heritage & Civilisation</p>
+        <h2 data-i18n="video_title">Experience Damascus, City of Jasmine</h2>
+        <p data-i18n="video_desc">Watch our introductory video to discover the ancient Umayyad Mosque, the bustling souqs, the Christian quarter of Bab Touma, and the vibrant street life that makes Damascus one of the world's most captivating cities.</p>
         <button class="btn-play" id="videoPlayBtn" data-toggle="modal" data-target="#videoModal">
             <i class="fa fa-play"></i>
         </button>
@@ -462,7 +466,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-8 col-12" data-aos="fade-right">
-                        <h2 data-i18n="banner_title">Welcome to the Basalt Mountain</h2>
+                        <h2 data-i18n="banner_title">Welcome to Damascus, City of Jasmine</h2>
                         <p data-i18n="banner_sub">Book your trip today and enjoy 30% off all packages until end of season</p>
                     </div>
                     <div class="col-md-4 col-12 text-center" data-aos="fade-left">
@@ -479,7 +483,7 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <h2 data-i18n="sec_weather">Best Time to Visit</h2>
-            <p class="section-sub" data-i18n="sec_weather_sub">Plan around Swaida's seasons, festivals, and ideal temperatures</p>
+            <p class="section-sub" data-i18n="sec_weather_sub">Plan around Damascus's seasons, festivals, and Mediterranean temperatures</p>
             <span class="section-divider"></span>
         </div>
         <div class="weather-grid" data-aos="fade-up">
@@ -518,8 +522,8 @@
 <section class="virtual-tour-section" id="virtualtour">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 data-i18n="sec_vt">Virtual Tour – Kanawat Ruins</h2>
-            <p class="section-sub" data-i18n="sec_vt_sub">Explore the ancient Roman city in an immersive 360° panorama before you visit</p>
+            <h2 data-i18n="sec_vt">Virtual Tour – Old City of Damascus</h2>
+            <p class="section-sub" data-i18n="sec_vt_sub">Walk through the ancient lanes and markets of one of the world's oldest inhabited cities</p>
             <span class="section-divider"></span>
         </div>
         <div class="vt-wrapper" data-aos="zoom-in">
@@ -527,10 +531,10 @@
                 <div class="vt-overlay-inner">
                     <div class="vt-play-icon"><i class="fa fa-street-view"></i></div>
                     <h4 data-i18n="vt_title">360° Immersive Tour</h4>
-                    <p data-i18n="vt_desc">Stand inside the ancient Temple of Zeus at Kanawat.<br>Drag to look around in every direction.</p>
+                    <p data-i18n="vt_desc">Stand inside the ancient Umayyad Mosque courtyard in Damascus. Drag to look around in every direction.</p>
                     <button class="btn btn-hero-primary" id="vtLaunch" data-i18n="vt_btn">Launch Virtual Tour</button>
                 </div>
-                <img src="images/kanawat1.jpg" alt="Kanawat 360 Preview" class="vt-preview-img">
+                <img src="images/kanawat1.jpg" alt="Damascus Old City 360 Preview" class="vt-preview-img">
             </div>
             <div id="panoramaViewer" style="display:none;width:100%;height:500px;border-radius:14px;overflow:hidden;"></div>
         </div>
@@ -818,8 +822,8 @@
                             <span><i class="fa fa-calendar"></i> April 2024</span>
                             <span><i class="fa fa-clock-o"></i> 5 min read</span>
                         </div>
-                        <h5>Spring Festival of the Basalt Mountain</h5>
-                        <p>Every April, Swaida bursts into color as locals celebrate the spring harvest with traditional music, folk dancing, and open-air markets stretching through the old city.</p>
+                        <h5>Damascus in Spring: The City of Jasmine in Full Bloom</h5>
+                        <p>Every spring, Damascus transforms as jasmine covers every doorway and street corner. Locals celebrate with open-air markets, folk music in the old city squares, and traditional sweets sold from every corner stall.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -835,8 +839,8 @@
                             <span><i class="fa fa-calendar"></i> March 2024</span>
                             <span><i class="fa fa-clock-o"></i> 8 min read</span>
                         </div>
-                        <h5>10 Things You Didn't Know About Shahba</h5>
-                        <p>Founded by Emperor Philip the Arab in 244 AD as his imperial capital, Shahba hides secrets most visitors walk right past. Here are the ten most surprising facts about ancient Philippopolis.</p>
+                        <h5>10 Things You Didn't Know About the Umayyad Mosque</h5>
+                        <p>Built in 705 AD on a site that was once a Roman temple and later a Byzantine cathedral, the Umayyad Mosque holds secrets that most visitors walk right past. Here are ten surprising facts about this UNESCO treasure.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -852,8 +856,8 @@
                             <span><i class="fa fa-calendar"></i> February 2024</span>
                             <span><i class="fa fa-clock-o"></i> 6 min read</span>
                         </div>
-                        <h5>Salkhad Castle at Sunset – A Photographer's Guide</h5>
-                        <p>Perched on a volcanic cone visible from 50 km away, Salkhad Castle is one of the most photogenic medieval fortresses in the Middle East. Here's exactly where to stand for the best shot.</p>
+                        <h5>Mount Qasioun at Night – A Photographer's Guide</h5>
+                        <p>Overlooking Damascus from 1,151m, Mount Qasioun offers the most spectacular nighttime panorama in Syria. Here's exactly when to go, where to stand, and which lens to bring for the perfect city-light shot.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -869,8 +873,8 @@
                             <span><i class="fa fa-calendar"></i> January 2024</span>
                             <span><i class="fa fa-clock-o"></i> 7 min read</span>
                         </div>
-                        <h5>Druze Culture: Traditions You'll Experience in Swaida</h5>
-                        <p>From the coffee ceremony to the mezze feast, from the elders' council to the embroidered thobe — a traveller's guide to Druze customs and how to respect them.</p>
+                        <h5>Damascus Culture: Traditions You'll Experience in the Old City</h5>
+                        <p>From the coffee ceremony in a Damascene courtyard to the call to prayer echoing through the Umayyad Mosque, from the hammam ritual to the night-market dinner — a traveller's guide to experiencing Damascus like a local.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -886,8 +890,8 @@
                             <span><i class="fa fa-calendar"></i> December 2023</span>
                             <span><i class="fa fa-clock-o"></i> 9 min read</span>
                         </div>
-                        <h5>The Ultimate First-Timer's Guide to Swaida</h5>
-                        <p>How to get there, what to wear, what to eat, which sites to prioritise, and everything else a first-time visitor needs to know about the Basalt Mountain.</p>
+                        <h5>The Ultimate First-Timer's Guide to Damascus</h5>
+                        <p>How to get there, what to wear, which neighbourhoods to stay in, what to eat, and which sites to prioritise — everything a first-time visitor needs to know before landing in Damascus.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -903,8 +907,8 @@
                             <span><i class="fa fa-calendar"></i> November 2023</span>
                             <span><i class="fa fa-clock-o"></i> 5 min read</span>
                         </div>
-                        <h5>What to Eat in Swaida: A Local Food Guide</h5>
-                        <p>Kibbeh bil-sayniyeh, freekeh soup, za'atar-pressed olive oil, and the best place to drink Turkish coffee in the old souk. A food lover's guide to eating like a local.</p>
+                        <h5>What to Eat in Damascus: A Local Food Guide</h5>
+                        <p>Fatteh, kibbeh, shawarma from the legendary Al-Sham vendors, baklava from Bab Touma, and the best spot for Syrian ice cream in the old souq. A food-lover's guide to eating Damascus like a local.</p>
                         <a href="#" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -971,9 +975,9 @@
                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                         <i class="fa fa-star"></i><i class="fa fa-star"></i>
                     </div>
-                    <p>"The Kanawat ruins exceeded every expectation. Walking among 2,000-year-old Roman temples with virtually no crowds is an experience I will never forget. The local guide was exceptional."</p>
-                    <h5>Pravel Sharma</h5>
-                    <small>Kanawat</small>
+                    <p>"Walking through the Umayyad Mosque at dawn, before the crowds arrive, is one of the most moving experiences of my life. The guides from Visit Damascus knew every story behind every stone. Absolutely unforgettable."</p>
+                    <h5>Omar Al-Hassan</h5>
+                    <small>Damascus Old City</small>
                 </div>
                 <img src="images/feedback.jpg" alt="Pravel Sharma">
             </div>
@@ -983,9 +987,9 @@
                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                         <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
                     </div>
-                    <p>"Shahba is an archaeologist's dream. We spent an entire day there and still didn't see everything. The mosaics in the local museum are world-class. The booking process was seamless."</p>
+                    <p>"The Old City of Damascus is an archaeologist's dream. We spent three full days there and still didn't see everything. The Azem Palace, the hammams, the hidden khans — world class. The booking process was seamless."</p>
                     <h5>Maria Fontaine</h5>
-                    <small>Shahba</small>
+                    <small>Damascus</small>
                 </div>
                 <img src="images/re2.jpeg" alt="Maria Fontaine">
             </div>
@@ -995,9 +999,9 @@
                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                         <i class="fa fa-star"></i><i class="fa fa-star"></i>
                     </div>
-                    <p>"Standing on top of Salkhad Castle watching the sunset over the volcanic landscape — that moment alone was worth the entire trip. Absolutely magical. 10/10 would return."</p>
-                    <h5>Omar Al-Hassan</h5>
-                    <small>Salkhad</small>
+                    <p>"Watching the city of Damascus light up at night from Mount Qasioun — thousands of lights stretching to the horizon — was the single most beautiful thing I've seen in five years of travel. Magical beyond words."</p>
+                    <h5>Layla Nassar</h5>
+                    <small>Mount Qasioun</small>
                 </div>
                 <img src="images/reviw.jpg" alt="Omar Al-Hassan">
             </div>
@@ -1184,7 +1188,7 @@
 
                     <div class="faq-item">
                         <button class="faq-q" data-target="faq1">
-                            <span data-i18n="faq1_q">Do I need a visa to visit Swaida, Syria?</span>
+                            <span data-i18n="faq1_q">Do I need a visa to visit Damascus, Syria?</span>
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq1">
@@ -1198,7 +1202,7 @@
                             <i class="fa fa-plus faq-icon"></i>
                         </button>
                         <div class="faq-a" id="faq2">
-                            <p>Spring (March–May) is the most beautiful season — wildflowers cover the volcanic plateau, temperatures are mild (15–25°C), and the annual Spring Festival takes place in April. Autumn (September–November) is also excellent. Summer can be hot (30–38°C) but manageable at Swaida's elevation of 1,000m. We do not recommend mid-July to mid-August for outdoor archaeological tours.</p>
+                            <p>Spring (March–May) is the most pleasant season in Damascus — temperatures range 15–25°C, the jasmine is in bloom, and the city's gardens and parks are at their most beautiful. Autumn (September–November) is equally wonderful.</p>
                         </div>
                     </div>
 
@@ -1282,7 +1286,7 @@
                 <h4 data-i18n="footer_contact">Quick Contact</h4>
                 <a href="tel:+963997395229" class="icon"><i class="fa fa-phone-square"></i>+963 997 395 229</a>
                 <a href="mailto:aleenalhussain11@gmail.com" class="icon"><i class="fa fa-envelope"></i>aleenalhussain11@gmail.com</a>
-                <a href="#" class="icon"><i class="fa fa-home"></i>Syria, Swaida Governorate</a>
+                <a href="#" class="icon"><i class="fa fa-home"></i>Syria, Damascus</a>
             </div>
             <div class="col-md-3 col-12">
                 <h4 class="follow" data-i18n="footer_social">Follow Us</h4>
@@ -1293,7 +1297,7 @@
             </div>
         </div>
         <hr>
-        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2022 Visit Swaida</p>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Aleen Alhussain &nbsp;|&nbsp; &copy; 2024 Visit Damascus</p>
     </div>
 </section>
 
@@ -1331,6 +1335,13 @@
         </div>
     </div>
 </div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/963997395229?text=Hello%20Visit%20Swaida!%20I'd%20like%20to%20book%20a%20tour."
+   class="whatsapp-fab" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <i class="fa fa-whatsapp"></i>
+    <span class="whatsapp-label">WhatsApp Us</span>
+</a>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
@@ -1536,7 +1547,7 @@ $('#backToTop').click(function() {
 });
 
 // ─── Typed Destination ───
-var destinations = ['Swaida', 'Kanawat', 'Shahba', 'Salkhad'];
+var destinations = ['Damascus', 'Old City', 'Umayyad', 'Qasioun'];
 var dIdx = 0;
 function typeDestination() {
     var el = document.getElementById('typed-destination');
@@ -1893,35 +1904,35 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
             nav_blog: 'Blog',
             nav_faq: 'FAQ',
             nav_contact: 'Contact',
-            hero_sub: 'Welcome to the Basalt Mountain',
-            hero_tagline: 'Discover ancient Roman cities, volcanic landscapes, and timeless Syrian culture',
+            hero_sub: 'Welcome to the Ancient Capital',
+            hero_tagline: 'Discover one of the world\'s oldest cities — ancient souqs, Umayyad grandeur, and timeless Syrian hospitality',
             hero_btn1: 'Explore Now',
             hero_btn2: 'Book a Trip',
             scroll_label: 'Scroll',
-            stat1: 'Archaeological Sites',
+            stat1: 'Years of History',
             stat2: 'Happy Visitors',
             stat3: 'Tour Packages',
             stat4: '% Satisfaction',
             media_label: 'As featured in & trusted by',
             sec_destinations: 'Featured Destinations',
-            sec_destinations_sub: 'Explore the ancient wonders of the Swaida Governorate',
-            dest_salkhad_name: 'Salkhad',
-            dest_salkhad_desc: 'Home to the magnificent Salkhad Castle, a 12th-century Ayyubid fortress perched atop a volcanic cone with panoramic views of the Hauran plain.',
-            dest_shahba_name: 'Shahba',
-            dest_shahba_desc: 'Ancient Philippopolis, founded by Roman Emperor Philip the Arab. A remarkably preserved Roman city with a theater, temples, and exquisite mosaics.',
-            dest_kanawat_name: 'Kanawat',
-            dest_kanawat_desc: 'Ancient Canatha of the Decapolis, featuring stunning Roman temples, a Byzantine basilica, and ruins from multiple civilizations spanning 2,000 years.',
-            dest_swaida_name: 'Swaida City',
-            dest_swaida_desc: 'The vibrant capital of the governorate, home to the Swaida Museum — one of Syria\'s finest — and the lively old market showcasing Druze culture and traditions.',
+            sec_destinations_sub: 'Explore the ancient wonders of Damascus, Syria\'s eternal capital',
+            dest_salkhad_name: 'Old City',
+            dest_salkhad_desc: 'A UNESCO World Heritage Site and one of the oldest continuously inhabited cities on earth. A labyrinth of ancient lanes, medieval khans, mosques, churches, and Ottoman palaces.',
+            dest_shahba_name: 'Umayyad Mosque',
+            dest_shahba_desc: 'Built in 705 AD by Caliph Al-Walid I, one of the largest and oldest mosques in the world, built over a Roman temple and a Byzantine cathedral.',
+            dest_kanawat_name: 'Al-Hamidiyya Souq',
+            dest_kanawat_desc: 'Damascus\'s most famous covered market, 600 metres of history leading directly to the Umayyad Mosque through a grand 19th-century arched iron roof.',
+            dest_swaida_name: 'Mount Qasioun',
+            dest_swaida_desc: 'The sacred mountain overlooking Damascus from 1,151m. Legendary site and home to the most spectacular panoramic views over the city, especially at night.',
             btn_explore: 'Explore',
             btn_see_more: 'See More',
             wishlist_title: 'My Saved Trips',
             wishlist_empty: 'No trips saved yet.\nTap the ♡ on any destination card.',
             sec_gallery: 'Travelling Gallery',
             sec_gallery_sub: 'A visual journey through Swaida\'s landscapes and heritage',
-            video_sub: 'Heritage & Culture',
-            video_title: 'Experience Swaida\'s Living History',
-            video_desc: 'Watch our introductory video to discover the ancient Roman cities, Byzantine churches, and vibrant Druze culture that make Swaida one of the most fascinating destinations in the Middle East.',
+            video_sub: 'Heritage & Civilisation',
+            video_title: 'Experience Damascus, City of Jasmine',
+            video_desc: 'Watch our introductory video to discover the ancient Umayyad Mosque, the bustling souqs, the Christian quarter of Bab Touma, and the vibrant street life that makes Damascus one of the world\'s most captivating cities.',
             video_play_label: 'Watch the Story',
             offer_badge: 'Our Services',
             offer_heading: 'Everything You Need\nfor an Unforgettable Journey',
@@ -1939,24 +1950,24 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
             svc5_desc: 'Handpicked local guesthouses and boutique hotels in traditional Haurani basalt stone architecture — sleep where history was made.',
             svc6_title: 'Cultural Workshops',
             svc6_desc: 'Mosaic restoration, traditional weaving, and Arabic calligraphy — learn from local artisans keeping 2,000-year-old crafts alive.',
-            banner_title: 'Welcome to the Basalt Mountain',
+            banner_title: 'Welcome to Damascus, City of Jasmine',
             banner_sub: 'Book your trip today and enjoy 30% off all packages until end of season',
             banner_btn: 'Book Now',
             sec_weather: 'Best Time to Visit',
-            sec_weather_sub: 'Plan around Swaida\'s seasons, festivals, and ideal temperatures',
+            sec_weather_sub: 'Plan around Damascus\'s seasons, festivals, and Mediterranean temperatures',
             weather_best: 'Best months',
             weather_avoid: 'Avoid (peak heat)',
-            sec_vt: 'Virtual Tour – Kanawat Ruins',
-            sec_vt_sub: 'Explore the ancient Roman city in an immersive 360° panorama before you visit',
+            sec_vt: 'Virtual Tour – Old City of Damascus',
+            sec_vt_sub: 'Walk through the ancient lanes and markets of one of the world\'s oldest inhabited cities',
             vt_title: '360° Immersive Tour',
-            vt_desc: 'Stand inside the ancient Temple of Zeus at Kanawat. Drag to look around in every direction.',
+            vt_desc: 'Stand inside the ancient Umayyad Mosque courtyard in Damascus. Drag to look around in every direction.',
             vt_btn: 'Launch Virtual Tour',
             vt_note: 'Use mouse drag or touch to look around. Scroll to zoom. Click ⛶ fullscreen for best experience.',
             sec_booking: 'Book Your Trip',
             sec_booking_sub: 'Reserve your place on the next available tour',
             sec_faq: 'Frequently Asked\nQuestions',
             sec_faq_sub: 'Everything you need to know before booking your Swaida experience.',
-            faq1_q: 'Do I need a visa to visit Swaida, Syria?',
+            faq1_q: 'Do I need a visa to visit Damascus, Syria?',
             faq2_q: 'What is the best time of year to visit?',
             faq3_q: 'What is included in your tour packages?',
             faq4_q: 'How large are the tour groups?',
@@ -1987,35 +1998,35 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
             nav_blog: 'المدونة',
             nav_faq: 'الأسئلة الشائعة',
             nav_contact: 'اتصل بنا',
-            hero_sub: 'أهلاً بكم في جبل العرب',
-            hero_tagline: 'اكتشف مدناً رومانية عريقة، ومناظر بركانية خلابة، وثقافة سورية أصيلة خالدة عبر الزمن',
+            hero_sub: 'أهلاً بكم في العاصمة الأزلية',
+            hero_tagline: 'اكتشف واحدة من أقدم مدن العالم — أسواق عريقة، وعظمة أموية، وضيافة سورية لا مثيل لها',
             hero_btn1: 'استكشف الآن',
             hero_btn2: 'احجز رحلتك',
             scroll_label: 'اسحب للأسفل',
-            stat1: 'موقع أثري',
+            stat1: 'عام من التاريخ',
             stat2: 'زائر سعيد',
             stat3: 'باقة سياحية',
             stat4: '% رضا العملاء',
             media_label: 'كما ورد في وتوصي به',
             sec_destinations: 'وجهاتنا المميزة',
-            sec_destinations_sub: 'استكشف عجائب محافظة السويداء الأثرية',
-            dest_salkhad_name: 'صلخد',
-            dest_salkhad_desc: 'موطن قلعة صلخد الشهيرة، الحصن الأيوبي الذي يعود إلى القرن الثاني عشر، المتربع فوق مخروط بركاني يطل بمنظر بانورامي على سهل حوران.',
-            dest_shahba_name: 'شهبا',
-            dest_shahba_desc: 'فيلبوبوليس القديمة التي أسسها الإمبراطور الروماني فيليب العربي. مدينة رومانية محفوظة بشكل رائع تضم مسرحاً ومعابد وفسيفساء بديعة.',
-            dest_kanawat_name: 'قنوات',
-            dest_kanawat_desc: 'كناثا القديمة عضو مدن الديكابوليس العشر، تتميز بمعابد رومانية مذهلة وكنيسة بيزنطية وآثار حضارات متعددة تمتد ألفي عام.',
-            dest_swaida_name: 'مدينة السويداء',
-            dest_swaida_desc: 'العاصمة النابضة بالحياة للمحافظة، موطن متحف السويداء — أحد أرقى المتاحف السورية — والسوق القديم الذي يعرض التراث الدرزي والتقاليد الأصيلة.',
+            sec_destinations_sub: 'استكشف عجائب دمشق، العاصمة الأزلية لسوريا',
+            dest_salkhad_name: 'المدينة القديمة',
+            dest_salkhad_desc: 'موقع تراث عالمي لليونسكو وواحدة من أقدم المدن المأهولة باستمرار على وجه الأرض. متاهة من الأزقة العريقة والخانات والجوامع والكنائس والقصور العثمانية.',
+            dest_shahba_name: 'الجامع الأموي',
+            dest_shahba_desc: 'بُني عام 705م بأمر الخليفة الوليد بن عبد الملك، وهو من أكبر المساجد وأقدمها في العالم، شُيّد فوق معبد روماني ثم كاتدرائية بيزنطية.',
+            dest_kanawat_name: 'سوق الحميدية',
+            dest_kanawat_desc: 'أشهر أسواق دمشق المسقّفة، ستمئة متر من التاريخ تقود مباشرة إلى الجامع الأموي تحت سقف حديدي قوسي يعود إلى القرن التاسع عشر.',
+            dest_swaida_name: 'جبل قاسيون',
+            dest_swaida_desc: 'الجبل المقدس المطل على دمشق من ارتفاع 1151م. يحمل في طياته أعظم المناظر البانورامية على المدينة، خاصة في الليل حين تتلألأ أضواؤها.',
             btn_explore: 'اكتشف',
             btn_see_more: 'شاهد المزيد',
             wishlist_title: 'رحلاتي المحفوظة',
             wishlist_empty: 'لم تحفظ أي رحلات بعد.\nانقر على ♡ في أي بطاقة وجهة.',
             sec_gallery: 'معرض الصور',
             sec_gallery_sub: 'رحلة بصرية عبر مناظر السويداء وتراثها الحضاري',
-            video_sub: 'التراث والثقافة',
-            video_title: 'اختبر تاريخ السويداء الحي',
-            video_desc: 'شاهد الفيديو التعريفي لتكتشف المدن الرومانية العريقة، والكنائس البيزنطية، والثقافة الدرزية الحيّة التي تجعل السويداء من أكثر الوجهات إثارةً في الشرق الأوسط.',
+            video_sub: 'التراث والحضارة',
+            video_title: 'اختبر دمشق، مدينة الياسمين',
+            video_desc: 'شاهد الفيديو التعريفي لتكتشف الجامع الأموي العريق، والأسواق الصاخبة، وحي باب توما المسيحي، والحياة اليومية النابضة التي تجعل دمشق واحدة من أكثر مدن العالم سحراً.',
             video_play_label: 'شاهد القصة',
             offer_badge: 'خدماتنا',
             offer_heading: 'كل ما تحتاجه\nلرحلة لا تُنسى',
@@ -2033,24 +2044,24 @@ $('.quick-reply').click(function() { sendChatMsg($(this).data('msg')); });
             svc5_desc: 'دور ضيافة محلية وفنادق بوتيك منتقاة بعناية في مباني الحجر البازلتي الحوراني التقليدي — نم حيث صنع التاريخ.',
             svc6_title: 'ورش العمل الثقافية',
             svc6_desc: 'ترميم الفسيفساء والنسيج التقليدي والخط العربي — تعلّم من الحرفيين المحليين الذين يحيون حرفاً عمرها ألفا عام.',
-            banner_title: 'أهلاً بكم في جبل العرب',
+            banner_title: 'أهلاً بكم في دمشق، مدينة الياسمين',
             banner_sub: 'احجز رحلتك اليوم واستمتع بخصم 30% على جميع الباقات حتى نهاية الموسم',
             banner_btn: 'احجز الآن',
             sec_weather: 'أفضل وقت للزيارة',
-            sec_weather_sub: 'خطط وفق مواسم السويداء ومهرجاناتها ودرجات حرارتها المثالية',
+            sec_weather_sub: 'خطط وفق مواسم دمشق ومهرجاناتها ودرجات حرارتها المتوسطية',
             weather_best: 'أفضل الأشهر',
             weather_avoid: 'تجنب (ذروة الحر)',
-            sec_vt: 'جولة افتراضية – آثار قنوات',
-            sec_vt_sub: 'استكشف المدينة الرومانية القديمة في بانوراما 360° قبل زيارتك',
+            sec_vt: 'جولة افتراضية – المدينة القديمة في دمشق',
+            sec_vt_sub: 'تجوّل في أزقة وأسواق واحدة من أقدم المدن المأهولة في التاريخ',
             vt_title: 'جولة تفاعلية 360°',
-            vt_desc: 'قف داخل معبد زيوس الأثري في قنوات. اسحب للنظر في كل الاتجاهات.',
+            vt_desc: 'قف في صحن الجامع الأموي العريق في دمشق. اسحب للنظر في كل الاتجاهات.',
             vt_btn: 'انطلق في الجولة الافتراضية',
             vt_note: 'استخدم الفأرة أو اللمس للنظر حولك. مرر للتكبير. انقر على ⛶ للشاشة الكاملة لأفضل تجربة.',
             sec_booking: 'احجز رحلتك',
             sec_booking_sub: 'احجز مكانك في الجولة القادمة المتاحة',
             sec_faq: 'الأسئلة\nالمتكررة',
             sec_faq_sub: 'كل ما تحتاج معرفته قبل حجز تجربتك في السويداء.',
-            faq1_q: 'هل أحتاج إلى تأشيرة لزيارة السويداء في سوريا؟',
+            faq1_q: 'هل أحتاج إلى تأشيرة لزيارة دمشق، سوريا؟',
             faq2_q: 'ما هو أفضل وقت في السنة للزيارة؟',
             faq3_q: 'ماذا يشمل برنامج الجولة؟',
             faq4_q: 'ما حجم مجموعات الجولات؟',
