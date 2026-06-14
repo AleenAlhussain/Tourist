@@ -438,23 +438,39 @@ html, body { overflow-x: hidden; max-width: 100%; }
 
 /* ─── Map Section ─── */
 .map-section { padding: 100px 0; background: #f8f9fb; }
-.map-tabs { margin-bottom: 24px; }
+.map-tabs { margin-bottom: 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .map-tab-btn {
-    background: transparent;
-    border: 2px solid var(--primary);
+    background: #fff;
+    border: 2px solid #e8eaed;
     color: var(--primary);
-    padding: 8px 22px;
+    padding: 8px 16px 8px 8px;
     border-radius: 50px;
-    margin: 4px;
-    font-size: 0.9rem;
+    margin: 0;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: var(--transition);
     font-family: 'Nunito', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+.map-tab-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e8eaed;
+    flex-shrink: 0;
+    transition: border-color 0.3s;
 }
 .map-tab-btn.active, .map-tab-btn:hover {
     background: var(--primary);
     color: var(--accent);
+    border-color: var(--primary);
 }
+.map-tab-btn.active .map-tab-img,
+.map-tab-btn:hover .map-tab-img { border-color: var(--accent); }
 .map-wrapper { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .route-card {
     background: var(--white);
