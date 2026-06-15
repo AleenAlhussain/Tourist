@@ -32,7 +32,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
 }
 #page-loader.loaded { opacity: 0; visibility: hidden; }
 .loader-inner { text-align: center; }
-.loader-inner img { width: 100px; margin-bottom: 20px; animation: pulse 1.2s ease infinite; }
+.loader-inner img { width: 200px; margin-bottom: 20px; animation: pulse 1.2s ease infinite; }
 .loader-bar {
     width: 200px;
     height: 4px;
@@ -120,7 +120,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .hero-parallax {
     width: 100%;
     min-height: 100vh;
-    background-image: url('../images/backgroun1.jpg');
+    background-image: url('../images/28.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
